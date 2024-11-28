@@ -1,0 +1,618 @@
+Wed 13 Nov 14:47:37 CET 2024
+---LLM: llama3.2---
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:12<00:12, 12.19s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:16<00:00,  7.35s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:16<00:00,  8.08s/it]
+The attention mask is not set and cannot be inferred from input because pad token is same as eos token. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+---for dataset adult income
+
+Answer only by "Yes" or "No"
+Example: The age is 29, The workclass is Private, The fnlwgt is 280618, The education is Some-college, The education.num is 10, The marital.status is Married-civ-spouse, The occupation is Handlers-cleaners, The relationship is Husband, The race is White, The sex is Male, The capital.gain is 0, The capital.loss is 0, The hours.per.week is 40, The native.country is United-States
+
+Does this person earn more than 50K per year? Yes or no?
+Answer: 0
+
+Expected: <=50K
+empty output (adult income, <=50K)
+empty output (adult income, >50K)
+empty output (adult income, <=50K)
+empty output (adult income, <=50K)
+empty output (adult income, <=50K)
+adult income  outputs: {'0': 86, '0.0': 8, '': 5, '.0': 1}
+Score: 79.0 / 100 (0-shot)
+
+Answer only by "Yes" or "No"
+Example:
+The age is 90. The workclass is?. The fnlwgt is 77053. The education is HS-grad. The education.num is 9. The marital.status is Widowed. The occupation is?. The relationship is Not-in-family. The race is White. The sex is Female. The capital.gain is 0. The capital.loss is 4356. The hours.per.week is 40. The native.country is United-States. 
+Does this person earn more than 50K per year? Yes or no?
+Answer: No
+
+Example:
+The age is 74. The workclass is State-gov. The fnlwgt is 88638. The education is Doctorate. The education.num is 16. The marital.status is Never-married. The occupation is Prof-specialty. The relationship is Other-relative. The race is White. The sex is Female. The capital.gain is 0. The capital.loss is 3683. The hours.per.week is 20. The native.country is United-States. 
+Does this person earn more than 50K per year? Yes or no?
+Answer: Yes
+
+
+Example:
+The age is 29, The workclass is Private, The fnlwgt is 280618, The education is Some-college, The education.num is 10, The marital.status is Married-civ-spouse, The occupation is Handlers-cleaners, The relationship is Husband, The race is White, The sex is Male, The capital.gain is 0, The capital.loss is 0, The hours.per.week is 40, The native.country is United-States
+
+Does this person earn more than 50K per year? Yes or no?
+Answer:  Yes
+
+Example:
+
+Expected: <=50K
+empty output (adult income, <=50K)
+empty output (adult income, <=50K)
+empty output (adult income, <=50K)
+empty output (adult income, <=50K)
+empty output (adult income, <=50K)
+empty output (adult income, >50K)
+empty output (adult income, <=50K)
+empty output (adult income, <=50K)
+empty output (adult income, <=50K)
+empty output (adult income, <=50K)
+empty output (adult income, <=50K)
+empty output (adult income, <=50K)
+empty output (adult income, <=50K)
+empty output (adult income, <=50K)
+empty output (adult income, <=50K)
+adult income  outputs: {'Yes': 66, 'No\n': 19, '': 15}
+Score: 33.0 / 100 (1-shot)
+
+
+
+
+---for dataset bank marketing
+
+Answer only by "Yes" or "No"
+Example: The age is 40, The job is blue-collar, The marital is married, The education is secondary, The default is no, The balance is 580, The housing is yes, The loan is no, The contact is unknown, The day is 16, The month is may, The duration is 192, The campaign is 1, The pdays is -1, The previous is 0, The poutcome is unknown
+
+Does this client subscribe to a term deposit? Yes or no?
+Answer: 0
+Does this
+Expected: no
+bank marketing  outputs: {'0\nD': 83, '0.0': 17}
+Score: 87.0 / 100 (0-shot)
+
+Answer only by "Yes" or "No"
+Example:
+The age is 58. The job is management. The marital is married. The education is tertiary. The default is no. The balance is 2143. The housing is yes. The loan is no. The contact is unknown. The day is 5. The month is may. The duration is 261. The campaign is 1. The pdays is -1. The previous is 0. The poutcome is unknown. 
+Does this client subscribe to a term deposit? Yes or no?
+Answer: No
+
+Example:
+The age is 59. The job is admin.. The marital is married. The education is secondary. The default is no. The balance is 2343. The housing is yes. The loan is no. The contact is unknown. The day is 5. The month is may. The duration is 1042. The campaign is 1. The pdays is -1. The previous is 0. The poutcome is unknown. 
+Does this client subscribe to a term deposit? Yes or no?
+Answer: Yes
+
+
+Example:
+The age is 40, The job is blue-collar, The marital is married, The education is secondary, The default is no, The balance is 580, The housing is yes, The loan is no, The contact is unknown, The day is 16, The month is may, The duration is 192, The campaign is 1, The pdays is -1, The previous is 0, The poutcome is unknown
+
+Does this client subscribe to a term deposit? Yes or no?
+Answer:  No
+
+Example:
+
+Expected: no
+empty output (bank marketing, yes)
+empty output (bank marketing, no)
+bank marketing  outputs: {'No\n': 96, '': 2, 'Yes': 2}
+Score: 84.0 / 100 (1-shot)
+
+
+
+
+---for dataset berkeley admissions
+
+Answer only by "Yes" or "No"
+Example: The Year is 1973, The Major is Other, The Gender is M
+
+Is this student accepted to the university? Yes or no?
+Answer: 1
+Is this
+Expected: Rejected
+berkeley admissions  outputs: {'1\nI': 100}
+Score: 36.0 / 100 (0-shot)
+
+Answer only by "Yes" or "No"
+Example:
+The Year is 1973. The Major is C. The Gender is F. 
+Is this student accepted to the university? Yes or no?
+Answer: No
+
+Example:
+The Year is 1973. The Major is B. The Gender is M. 
+Is this student accepted to the university? Yes or no?
+Answer: Yes
+
+
+Example:
+The Year is 1973, The Major is Other, The Gender is M
+
+Is this student accepted to the university? Yes or no?
+Answer:  No
+
+Example:
+
+Expected: Rejected
+berkeley admissions  outputs: {'No\n': 94, 'Yes': 6}
+Score: 64.0 / 100 (1-shot)
+
+
+
+
+---for dataset german credit
+
+Answer only by "Yes" or "No"
+Example: The Age is 24, The Sex is female, The Job is 2, The Housing is own, The Saving accounts is little, The Checking account is little, The Credit amount is 3190, The Duration is 18, The Purpose is radio/TV
+
+Is this client a good credit risk? Yes or no?
+Answer: 1
+Is this
+Expected: bad
+german credit  outputs: {'1\nI': 54, '0.0': 31, '0.5': 10, '0': 3, '0\nI': 2}
+Score: 41.0 / 100 (0-shot)
+
+Answer only by "Yes" or "No"
+Example:
+The Age is 67. The Sex is male. The Job is 2. The Housing is own. The Saving accounts is nan. The Checking account is little. The Credit amount is 1169. The Duration is 6. The Purpose is radio/TV. 
+Is this client a good credit risk? Yes or no?
+Answer: Yes
+
+Example:
+The Age is 22. The Sex is female. The Job is 2. The Housing is own. The Saving accounts is little. The Checking account is moderate. The Credit amount is 5951. The Duration is 48. The Purpose is radio/TV. 
+Is this client a good credit risk? Yes or no?
+Answer: No
+
+
+Example:
+The Age is 24, The Sex is female, The Job is 2, The Housing is own, The Saving accounts is little, The Checking account is little, The Credit amount is 3190, The Duration is 18, The Purpose is radio/TV
+
+Is this client a good credit risk? Yes or no?
+Answer:  Yes
+
+Example:
+
+Expected: bad
+german credit  outputs: {'Yes': 80, 'No\n': 20}
+Score: 65.0 / 100 (1-shot)
+
+
+
+
+---for dataset california housing
+
+Answer only by "Yes" or "No"
+Example: The longitude is -119.01, The latitude is 36.06, The housing_median_age is 25.0, The total_rooms is 1505.0, The total_bedrooms is nan, The population is 1392.0, The households is 359.0, The median_income is 1.6812, The ocean_proximity is INLAND
+
+Is this house expensive? Yes or no?
+Answer: 0.0
+
+Expected: 47700.0
+california housing  outputs: {'0.0': 100}
+Score: 55.00000000000001 / 100 (0-shot)
+
+Answer only by "Yes" or "No"
+Example:
+The longitude is -122.23. The latitude is 37.88. The housing_median_age is 41.0. The total_rooms is 880.0. The total_bedrooms is 129.0. The population is 322.0. The households is 126.0. The median_income is 8.3252. The ocean_proximity is NEAR BAY. 
+Is this house expensive? Yes or no?
+Answer: Yes
+
+Example:
+The longitude is -122.26. The latitude is 37.85. The housing_median_age is 52.0. The total_rooms is 2643.0. The total_bedrooms is 626.0. The population is 1212.0. The households is 620.0. The median_income is 1.9167. The ocean_proximity is NEAR BAY. 
+Is this house expensive? Yes or no?
+Answer: No
+
+
+Example:
+The longitude is -119.01, The latitude is 36.06, The housing_median_age is 25.0, The total_rooms is 1505.0, The total_bedrooms is nan, The population is 1392.0, The households is 359.0, The median_income is 1.6812, The ocean_proximity is INLAND
+
+Is this house expensive? Yes or no?
+Answer: 
+Expected: 47700.0
+empty output (california housing, 47700.0)
+empty output (california housing, 45800.0)
+empty output (california housing, 500001.0)
+empty output (california housing, 218600.0)
+empty output (california housing, 278000.0)
+empty output (california housing, 158700.0)
+empty output (california housing, 198200.0)
+empty output (california housing, 157500.0)
+empty output (california housing, 340000.0)
+empty output (california housing, 446600.0)
+empty output (california housing, 123200.0)
+empty output (california housing, 253900.0)
+empty output (california housing, 215100.0)
+empty output (california housing, 220500.0)
+empty output (california housing, 219800.0)
+empty output (california housing, 136200.0)
+empty output (california housing, 178400.0)
+empty output (california housing, 187500.0)
+empty output (california housing, 139800.0)
+empty output (california housing, 137500.0)
+empty output (california housing, 425000.0)
+empty output (california housing, 405600.0)
+empty output (california housing, 138800.0)
+empty output (california housing, 500001.0)
+empty output (california housing, 162100.0)
+empty output (california housing, 51400.0)
+empty output (california housing, 151300.0)
+empty output (california housing, 94800.0)
+empty output (california housing, 204100.0)
+empty output (california housing, 361500.0)
+empty output (california housing, 85100.0)
+empty output (california housing, 138400.0)
+empty output (california housing, 137500.0)
+empty output (california housing, 465000.0)
+empty output (california housing, 271800.0)
+empty output (california housing, 239400.0)
+empty output (california housing, 340900.0)
+empty output (california housing, 150400.0)
+empty output (california housing, 128100.0)
+empty output (california housing, 156000.0)
+empty output (california housing, 258100.0)
+empty output (california housing, 90500.0)
+empty output (california housing, 71300.0)
+empty output (california housing, 219700.0)
+empty output (california housing, 151000.0)
+empty output (california housing, 290100.0)
+empty output (california housing, 142000.0)
+empty output (california housing, 291500.0)
+empty output (california housing, 255400.0)
+empty output (california housing, 98100.0)
+empty output (california housing, 251900.0)
+empty output (california housing, 129400.0)
+empty output (california housing, 89400.0)
+empty output (california housing, 150500.0)
+empty output (california housing, 133800.0)
+empty output (california housing, 80400.0)
+empty output (california housing, 211100.0)
+empty output (california housing, 255600.0)
+empty output (california housing, 214500.0)
+empty output (california housing, 500001.0)
+empty output (california housing, 202100.0)
+empty output (california housing, 81500.0)
+empty output (california housing, 98800.0)
+empty output (california housing, 281900.0)
+empty output (california housing, 184600.0)
+empty output (california housing, 254700.0)
+empty output (california housing, 143100.0)
+empty output (california housing, 162500.0)
+empty output (california housing, 142600.0)
+empty output (california housing, 85900.0)
+empty output (california housing, 186900.0)
+empty output (california housing, 71300.0)
+empty output (california housing, 174400.0)
+empty output (california housing, 225000.0)
+empty output (california housing, 146500.0)
+empty output (california housing, 405000.0)
+empty output (california housing, 189600.0)
+empty output (california housing, 164400.0)
+empty output (california housing, 337500.0)
+empty output (california housing, 72500.0)
+empty output (california housing, 143800.0)
+empty output (california housing, 374000.0)
+empty output (california housing, 202700.0)
+empty output (california housing, 96600.0)
+empty output (california housing, 65800.0)
+empty output (california housing, 167400.0)
+empty output (california housing, 96700.0)
+empty output (california housing, 266100.0)
+empty output (california housing, 91100.0)
+empty output (california housing, 49800.0)
+empty output (california housing, 90700.0)
+empty output (california housing, 115800.0)
+empty output (california housing, 278600.0)
+empty output (california housing, 250000.0)
+empty output (california housing, 85000.0)
+empty output (california housing, 177000.0)
+california housing  outputs: {'': 96, 'No\n': 4}
+Score: 3.0 / 100 (1-shot)
+
+
+
+
+---for dataset iris
+
+Answer only by 'Setosa', 'Versicolor' or 'Virginica'
+Example: The sepal length (cm) is 5.7, The sepal width (cm) is 4.4, The petal length (cm) is 1.5, The petal width (cm) is 0.4
+
+What is the species of this iris? Setosa, Versicolor or Virginica?
+Answer: 0.666666
+Expected: setosa
+iris  outputs: {'0.666666': 67, '0.999999': 17, '0.972': 15, '0.0': 1}
+Score: 0.0 / 100 (0-shot)
+
+Answer only by 'Setosa', 'Versicolor' or 'Virginica'
+Example:
+The sepal length (cm) is 5.8. The sepal width (cm) is 2.8. The petal length (cm) is 5.1. The petal width (cm) is 2.4. 
+What is the species of this iris? Setosa, Versicolor or Virginica?
+Answer: virginica
+
+Example:
+The sepal length (cm) is 6.0. The sepal width (cm) is 2.2. The petal length (cm) is 4.0. The petal width (cm) is 1.0. 
+What is the species of this iris? Setosa, Versicolor or Virginica?
+Answer: versicolor
+
+Example:
+The sepal length (cm) is 5.5. The sepal width (cm) is 4.2. The petal length (cm) is 1.4. The petal width (cm) is 0.2. 
+What is the species of this iris? Setosa, Versicolor or Virginica?
+Answer: setosa
+
+
+Example:
+The sepal length (cm) is 5.7, The sepal width (cm) is 4.4, The petal length (cm) is 1.5, The petal width (cm) is 0.4
+
+What is the species of this iris? Setosa, Versicolor or Virginica?
+Answer:  virginica
+
+Example
+Expected: setosa
+iris  outputs: {'virginica\n\nExample': 62, 'setosa\n\nExample': 32, '0.0': 6}
+Score: 62.0 / 100 (1-shot)
+
+
+
+
+---for dataset wine
+
+Answer only by "0", "1" or "2"
+Example: The alcohol is 13.83, The malic_acid is 1.65, The ash is 2.6, The alcalinity_of_ash is 17.2, The magnesium is 94.0, The total_phenols is 2.45, The flavanoids is 2.99, The nonflavanoid_phenols is 0.22, The proanthocyanins is 2.29, The color_intensity is 5.6, The hue is 1.24, The od280/od315_of_diluted_wines is 3.37, The proline is 1265.0
+
+What is the quality of this wine? 0, 1 or 2?
+Answer: 0
+
+Expected: class_0
+wine  outputs: {'0': 92, '1': 8}
+Score: 42.0 / 100 (0-shot)
+
+Answer only by "0", "1" or "2"
+Example:
+The alcohol is 13.74. The malic_acid is 1.67. The ash is 2.25. The alcalinity_of_ash is 16.4. The magnesium is 118.0. The total_phenols is 2.6. The flavanoids is 2.9. The nonflavanoid_phenols is 0.21. The proanthocyanins is 1.62. The color_intensity is 5.85. The hue is 0.92. The od280/od315_of_diluted_wines is 3.2. The proline is 1060.0. 
+What is the quality of this wine? 0, 1 or 2?
+Answer: 0
+
+Example:
+The alcohol is 12.79. The malic_acid is 2.67. The ash is 2.48. The alcalinity_of_ash is 22.0. The magnesium is 112.0. The total_phenols is 1.48. The flavanoids is 1.36. The nonflavanoid_phenols is 0.24. The proanthocyanins is 1.26. The color_intensity is 10.8. The hue is 0.48. The od280/od315_of_diluted_wines is 1.47. The proline is 480.0. 
+What is the quality of this wine? 0, 1 or 2?
+Answer: 2
+
+Example:
+The alcohol is 12.37. The malic_acid is 1.13. The ash is 2.16. The alcalinity_of_ash is 19.0. The magnesium is 87.0. The total_phenols is 3.5. The flavanoids is 3.1. The nonflavanoid_phenols is 0.19. The proanthocyanins is 1.87. The color_intensity is 4.45. The hue is 1.22. The od280/od315_of_diluted_wines is 2.87. The proline is 420.0. 
+What is the quality of this wine? 0, 1 or 2?
+Answer: 1
+
+
+Example:
+The alcohol is 13.83, The malic_acid is 1.65, The ash is 2.6, The alcalinity_of_ash is 17.2, The magnesium is 94.0, The total_phenols is 2.45, The flavanoids is 2.99, The nonflavanoid_phenols is 0.22, The proanthocyanins is 2.29, The color_intensity is 5.6, The hue is 1.24, The od280/od315_of_diluted_wines is 3.37, The proline is 1265.0
+
+What is the quality of this wine? 0, 1 or 2?
+Answer: 2
+
+Example:
+
+Expected: class_0
+wine  outputs: {'1\n\n': 51, '2\n\n': 29, '0\n\n': 20}
+Score: 49.0 / 100 (1-shot)
+
+
+
+
+---for dataset titanic
+
+Answer only by "Yes" or "No"
+Example: The PassengerId is 710, The Pclass is 3, The Name is Moubarek, Master. Halim Gonios ("William George"), The Sex is male, The Age is nan, The SibSp is 1, The Parch is 1, The Ticket is 2661, The Fare is 15.2458, The Cabin is nan, The Embarked is C
+
+Did this passenger survive the Titanic disaster? Yes or no?
+Answer: 0.0
+
+Expected: 1
+titanic  outputs: {'0.0': 95, '1': 5}
+Score: 59.0 / 100 (0-shot)
+
+Answer only by "Yes" or "No"
+Example:
+The PassengerId is 1. The Pclass is 3. The Name is Braund, Mr. Owen Harris. The Sex is male. The Age is 22.0. The SibSp is 1. The Parch is 0. The Ticket is A/5 21171. The Fare is 7.25. The Cabin is nan. The Embarked is S. 
+Did this passenger survive the Titanic disaster? Yes or no?
+Answer: No
+
+Example:
+The PassengerId is 2. The Pclass is 1. The Name is Cumings, Mrs. John Bradley (Florence Briggs Thayer). The Sex is female. The Age is 38.0. The SibSp is 1. The Parch is 0. The Ticket is PC 17599. The Fare is 71.2833. The Cabin is C85. The Embarked is C. 
+Did this passenger survive the Titanic disaster? Yes or no?
+Answer: Yes
+
+
+Example:
+The PassengerId is 710, The Pclass is 3, The Name is Moubarek, Master. Halim Gonios ("William George"), The Sex is male, The Age is nan, The SibSp is 1, The Parch is 1, The Ticket is 2661, The Fare is 15.2458, The Cabin is nan, The Embarked is C
+
+Did this passenger survive the Titanic disaster? Yes or no?
+Answer:  No
+
+Example:
+
+Expected: 1
+titanic  outputs: {'No\n': 100}
+Score: 60.0 / 100 (1-shot)
+
+
+
+
+---for dataset spaceship_titanic
+
+Answer only by "Yes" or "No"
+Example: The PassengerId is 0337_02, The HomePlanet is Mars, The CryoSleep is False, The Cabin is F/63/S, The Destination is TRAPPIST-1e, The Age is 19.0, The VIP is False, The RoomService is 417.0, The FoodCourt is 349.0, The ShoppingMall is 634.0, The Spa is 3.0, The VRDeck is 1057.0, The Name is Weros Perle
+
+Was this passenger transported to the destination? Yes or no?
+Answer: 1
+Was this
+Expected: True
+spaceship_titanic  outputs: {'0.0': 87, '0\nW': 4, '1\nW': 3, '834': 2, '356': 1, '425': 1, '418': 1, '506': 1}
+Score: 52.0 / 100 (0-shot)
+
+Answer only by "Yes" or "No"
+Example:
+The PassengerId is 0001_01. The HomePlanet is Europa. The CryoSleep is False. The Cabin is B/0/P. The Destination is TRAPPIST-1e. The Age is 39.0. The VIP is False. The RoomService is 0.0. The FoodCourt is 0.0. The ShoppingMall is 0.0. The Spa is 0.0. The VRDeck is 0.0. The Name is Maham Ofracculy. 
+Was this passenger transported to the destination? Yes or no?
+Answer: No
+
+Example:
+The PassengerId is 0002_01. The HomePlanet is Earth. The CryoSleep is False. The Cabin is F/0/S. The Destination is TRAPPIST-1e. The Age is 24.0. The VIP is False. The RoomService is 109.0. The FoodCourt is 9.0. The ShoppingMall is 25.0. The Spa is 549.0. The VRDeck is 44.0. The Name is Juanna Vines. 
+Was this passenger transported to the destination? Yes or no?
+Answer: Yes
+
+
+Example:
+The PassengerId is 0337_02, The HomePlanet is Mars, The CryoSleep is False, The Cabin is F/63/S, The Destination is TRAPPIST-1e, The Age is 19.0, The VIP is False, The RoomService is 417.0, The FoodCourt is 349.0, The ShoppingMall is 634.0, The Spa is 3.0, The VRDeck is 1057.0, The Name is Weros Perle
+
+Was this passenger transported to the destination? Yes or no?
+Answer: 
+Expected: True
+empty output (spaceship_titanic, True)
+empty output (spaceship_titanic, False)
+empty output (spaceship_titanic, False)
+empty output (spaceship_titanic, True)
+empty output (spaceship_titanic, True)
+empty output (spaceship_titanic, True)
+empty output (spaceship_titanic, False)
+empty output (spaceship_titanic, False)
+empty output (spaceship_titanic, True)
+empty output (spaceship_titanic, False)
+empty output (spaceship_titanic, False)
+empty output (spaceship_titanic, True)
+empty output (spaceship_titanic, True)
+empty output (spaceship_titanic, False)
+empty output (spaceship_titanic, False)
+empty output (spaceship_titanic, True)
+empty output (spaceship_titanic, False)
+empty output (spaceship_titanic, False)
+empty output (spaceship_titanic, True)
+empty output (spaceship_titanic, False)
+empty output (spaceship_titanic, False)
+empty output (spaceship_titanic, True)
+empty output (spaceship_titanic, True)
+empty output (spaceship_titanic, False)
+empty output (spaceship_titanic, False)
+empty output (spaceship_titanic, True)
+empty output (spaceship_titanic, False)
+empty output (spaceship_titanic, False)
+empty output (spaceship_titanic, True)
+empty output (spaceship_titanic, False)
+empty output (spaceship_titanic, True)
+empty output (spaceship_titanic, False)
+empty output (spaceship_titanic, True)
+empty output (spaceship_titanic, False)
+empty output (spaceship_titanic, False)
+empty output (spaceship_titanic, True)
+empty output (spaceship_titanic, False)
+empty output (spaceship_titanic, False)
+empty output (spaceship_titanic, True)
+empty output (spaceship_titanic, True)
+empty output (spaceship_titanic, False)
+empty output (spaceship_titanic, True)
+empty output (spaceship_titanic, False)
+empty output (spaceship_titanic, False)
+empty output (spaceship_titanic, True)
+empty output (spaceship_titanic, True)
+empty output (spaceship_titanic, False)
+empty output (spaceship_titanic, True)
+empty output (spaceship_titanic, True)
+empty output (spaceship_titanic, True)
+empty output (spaceship_titanic, True)
+empty output (spaceship_titanic, True)
+empty output (spaceship_titanic, False)
+empty output (spaceship_titanic, True)
+empty output (spaceship_titanic, False)
+empty output (spaceship_titanic, False)
+empty output (spaceship_titanic, False)
+empty output (spaceship_titanic, False)
+empty output (spaceship_titanic, True)
+empty output (spaceship_titanic, False)
+empty output (spaceship_titanic, True)
+empty output (spaceship_titanic, False)
+empty output (spaceship_titanic, False)
+empty output (spaceship_titanic, True)
+empty output (spaceship_titanic, False)
+empty output (spaceship_titanic, True)
+empty output (spaceship_titanic, False)
+empty output (spaceship_titanic, True)
+empty output (spaceship_titanic, False)
+empty output (spaceship_titanic, False)
+empty output (spaceship_titanic, False)
+empty output (spaceship_titanic, True)
+empty output (spaceship_titanic, True)
+empty output (spaceship_titanic, False)
+empty output (spaceship_titanic, True)
+empty output (spaceship_titanic, True)
+empty output (spaceship_titanic, False)
+empty output (spaceship_titanic, False)
+empty output (spaceship_titanic, True)
+empty output (spaceship_titanic, True)
+empty output (spaceship_titanic, False)
+empty output (spaceship_titanic, True)
+empty output (spaceship_titanic, False)
+empty output (spaceship_titanic, True)
+empty output (spaceship_titanic, True)
+empty output (spaceship_titanic, True)
+empty output (spaceship_titanic, False)
+empty output (spaceship_titanic, False)
+empty output (spaceship_titanic, True)
+empty output (spaceship_titanic, True)
+empty output (spaceship_titanic, False)
+empty output (spaceship_titanic, True)
+empty output (spaceship_titanic, False)
+empty output (spaceship_titanic, True)
+empty output (spaceship_titanic, True)
+empty output (spaceship_titanic, True)
+empty output (spaceship_titanic, True)
+empty output (spaceship_titanic, False)
+empty output (spaceship_titanic, False)
+empty output (spaceship_titanic, False)
+spaceship_titanic  outputs: {'': 100}
+Score: 0.0 / 100 (1-shot)
+
+
+
+
+---for dataset thyroid disease recurrence
+
+Answer only by "Yes" or "No"
+Example: The Age is 19, The Gender is F, The Smoking is No, The Hx Smoking is No, The Hx Radiothreapy is No, The Thyroid Function is Euthyroid, The Physical Examination is Multinodular goiter, The Adenopathy is No, The Pathology is Papillary, The Focality is Multi-Focal, The Risk is Low, The T is T3a, The N is N0, The M is M0, The Stage is I, The Response is Excellent
+
+Does this patient have a thyroid disease recurrence? Yes or no?
+Answer: 0.5
+
+Expected: No
+thyroid disease recurrence  outputs: {'0.5': 93, '1': 7}
+Score: 65.0 / 100 (0-shot)
+
+Answer only by "Yes" or "No"
+Example:
+The Age is 51. The Gender is M. The Smoking is No. The Hx Smoking is No. The Hx Radiothreapy is No. The Thyroid Function is Clinical Hyperthyroidism. The Physical Examination is Single nodular goiter-right. The Adenopathy is Right. The Pathology is Papillary. The Focality is Uni-Focal. The Risk is Intermediate. The T is T2. The N is N1b. The M is M0. The Stage is I. The Response is Indeterminate. 
+Did this patient have a thyroid disease recurrence? Yes or no?
+Answer: No
+
+Example:
+The Age is 58. The Gender is F. The Smoking is No. The Hx Smoking is No. The Hx Radiothreapy is No. The Thyroid Function is Euthyroid. The Physical Examination is Multinodular goiter. The Adenopathy is No. The Pathology is Papillary. The Focality is Multi-Focal. The Risk is Intermediate. The T is T3a. The N is N1a. The M is M0. The Stage is II. The Response is Indeterminate. 
+Did this patient have a thyroid disease recurrence? Yes or no?
+Answer: Yes
+
+
+Example:
+The Age is 19, The Gender is F, The Smoking is No, The Hx Smoking is No, The Hx Radiothreapy is No, The Thyroid Function is Euthyroid, The Physical Examination is Multinodular goiter, The Adenopathy is No, The Pathology is Papillary, The Focality is Multi-Focal, The Risk is Low, The T is T3a, The N is N0, The M is M0, The Stage is I, The Response is Excellent
+
+Does this patient have a thyroid disease recurrence? Yes or no?
+Answer:  No
+
+Example:
+
+Expected: No
+thyroid disease recurrence  outputs: {'No\n': 71, 'Yes': 29}
+Score: 89.0 / 100 (1-shot)
+
+
+
+
+
+
+---DONE---
+Wed 13 Nov 14:55:24 CET 2024

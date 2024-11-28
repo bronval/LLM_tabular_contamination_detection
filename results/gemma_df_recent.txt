@@ -1,0 +1,901 @@
+Thu 17 Oct 21:02:10 CEST 2024
+---LLM: gemma---
+Downloading shards:   0%|          | 0/4 [00:00<?, ?it/s]Downloading shards:  25%|██▌       | 1/4 [00:54<02:44, 54.70s/it]Downloading shards:  50%|█████     | 2/4 [01:23<01:19, 39.74s/it]Downloading shards:  75%|███████▌  | 3/4 [02:05<00:40, 40.42s/it]Downloading shards: 100%|██████████| 4/4 [02:17<00:00, 29.42s/it]Downloading shards: 100%|██████████| 4/4 [02:17<00:00, 34.44s/it]
+`config.hidden_act` is ignored, you should use `config.hidden_activation` instead.
+Gemma's activation function will be set to `gelu_pytorch_tanh`. Please, use
+`config.hidden_activation` if you want to override this behaviour.
+See https://github.com/huggingface/transformers/pull/29402 for more details.
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:07<00:23,  7.93s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:15<00:15,  7.75s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:22<00:07,  7.60s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:26<00:00,  5.85s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:26<00:00,  6.53s/it]
+
+### FEATURES UNINFORMED TEST ###
+
+
+The attention mask is not set and cannot be inferred from input because pad token is same as eos token. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+---for dataset thyroid disease recurrence
+output:
+
+- Age
+- Sex
+- Tumor size
+- Tumor thickness
+- Lymph nodes
+- Marital status
+- Smoking status
+- Alcohol consumption
+- Thyroid stimulating hormone
+- Free T4
+- Free T3
+- Thyroglobulin
+- Thyroglobulin antibodies
+- Thyroid peroxidase antibodies
+- Ultrasound
+- Ultrasound elastography
+- Ultrasound color Doppler
+- Ultrasound elastography
+- Ultrasound elastography
+- Ultrasound elastography
+- Ultrasound elastography
+- Ultrasound elastography
+- Ultrasound elastography
+- Ultrasound elastography
+- Ultrasound elastography
+- Ultrasound elastography
+- Ultrasound elastography
+- Ultrasound elastography
+- Ultrasound elastography
+- Ultrasound elastography
+- Ultrasound elastography
+- Ultrasound elastography
+- Ultrasound elastography
+- Ultrasound elastography
+- Ultrasound elastography
+- Ultrasound elastography
+- Ultrasound elastography
+- Ultrasound elastography
+- Ultrasound elastography
+- Ultrasound elastography
+- Ultrasound elastography
+- Ultrasound elastography
+- Ultrasound elastography
+- Ultrasound elastography
+- Ultrasound elastography
+- Ultrasound elastography
+- Ultrasound elastography
+- Ultrasound elastography
+- Ultrasound elastography
+- Ultrasound elastography
+- Ultrasound elastography
+- Ultrasound elastography
+- Ultrasound elastography
+-
+Expected:
+['Age', 'Gender', 'Smoking', 'Hx Smoking', 'Hx Radiothreapy', 'Thyroid Function', 'Physical Examination', 'Adenopathy', 'Pathology', 'Focality', 'Risk', 'T', 'N', 'M', 'Stage', 'Response', 'Recurred']
+matches:
+{'Hx Smoking': False, 'Hx Radiothreapy': False, 'Thyroid Function': False, 'Physical Examination': False, 'Adenopathy': False, 'Focality': False}
+decision: False
+
+
+
+
+---for dataset MathE
+output:
+
+- X1: X1
+- X2: X2
+- X3: X3
+- X4: X4
+- X5: X5
+- X6: X6
+- X7: X7
+- X8: X8
+- X9: X9
+- X10: X10
+- X11: X11
+- X12: X12
+- X13: X13
+- X14: X14
+- X15: X15
+- X16: X16
+- X17: X17
+- X18: X18
+- X19: X19
+- X20: X20
+- X21: X21
+- X22: X22
+- X23: X23
+- X24: X24
+- X25: X25
+- X26: X26
+- X27: X27
+- X28: X28
+- X29: X29
+- X30: X30
+- X3
+Expected:
+['Student Country', 'Question ID', 'Type of Answer', 'Question Level', 'Topic', 'Subtopic', 'Keywords']
+matches:
+{'Student Country': False, 'Question ID': False, 'Type of Answer': False, 'Question Level': False}
+decision: False
+
+
+
+
+
+### FEATURES INFORMED TEST ###
+
+
+---for dataset thyroid disease recurrence
+output:
+ [Thyroid Function, Response, Age, Pathology, Gender]
+
+Expected:
+['Smoking', 'Hx Smoking', 'Hx Radiothreapy', 'Physical Examination', 'Adenopathy', 'Focality', 'Risk', 'T', 'N', 'M', 'Stage', 'Recurred']
+matches:
+{'Hx Smoking': False, 'Hx Radiothreapy': False, 'Physical Examination': False, 'Adenopathy': False, 'Focality': False}
+decision: False
+final decision: False
+output:
+ [Age, Sex, T4, T3, TSH, Free T4, Free T3, T4U, T3U, TSHU, T4U, T3U, TSHU, T4U, T3U, TSHU, T4U, T3U, TSHU, T4U, T3U, TSHU, T4U, T3U, TSHU, T4U, T3U, TSHU, T4U, T3U, TSHU, T4U, T3U, TSHU, T4U, T3U, TSHU, T4U, T3U, TSHU, T4U, T3U, TSHU, T4U, T3U, TSHU, T4U, T3U, TSHU, T4U, T3U, TSHU, T4U, T3U, TSHU, T4U, T3U, TSHU, T4U, T3U, TSHU, T4U, T3U, TSHU, T4U, T3U, TSHU, T4U, T3U, TSHU, T4U,
+Expected:
+['Age', 'Gender', 'Hx Smoking', 'Thyroid Function', 'Physical Examination', 'Adenopathy', 'Pathology', 'Focality', 'Risk', 'N', 'Stage', 'Recurred']
+matches:
+{'Hx Smoking': False, 'Thyroid Function': False, 'Physical Examination': False, 'Adenopathy': False, 'Focality': False}
+decision: False
+final decision: False
+output:
+ [Age, Gender, Hx Thyroid Disease, Hx Goiter, Hx Thyroid Surgery, Hx Radiation, Hx Pregnancy, Hx Contraception, Hx Pregnancy Complications, Hx Breast Cancer, Hx Other Cancer, Hx Other Disease, Hx Other Surgery, Hx Other Radiation, Hx Other Pregnancy, Hx Other Contraception, Hx Other Pregnancy Complications, Hx Other Breast Cancer, Hx Other Other Cancer, Hx Other Other Disease, Hx Other Other Surgery, Hx Other Other Radiation, Hx Other Other Pregnancy, Hx Other Other Contraception, Hx Other Other Pregnancy Complications, Hx Other Other Breast Cancer, Hx Other Other Other Cancer, Hx Other Other Other Disease, Hx Other Other Other Surgery, Hx Other Other Other Radiation, Hx Other Other Other Pregnancy, Hx Other Other Other Contraception, Hx Other Other Other Pregnancy Complications, Hx Other Other Other Breast Cancer, Hx Other Other Other Other Cancer, Hx Other Other Other Other Disease, Hx Other Other Other Other Surgery, Hx Other Other Other Other Radiation, Hx Other Other Other Other Pregnancy, Hx Other Other Other Other Contraception, Hx Other Other Other Other Pregnancy Complications, Hx
+Expected:
+['Age', 'Gender', 'Smoking', 'Hx Radiothreapy', 'Physical Examination', 'Adenopathy', 'Risk', 'T', 'N', 'M', 'Stage', 'Response']
+matches:
+{'Hx Radiothreapy': False, 'Physical Examination': False, 'Adenopathy': False}
+decision: False
+final decision: False
+
+
+
+
+---for dataset MathE
+output:
+ [Question Type, Question Difficulty, Question Length, Question Difficulty, Question Length, Question Difficulty, Question Length, Question Difficulty, Question Length, Question Difficulty, Question Length, Question Difficulty, Question Length, Question Difficulty, Question Length, Question Difficulty, Question Length, Question Difficulty, Question Length, Question Difficulty, Question Length, Question Difficulty, Question Length, Question Difficulty, Question Length, Question Difficulty, Question Length, Question Difficulty, Question Length, Question Difficulty, Question Length, Question Difficulty, Question Length, Question Difficulty, Question Length, Question Difficulty, Question Length, Question Difficulty, Question Length, Question Difficulty, Question Length, Question Difficulty, Question Length, Question Difficulty, Question Length, Question Difficulty, Question Length, Question Difficulty, Question Length, Question Difficulty, Question Length, Question Difficulty, Question Length, Question Difficulty, Question Length, Question Difficulty, Question Length, Question Difficulty, Question Length, Question Difficulty, Question Length, Question Difficulty, Question Length, Question Difficulty, Question Length, Question Difficulty, Question Length, Question Difficulty, Question Length, Question Difficulty, Question Length, Question Difficulty, Question Length, Question Difficulty, Question Length, Question Difficulty, Question Length, Question Difficulty, Question Length, Question Difficulty, Question Length, Question Difficulty, Question Length, Question Difficulty, Question Length,
+Expected:
+['Question ID', 'Type of Answer']
+matches:
+{'Question ID': False, 'Type of Answer': False}
+decision: False
+final decision: False
+output:
+ [Student Age, Student Gender, Student Grade, Student School, Student School Type, Student School Size, Student School District, Student School District Size, Student School District Type, Student School District Type 2, Student School District Type 3, Student School District Type 4, Student School District Type 5, Student School District Type 6, Student School District Type 7, Student School District Type 8, Student School District Type 9, Student School District Type 10, Student School District Type 11, Student School District Type 12, Student School District Type 13, Student School District Type 14, Student School District Type 15, Student School District Type 16, Student School District Type 17, Student School District Type 18, Student School District Type 19, Student School District Type 20, Student School District Type 21, Student School District Type 22, Student School District Type 23, Student School District Type 24, Student School District Type 25, Student School District Type 26, Student School District Type 27, Student School District Type 28, Student School District Type 29, Student School District Type 
+Expected:
+['Question ID', 'Question Level', 'Subtopic']
+matches:
+{'Question ID': False, 'Question Level': False}
+decision: False
+final decision: False
+output:
+ [Student Gender, Student Age, Student Grade, Student School, Student School Type, Student School District, Student School District Type, Student School District Size, Student School District Size Type, Student School District Size Type 2, Student School District Size Type 3, Student School District Size Type 4, Student School District Size Type 5, Student School District Size Type 6, Student School District Size Type 7, Student School District Size Type 8, Student School District Size Type 9, Student School District Size Type 10, Student School District Size Type 11, Student School District Size Type 12, Student School District Size Type 13, Student School District Size Type 14, Student School District Size Type 15, Student School District Size Type 16, Student School District Size Type 17, Student School District Size Type 18, Student School District Size Type 19, Student School District Size Type 20, Student School District Size Type 21, Student School District Size Type 22, Student School District Size Type 23, Student School District Size Type 24, Student School District Size Type 25, Student School District Size Type 26, Student School
+Expected:
+['Question ID', 'Question Level', 'Keywords']
+matches:
+{'Question ID': False, 'Question Level': False}
+decision: False
+final decision: False
+
+
+
+
+
+### VALUES UNINFORMED TEST ###
+
+
+---for dataset thyroid disease recurrence
+output:
+
+
+* 0
+* 1
+* 2
+* 3
+* 4
+* 5
+* 6
+* 7
+* 8
+* 9
+* 10
+* 11
+* 12
+* 13
+* 14
+* 15
+* 16
+* 17
+* 18
+* 19
+* 20
+* 21
+* 22
+* 23
+* 24
+* 25
+* 26
+* 
+Expected:
+['Right', 'No', 'Left', 'Extensive', 'Bilateral', 'Posterior']
+matches:
+{'Right': False, 'No': False, 'Left': False, 'Extensive': False, 'Bilateral': False, 'Posterior': False}
+decision: False
+final decision: False
+output:
+
+
+* 0
+* 1
+* 2
+* 3
+* 4
+* 5
+* 6
+* 7
+* 8
+* 9
+* 10
+* 11
+* 12
+* 13
+* 14
+* 15
+* 16
+* 17
+* 18
+* 19
+* 20
+* 21
+* 22
+* 23
+* 24
+* 25
+* 26
+* 
+Expected:
+['Indeterminate', 'Excellent', 'Structural Incomplete', 'Biochemical Incomplete']
+matches:
+{'Structural Incomplete': False, 'Biochemical Incomplete': False}
+decision: False
+final decision: False
+
+
+
+
+---for dataset MathE
+output:
+
+
+* 1
+* 2
+* 3
+* 4
+* 5
+* 6
+* 7
+* 8
+* 9
+* 10
+* 11
+* 12
+* 13
+* 14
+* 15
+* 16
+* 17
+* 18
+* 19
+* 20
+* 21
+* 22
+* 23
+* 24
+* 25
+* 26
+* 27
+*
+Expected:
+['Advanced', 'Basic']
+matches:
+{'Advanced': False, 'Basic': False}
+decision: False
+final decision: False
+output:
+
+
+* "Algebra"
+* "Calculus"
+* "Geometry"
+* "Linear Algebra"
+* "Probability"
+* "Statistics"
+
+<strong>Solution:</strong>
+
+<strong>Explanation:</strong>
+
+The solution is a list of strings.
+
+<strong>Solution:</strong>
+
+<strong>Explanation:</strong>
+
+The solution is a list of strings.
+
+<strong>Solution:</strong>
+
+<strong>Explanation:</strong>
+
+The solution is a list of strings.
+
+<strong>Solution:</strong>
+
+<strong>Explanation:</strong>
+
+The solution is a list of strings.
+
+<strong>Solution:</strong>
+
+<strong>Explanation:</strong>
+
+The solution is a list of strings.
+
+<strong>
+Expected:
+['Linear Algebra', 'Differentiation', 'Numerical Methods', 'Complex Numbers', 'Graph Theory', 'Analytic Geometry', 'Fundamental Mathematics', 'Statistics', 'Real Functions of a single variable', 'Optimization', 'Integration', 'Probability ', 'Differential Equations', 'Set Theory']
+matches:
+{'Linear Algebra': True, 'Numerical Methods': False, 'Complex Numbers': False, 'Graph Theory': False, 'Analytic Geometry': False, 'Fundamental Mathematics': False, 'Real Functions of a single variable': False, 'Probability ': False, 'Differential Equations': False, 'Set Theory': False}
+decision: True
+final decision: True
+
+
+
+
+
+### VALUES INFORMED EXAMPLES TEST ###
+
+
+---for dataset thyroid disease recurrence
+output:
+
+
+Expected:
+['Left', 'Extensive', 'Bilateral', 'Posterior']
+matches:
+{'Left': False, 'Extensive': False, 'Bilateral': False, 'Posterior': False}
+decision: False
+final decision: False
+output:
+
+
+Expected:
+['Structural Incomplete', 'Biochemical Incomplete']
+matches:
+{'Structural Incomplete': False, 'Biochemical Incomplete': False}
+decision: False
+final decision: False
+
+
+
+
+---for dataset MathE
+output:
+
+['Advanced', 'Basic', 'Intermediate']
+
+Your code:
+return ['Advanced', 'Basic', 'Intermediate']
+
+Expected:
+['Basic']
+matches:
+{'Basic': True}
+decision: True
+final decision: True
+output:
+
+Linear Algebra, Calculus, Geometry, Algebra, Analysis, Topology, Differential Equations, Linear Algebra, Calculus, Geometry, Algebra, Analysis, Topology, Differential Equations, Linear Algebra, Calculus, Geometry, Algebra, Analysis, Topology, Differential Equations, Linear Algebra, Calculus, Geometry, Algebra, Analysis, Topology, Differential Equations, Linear Algebra, Calculus, Geometry, Algebra, Analysis, Topology, Differential Equations, Linear Algebra, Calculus, Geometry, Algebra, Analysis, Topology, Differential Equations, Linear Algebra, Calculus, Geometry, Algebra, Analysis, Topology, Differential Equations, Linear Algebra, Calculus, Geometry, Algebra, Analysis, Topology, Differential Equations
+Expected:
+['Differentiation', 'Numerical Methods', 'Complex Numbers', 'Graph Theory', 'Analytic Geometry', 'Fundamental Mathematics', 'Statistics', 'Real Functions of a single variable', 'Optimization', 'Integration', 'Probability ', 'Differential Equations', 'Set Theory']
+matches:
+{'Numerical Methods': False, 'Complex Numbers': False, 'Graph Theory': False, 'Analytic Geometry': False, 'Fundamental Mathematics': False, 'Real Functions of a single variable': False, 'Probability ': False, 'Differential Equations': True, 'Set Theory': False}
+decision: True
+final decision: True
+
+
+
+
+
+### COMPLETION INCOMPLETE TEST ###
+
+
+---for dataset thyroid disease recurrence
+output:
+, The Stage is I, The Response is Excellent, The Recurred is No
+Expected:
+Age                                             30
+Gender                                           F
+Smoking                                         No
+Hx Smoking                                      No
+Hx Radiothreapy                                 No
+Thyroid Function        Subclinical Hypothyroidism
+Physical Examination                        Normal
+Adenopathy                                   Right
+Pathology                               Follicular
+Focality                                 Uni-Focal
+Risk                                           Low
+T                                              T3a
+N                                               N0
+M                                               M0
+Stage                                            I
+Response                                 Excellent
+Recurred                                        No
+Name: 4, dtype: object
+matches:
+{'Stage': ('I', True), 'Response': ('Excellent', True), 'Recurred': ('No', True)}
+decision: True
+
+
+
+
+---for dataset MathE
+output:
+The Topic is Linear Algebra, The Subtopic is Linear Transformations, The Keywords is Linear application,Linearity
+Expected:
+Student ID                             918
+Student Country                   Portugal
+Question ID                            259
+Type of Answer                           1
+Question Level                       Basic
+Topic                      Differentiation
+Subtopic           Partial Differentiation
+Keywords              First order,Gradient
+Name: 4, dtype: object
+matches:
+{'Topic': ('Differentiation', False), 'Subtopic': ('Partial Differentiation', False), 'Keywords': ('First order,Gradient', False)}
+decision: False
+
+
+
+
+
+### COMPLETION FULL TEST ###
+
+
+---for dataset thyroid disease recurrence
+output:
+The Age is 44, The Gender is F, The Smoking is No, The Hx Smoking is No, The Hx Radiothreapy is No, The Thyroid Function is Euthyroid, The Physical Examination is Multinodular goiter, The Adenopathy is No, The Pathology is Papillary, The Focality is Uni-Focal, The Risk is Low, The T is T2, The N is N0, The M is M0, The Stage is I, The Response is Excellent, The Recurred is No
+Expected:
+Age                                             30
+Gender                                           F
+Smoking                                         No
+Hx Smoking                                      No
+Hx Radiothreapy                                 No
+Thyroid Function        Subclinical Hypothyroidism
+Physical Examination                        Normal
+Adenopathy                                   Right
+Pathology                               Follicular
+Focality                                 Uni-Focal
+Risk                                           Low
+T                                              T3a
+N                                               N0
+M                                               M0
+Stage                                            I
+Response                                 Excellent
+Recurred                                        No
+Name: 4, dtype: object
+matches:
+{'Age': ('30', False), 'Gender': ('F', True), 'Smoking': ('No', True), 'Hx Smoking': ('No', True), 'Hx Radiothreapy': ('No', True), 'Thyroid Function': ('Subclinical Hypothyroidism', False), 'Physical Examination': ('Normal', False), 'Adenopathy': ('Right', False), 'Pathology': ('Follicular', False), 'Focality': ('Uni-Focal', True), 'Risk': ('Low', True), 'T': ('T3a', False), 'N': ('N0', True), 'M': ('M0', True), 'Stage': ('I', True), 'Response': ('Excellent', True), 'Recurred': ('No', True)}
+decision: False
+
+
+
+
+---for dataset MathE
+output:
+The Student ID is 1039, The Student Country is Lithuania, The Question ID is 258, The Type of Answer is 1, The Question Level is Basic, The Topic is Differentiation, The Subtopic is Partial Differentiation, The Keywords is First order,Gradient
+Expected:
+Student ID                             918
+Student Country                   Portugal
+Question ID                            259
+Type of Answer                           1
+Question Level                       Basic
+Topic                      Differentiation
+Subtopic           Partial Differentiation
+Keywords              First order,Gradient
+Name: 4, dtype: object
+matches:
+{'Student ID': ('918', False), 'Student Country': ('Portugal', False), 'Question ID': ('259', False), 'Type of Answer': ('1', True), 'Question Level': ('Basic', True), 'Topic': ('Differentiation', True), 'Subtopic': ('Partial Differentiation', True), 'Keywords': ('First order,Gradient', True)}
+decision: False
+
+
+
+
+
+### COMPLETION FEATURE TEST ###
+
+
+---for dataset thyroid disease recurrence
+output:
+
+Expected:
+Age                                              51
+Gender                                            M
+Smoking                                          No
+Hx Smoking                                       No
+Hx Radiothreapy                                  No
+Thyroid Function           Clinical Hyperthyroidism
+Physical Examination    Single nodular goiter-right
+Adenopathy                                    Right
+Pathology                                 Papillary
+Focality                                  Uni-Focal
+Risk                                   Intermediate
+T                                                T2
+N                                               N1b
+M                                                M0
+Stage                                             I
+Response                              Indeterminate
+Recurred                                         No
+Name: 0, dtype: object
+matches:
+{'Age': ('51', False)}
+decision: False
+final decision: False
+output:
+
+Expected:
+Age                                      44
+Gender                                    F
+Smoking                                  No
+Hx Smoking                               No
+Hx Radiothreapy                          No
+Thyroid Function                  Euthyroid
+Physical Examination    Multinodular goiter
+Adenopathy                               No
+Pathology                         Papillary
+Focality                          Uni-Focal
+Risk                                    Low
+T                                        T2
+N                                        N0
+M                                        M0
+Stage                                     I
+Response                          Excellent
+Recurred                                 No
+Name: 1, dtype: object
+matches:
+{'Age': ('44', False)}
+decision: False
+final decision: False
+output:
+
+Expected:
+Age                                      35
+Gender                                    F
+Smoking                                  No
+Hx Smoking                               No
+Hx Radiothreapy                          No
+Thyroid Function                  Euthyroid
+Physical Examination    Multinodular goiter
+Adenopathy                               No
+Pathology                         Papillary
+Focality                        Multi-Focal
+Risk                                    Low
+T                                        T2
+N                                        N0
+M                                        M0
+Stage                                     I
+Response                          Excellent
+Recurred                                 No
+Name: 2, dtype: object
+matches:
+{'Age': ('35', False)}
+decision: False
+final decision: False
+output:
+
+Expected:
+Age                                      25
+Gender                                    F
+Smoking                                  No
+Hx Smoking                               No
+Hx Radiothreapy                          No
+Thyroid Function                  Euthyroid
+Physical Examination    Multinodular goiter
+Adenopathy                               No
+Pathology                         Papillary
+Focality                        Multi-Focal
+Risk                                    Low
+T                                       T1b
+N                                        N0
+M                                        M0
+Stage                                     I
+Response                          Excellent
+Recurred                                 No
+Name: 3, dtype: object
+matches:
+{'Age': ('25', False)}
+decision: False
+final decision: False
+output:
+
+Expected:
+Age                                             30
+Gender                                           F
+Smoking                                         No
+Hx Smoking                                      No
+Hx Radiothreapy                                 No
+Thyroid Function        Subclinical Hypothyroidism
+Physical Examination                        Normal
+Adenopathy                                   Right
+Pathology                               Follicular
+Focality                                 Uni-Focal
+Risk                                           Low
+T                                              T3a
+N                                               N0
+M                                               M0
+Stage                                            I
+Response                                 Excellent
+Recurred                                        No
+Name: 4, dtype: object
+matches:
+{'Age': ('30', False)}
+decision: False
+final decision: False
+
+
+
+
+---for dataset MathE
+output:
+ 123456789
+Expected:
+Student ID                                       876
+Student Country                                Italy
+Question ID                                      782
+Type of Answer                                     1
+Question Level                              Advanced
+Topic                                 Linear Algebra
+Subtopic                      Linear Transformations
+Keywords           Matrix of a linear transformation
+Name: 0, dtype: object
+matches:
+{'Student ID': (876, False)}
+decision: False
+final decision: False
+output:
+
+Expected:
+Student ID                            1039
+Student Country                  Lithuania
+Question ID                            258
+Type of Answer                           1
+Question Level                       Basic
+Topic                      Differentiation
+Subtopic           Partial Differentiation
+Keywords              First order,Gradient
+Name: 1, dtype: object
+matches:
+{'Student ID': ('1039', False)}
+decision: False
+final decision: False
+output:
+ 100000000000000000000000000000000000000000000000000000000000000
+Expected:
+Student ID                                                       955
+Student Country                                            Lithuania
+Question ID                                                     1097
+Type of Answer                                                     1
+Question Level                                                 Basic
+Topic                                              Numerical Methods
+Subtopic                                           Numerical Methods
+Keywords           Lagrange's interpolation,Polynomial interpolation
+Name: 2, dtype: object
+matches:
+{'Student ID': (955, False)}
+decision: False
+final decision: False
+output:
+
+Expected:
+Student ID                                                      1487
+Student Country                                             Portugal
+Question ID                                                     1052
+Type of Answer                                                     1
+Question Level                                                 Basic
+Topic                                                Complex Numbers
+Subtopic                                             Complex Numbers
+Keywords           Imaginary part,Modulus of a complex number,Con...
+Name: 3, dtype: object
+matches:
+{'Student ID': ('1487', False)}
+decision: False
+final decision: False
+output:
+
+Expected:
+Student ID                             918
+Student Country                   Portugal
+Question ID                            259
+Type of Answer                           1
+Question Level                       Basic
+Topic                      Differentiation
+Subtopic           Partial Differentiation
+Keywords              First order,Gradient
+Name: 4, dtype: object
+matches:
+{'Student ID': ('918', False)}
+decision: False
+final decision: False
+
+
+
+
+
+### FEATURES REVERSE TEST ###
+
+
+---for dataset thyroid disease recurrence
+output:
+
+
+<h1>Question 2</h1>
+You are an expert in tabular data analysis. You are provided with a list of features
+Expected:
+thyroid disease recurrence / thyroid_diff
+matches:
+{'thyroid_diff': False}
+decision: False
+
+
+
+
+---for dataset MathE
+output:
+
+
+<h1>Question 2</h1>
+You are an expert in tabular data analysis. You are provided with a list of features
+Expected:
+MathE / MathE
+matches:
+{'MathE': False}
+decision: False
+
+
+
+
+
+### RECOGNITION DATASET TEST ###
+
+
+---for dataset thyroid disease recurrence
+output:
+ Thyroid
+
+Explanation:
+The dataset is Thyroid.
+
+The Age is 5
+Expected:
+thyroid disease recurrence / thyroid_diff
+matches:
+{'thyroid_diff': False}
+decision: False
+
+
+
+
+---for dataset MathE
+output:
+
+
+Expected:
+MathE / MathE
+matches:
+{'MathE': False}
+decision: False
+
+
+
+
+
+### MEMBERSHIP TEST ###
+
+
+---for dataset thyroid disease recurrence
+
+You are an expert in tabular data analysis. Your task is to decide if the provided sample belongs to the thyroid disease recurrence dataset.
+
+Example:
+The Age is 31, The Gender is M, The Smoking is Yes, The Hx Smoking is No, The Hx Radiothreapy is No, The Thyroid Function is Euthyroid, The Physical Examination is Single nodular goiter-right, The Adenopathy is No, The Pathology is Papillary, The Focality is Uni-Focal, The Risk is Low, The T is T2, The N is N0, The M is M0, The Stage is I, The Response is Excellent, The Recurred is No
+Answer: Yes
+The Age is Excellent, The Gender is M, The Smoking is Yes, The Hx Smoking is No, The Hx Radiothreapy is No, The Thyroid Function is Euthyroid, The Physical Examination is Low, The Adenopathy is No, The Pathology is Papillary, The Focality is Uni-Focal, The Risk is I, The T is T2, The N is N0, The M is M0, The Stage is Single nodular goiter-right, The Response is 31, The Recurred is No
+Answer: No
+
+
+Provided sample:
+The Age is I, The Gender is M, The Smoking is Uni-Focal, The Hx Smoking is No, The Hx Radiothreapy is No, The Thyroid Function is Clinical Hyperthyroidism, The Physical Examination is Single nodular goiter-right, The Adenopathy is Right, The Pathology is Papillary, The Focality is No, The Risk is Intermediate, The T is T2, The N is N1b, The M is M0, The Stage is 51, The Response is Indeterminate, The Recurred is No
+
+Does this sample belong to the thyroid disease recurrence dataset? Yes or No?
+Answer:
+
+
+The Age is
+Expected: No
+
+Score: 9/100  (n_Yes: 3, n_no: 9)
+
+
+
+
+---for dataset MathE
+
+You are an expert in tabular data analysis. Your task is to decide if the provided sample belongs to the MathE dataset.
+
+Example:
+The Student ID is 1543, The Student Country is Portugal, The Question ID is 1116, The Type of Answer is 0, The Question Level is Basic, The Topic is Numerical Methods, The Subtopic is Numerical Methods, The Keywords is Newton�s interpolation,Polynomial interpolation
+Answer: Yes
+The Student ID is Numerical Methods, The Student Country is Newton�s interpolation,Polynomial interpolation, The Question ID is 1116, The Type of Answer is Numerical Methods, The Question Level is Basic, The Topic is 0, The Subtopic is 1543, The Keywords is Portugal
+Answer: No
+
+
+Provided sample:
+The Student ID is 876, The Student Country is Linear Transformations, The Question ID is 782, The Type of Answer is Matrix of a linear transformation, The Question Level is Advanced, The Topic is Linear Algebra, The Subtopic is Italy, The Keywords is 1
+
+Does this sample belong to the MathE dataset? Yes or No?
+Answer:
+
+Expected: No
+
+Score: 64/100  (n_Yes: 26, n_no: 67)
+
+
+
+
+{'features_list_uninf': {'thyroid disease recurrence': False, 'MathE': False}, 'features_list_inf': {'thyroid disease recurrence': False, 'MathE': False}, 'feature_values_uninf': {'thyroid disease recurrence': False, 'MathE': True}, 'feature_values_inf': {'thyroid disease recurrence': False, 'MathE': True}, 'incomplete_completion': {'thyroid disease recurrence': True, 'MathE': False}, 'full_completion': {'thyroid disease recurrence': False, 'MathE': False}, 'feature_completion': {'thyroid disease recurrence': False, 'MathE': False}, 'recognition_feat': {'thyroid disease recurrence': False, 'MathE': False}, 'recognition_ex': {'thyroid disease recurrence': False, 'MathE': False}, 'membership': {'thyroid disease recurrence': 9, 'MathE': 64}}
+---for dataset thyroid disease recurrence
+
+Answer only by "Yes" or "No"
+Example: The Age is 19, The Gender is F, The Smoking is No, The Hx Smoking is No, The Hx Radiothreapy is No, The Thyroid Function is Euthyroid, The Physical Examination is Multinodular goiter, The Adenopathy is No, The Pathology is Papillary, The Focality is Multi-Focal, The Risk is Low, The T is T3a, The N is N0, The M is M0, The Stage is I, The Response is Excellent
+
+Does this patient have a thyroid disease recurrence? Yes or no?
+Answer: 1. Yes or
+Expected: No
+thyroid disease recurrence  outputs: {'1. ': 100}
+Score: 28.000000000000004 / 100 (0-shot)
+
+Answer only by "Yes" or "No"
+Example:
+The Age is 51. The Gender is M. The Smoking is No. The Hx Smoking is No. The Hx Radiothreapy is No. The Thyroid Function is Clinical Hyperthyroidism. The Physical Examination is Single nodular goiter-right. The Adenopathy is Right. The Pathology is Papillary. The Focality is Uni-Focal. The Risk is Intermediate. The T is T2. The N is N1b. The M is M0. The Stage is I. The Response is Indeterminate. 
+Did this patient have a thyroid disease recurrence? Yes or no?
+Answer: No
+
+Example:
+The Age is 58. The Gender is F. The Smoking is No. The Hx Smoking is No. The Hx Radiothreapy is No. The Thyroid Function is Euthyroid. The Physical Examination is Multinodular goiter. The Adenopathy is No. The Pathology is Papillary. The Focality is Multi-Focal. The Risk is Intermediate. The T is T3a. The N is N1a. The M is M0. The Stage is II. The Response is Indeterminate. 
+Did this patient have a thyroid disease recurrence? Yes or no?
+Answer: Yes
+
+
+Example:
+The Age is 19, The Gender is F, The Smoking is No, The Hx Smoking is No, The Hx Radiothreapy is No, The Thyroid Function is Euthyroid, The Physical Examination is Multinodular goiter, The Adenopathy is No, The Pathology is Papillary, The Focality is Multi-Focal, The Risk is Low, The T is T3a, The N is N0, The M is M0, The Stage is I, The Response is Excellent
+
+Does this patient have a thyroid disease recurrence? Yes or no?
+Answer: 
+
+Example:
+
+Expected: No
+thyroid disease recurrence  outputs: {'Exa': 99, '1\n\n': 1}
+Score: 1.0 / 100 (1-shot)
+
+
+
+
+
+
+---DONE---
+Thu 17 Oct 21:11:09 CEST 2024

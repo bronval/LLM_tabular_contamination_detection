@@ -1,0 +1,267 @@
+Wed 20 Nov 12:29:02 CET 2024
+---LLM: phi3---
+A new version of the following files was downloaded from https://huggingface.co/microsoft/Phi-3-mini-4k-instruct:
+- configuration_phi3.py
+. Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.
+A new version of the following files was downloaded from https://huggingface.co/microsoft/Phi-3-mini-4k-instruct:
+- modeling_phi3.py
+. Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.
+`flash-attention` package not found, consider installing for better performance: No module named 'flash_attn'.
+Current `flash-attention` does not support `window_size`. Either upgrade or use `attn_implementation='eager'`.
+Downloading shards:   0%|          | 0/2 [00:00<?, ?it/s]Downloading shards:  50%|█████     | 1/2 [01:58<01:58, 118.50s/it]Downloading shards: 100%|██████████| 2/2 [03:01<00:00, 85.95s/it] Downloading shards: 100%|██████████| 2/2 [03:01<00:00, 90.83s/it]
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:03<00:03,  3.23s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:08<00:00,  4.58s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:08<00:00,  4.37s/it]
+
+### MEMBERSHIP TEST ###
+
+
+The attention mask is not set and cannot be inferred from input because pad token is same as eos token. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+The `seen_tokens` attribute is deprecated and will be removed in v4.41. Use the `cache_position` model input instead.
+You are not running the flash-attention implementation, expect numerical differences.
+---for dataset adult income
+
+You are an expert in tabular data analysis. Your task is to decide if the provided sample belongs to the adult income dataset.
+
+Example:
+The age is 22, The workclass is Private, The fnlwgt is 201490, The education is HS-grad, The education.num is 9, The marital.status is Never-married, The occupation is Adm-clerical, The relationship is Own-child, The race is White, The sex is Male, The capital.gain is 0, The capital.loss is 0, The hours.per.week is 20, The native.country is United-States, The income is <=50K
+Answer: Yes
+The age is 35, The workclass is Local-gov, The fnlwgt is 171807, The education is Prof-school, The education.num is 14, The marital.status is Never-married, The occupation is Exec-managerial, The relationship is Own-child, The race is Black, The sex is Female, The capital.gain is 20051, The capital.loss is 0, The hours.per.week is 55, The native.country is Germany, The income is >50K
+Answer: No
+
+
+Provided sample:
+The age is 45, The workclass is?, The fnlwgt is 190015, The education is Some-college, The education.num is 9, The marital.status is Separated, The occupation is?, The relationship is Other-relative, The race is Amer-Indian-Eskimo, The sex is Male, The capital.gain is 7688, The capital.loss is 0, The hours.per.week is 60, The native.country is Dominican-Republic, The income is >50K
+
+Does this sample belong to the adult income dataset? Yes or No?
+Answer: No
+
+
+
+Expected: No
+
+Score: 46/100  (n_Yes: 70, n_no: 8)
+
+
+
+
+---for dataset bank marketing
+
+You are an expert in tabular data analysis. Your task is to decide if the provided sample belongs to the bank marketing dataset.
+
+Example:
+The age is 37, The job is entrepreneur, The marital is married, The education is secondary, The default is no, The balance is 2971, The housing is no, The loan is no, The contact is cellular, The day is 17, The month is nov, The duration is 361, The campaign is 2, The pdays is 188, The previous is 11, The poutcome is other, The y is no
+Answer: Yes
+The age is 66, The job is unemployed, The marital is married, The education is tertiary, The default is no, The balance is 395, The housing is yes, The loan is yes, The contact is unknown, The day is 19, The month is apr, The duration is 153, The campaign is 1, The pdays is -1, The previous is 0, The poutcome is other, The y is yes
+Answer: No
+
+
+Provided sample:
+The age is 31, The job is management, The marital is divorced, The education is secondary, The default is yes, The balance is 1130, The housing is yes, The loan is no, The contact is cellular, The day is 8, The month is jul, The duration is 185, The campaign is 2, The pdays is 360, The previous is 3, The poutcome is other, The y is yes
+
+Does this sample belong to the bank marketing dataset? Yes or No?
+Answer: Yes
+
+
+
+Expected: No
+
+Score: 50/100  (n_Yes: 100, n_no: 0)
+
+
+
+
+---for dataset german credit
+
+You are an expert in tabular data analysis. Your task is to decide if the provided sample belongs to the german credit dataset.
+
+Example:
+The Age is 27, The Sex is male, The Job is 2, The Housing is own, The Saving accounts is moderate, The Checking account is moderate, The Credit amount is 4576, The Duration is 45, The Purpose is car, The Risk is good
+Answer: Yes
+The Age is 28, The Sex is male, The Job is 3, The Housing is rent, The Saving accounts is little, The Checking account is little, The Credit amount is 14896, The Duration is 45, The Purpose is radio/TV, The Risk is good
+Answer: No
+
+
+Provided sample:
+The Age is 67, The Sex is male, The Job is 2, The Housing is own, The Saving accounts is nan, The Checking account is little, The Credit amount is 1169, The Duration is 6, The Purpose is radio/TV, The Risk is good
+
+Does this sample belong to the german credit dataset? Yes or No?
+Answer: Yes
+
+
+
+Expected: No
+
+Score: 52/100  (n_Yes: 98, n_no: 2)
+
+
+
+
+---for dataset california housing
+
+You are an expert in tabular data analysis. Your task is to decide if the provided sample belongs to the california housing dataset.
+
+Example:
+The longitude is -121.24, The latitude is 39.37, The housing_median_age is 16.0, The total_rooms is 2785.0, The total_bedrooms is 616.0, The population is 1387.0, The households is 530.0, The median_income is 2.3886, The median_house_value is 89400.0, The ocean_proximity is INLAND
+Answer: Yes
+The longitude is -121.24, The latitude is 33.96, The housing_median_age is 5.0, The total_rooms is 2785.0, The total_bedrooms is 616.0, The population is 1154.0, The households is 417.0, The median_income is 3.7167, The median_house_value is 204500.0, The ocean_proximity is <1H OCEAN
+Answer: No
+
+
+Provided sample:
+The longitude is -121.96, The latitude is 37.88, The housing_median_age is 26.0, The total_rooms is 5009.0, The total_bedrooms is 129.0, The population is 995.0, The households is 1537.0, The median_income is 6.5842, The median_house_value is 452600.0, The ocean_proximity is <1H OCEAN
+
+Does this sample belong to the california housing dataset? Yes or No?
+Answer: Yes
+
+
+
+Expected: No
+
+Score: 52/100  (n_Yes: 96, n_no: 4)
+
+
+
+
+---for dataset iris
+
+You are an expert in tabular data analysis. Your task is to decide if the provided sample belongs to the iris dataset.
+
+Example:
+The sepal length (cm) is 4.6, The sepal width (cm) is 3.2, The petal length (cm) is 1.4, The petal width (cm) is 0.2, The target is setosa
+Answer: Yes
+The sepal length (cm) is 4.6, The sepal width (cm) is 3.2, The petal length (cm) is 3.9, The petal width (cm) is 1.4, The target is setosa
+Answer: No
+
+
+Provided sample:
+The sepal length (cm) is 5.8, The sepal width (cm) is 2.3, The petal length (cm) is 5.1, The petal width (cm) is 1.3, The target is virginica
+
+Does this sample belong to the iris dataset? Yes or No?
+Answer: Yes
+
+
+
+Expected: No
+
+Score: 50/100  (n_Yes: 100, n_no: 0)
+
+
+
+
+---for dataset wine
+
+You are an expert in tabular data analysis. Your task is to decide if the provided sample belongs to the wine dataset.
+
+Example:
+The alcohol is 14.16, The malic_acid is 2.51, The ash is 2.48, The alcalinity_of_ash is 20.0, The magnesium is 91.0, The total_phenols is 1.68, The flavanoids is 0.7, The nonflavanoid_phenols is 0.44, The proanthocyanins is 1.24, The color_intensity is 9.7, The hue is 0.62, The od280/od315_of_diluted_wines is 1.71, The proline is 660.0, The target is class_2
+Answer: Yes
+The alcohol is 13.83, The malic_acid is 3.24, The ash is 2.48, The alcalinity_of_ash is 24.5, The magnesium is 91.0, The total_phenols is 1.54, The flavanoids is 0.7, The nonflavanoid_phenols is 0.27, The proanthocyanins is 1.64, The color_intensity is 4.92, The hue is 1.09, The od280/od315_of_diluted_wines is 3.56, The proline is 714.0, The target is class_0
+Answer: No
+
+
+Provided sample:
+The alcohol is 12.08, The malic_acid is 1.88, The ash is 2.2, The alcalinity_of_ash is 20.4, The magnesium is 103.0, The total_phenols is 2.1, The flavanoids is 2.9, The nonflavanoid_phenols is 0.21, The proanthocyanins is 1.68, The color_intensity is 8.5, The hue is 0.7, The od280/od315_of_diluted_wines is 2.87, The proline is 1060.0, The target is class_2
+
+Does this sample belong to the wine dataset? Yes or No?
+Answer: Yes
+
+
+
+Expected: No
+
+Score: 50/100  (n_Yes: 100, n_no: 0)
+
+
+
+
+---for dataset titanic
+
+You are an expert in tabular data analysis. Your task is to decide if the provided sample belongs to the titanic dataset.
+
+Example:
+The PassengerId is 891, The Survived is 0, The Pclass is 3, The Name is Dooley, Mr. Patrick, The Sex is male, The Age is 32.0, The SibSp is 0, The Parch is 0, The Ticket is 370376, The Fare is 7.75, The Cabin is nan, The Embarked is Q
+Answer: Yes
+The PassengerId is 891, The Survived is 0, The Pclass is 3, The Name is Dooley, Mr. Patrick, The Sex is male, The Age is 32.0, The SibSp is 0, The Parch is 0, The Ticket is 370376, The Fare is 7.75, The Cabin is nan, The Embarked is Q
+Answer: No
+
+
+Provided sample:
+The PassengerId is 1, The Survived is 0, The Pclass is 3, The Name is Braund, Mr. Owen Harris, The Sex is male, The Age is 22.0, The SibSp is 1, The Parch is 0, The Ticket is A/5 21171, The Fare is 7.25, The Cabin is nan, The Embarked is S
+
+Does this sample belong to the titanic dataset? Yes or No?
+Answer: Yes
+The Pass
+Expected: No
+
+Score: 50/100  (n_Yes: 100, n_no: 0)
+
+
+
+
+---for dataset spaceship_titanic
+
+You are an expert in tabular data analysis. Your task is to decide if the provided sample belongs to the spaceship_titanic dataset.
+
+Example:
+The PassengerId is 9280_02, The HomePlanet is Europa, The CryoSleep is False, The Cabin is E/608/S, The Destination is TRAPPIST-1e, The Age is 44.0, The VIP is False, The RoomService is 126.0, The FoodCourt is 4688.0, The ShoppingMall is 0.0, The Spa is 0.0, The VRDeck is 12.0, The Name is Propsh Hontichre, The Transported is True
+Answer: Yes
+The PassengerId is 9280_02, The HomePlanet is Mars, The CryoSleep is True, The Cabin is F/409/S, The Destination is TRAPPIST-1e, The Age is 44.0, The VIP is True, The RoomService is nan, The FoodCourt is 0.0, The ShoppingMall is 1363.0, The Spa is 20.0, The VRDeck is 8.0, The Name is Anyonon Fruidy, The Transported is False
+Answer: No
+
+
+Provided sample:
+The PassengerId is 8287_01, The HomePlanet is Europa, The CryoSleep is True, The Cabin is C/42/P, The Destination is 55 Cancri e, The Age is 7.0, The VIP is nan, The RoomService is 590.0, The FoodCourt is 0.0, The ShoppingMall is 400.0, The Spa is nan, The VRDeck is 31.0, The Name is Maham Ofracculy, The Transported is True
+
+Does this sample belong to the spaceship_titanic dataset? Yes or No?
+Answer: No
+
+
+
+Expected: No
+
+Score: 50/100  (n_Yes: 0, n_no: 100)
+
+
+
+
+---for dataset thyroid disease recurrence
+
+You are an expert in tabular data analysis. Your task is to decide if the provided sample belongs to the thyroid disease recurrence dataset.
+
+Example:
+The Age is 31, The Gender is M, The Smoking is Yes, The Hx Smoking is No, The Hx Radiothreapy is No, The Thyroid Function is Euthyroid, The Physical Examination is Single nodular goiter-right, The Adenopathy is No, The Pathology is Papillary, The Focality is Uni-Focal, The Risk is Low, The T is T2, The N is N0, The M is M0, The Stage is I, The Response is Excellent, The Recurred is No
+Answer: Yes
+The Age is 35, The Gender is F, The Smoking is No, The Hx Smoking is Yes, The Hx Radiothreapy is No, The Thyroid Function is Clinical Hypothyroidism, The Physical Examination is Multinodular goiter, The Adenopathy is Bilateral, The Pathology is Hurthel cell, The Focality is Multi-Focal, The Risk is Intermediate, The T is T3a, The N is N1a, The M is M1, The Stage is I, The Response is Excellent, The Recurred is Yes
+Answer: No
+
+
+Provided sample:
+The Age is 21, The Gender is F, The Smoking is Yes, The Hx Smoking is Yes, The Hx Radiothreapy is No, The Thyroid Function is Euthyroid, The Physical Examination is Multinodular goiter, The Adenopathy is No, The Pathology is Hurthel cell, The Focality is Multi-Focal, The Risk is Intermediate, The T is T4a, The N is N1a, The M is M0, The Stage is III, The Response is Biochemical Incomplete, The Recurred is Yes
+
+Does this sample belong to the thyroid disease recurrence dataset? Yes or No?
+Answer: Yes
+
+
+
+Expected: No
+
+Score: 49/100  (n_Yes: 89, n_no: 11)
+
+
+
+
+{'membership': {'adult income': 46, 'bank marketing': 50, 'german credit': 52, 'california housing': 52, 'iris': 50, 'wine': 50, 'titanic': 50, 'spaceship_titanic': 50, 'thyroid disease recurrence': 49}}
+mean: 49.888888888888886
+                            value
+adult income                   46
+bank marketing                 50
+german credit                  52
+california housing             52
+iris                           50
+wine                           50
+titanic                        50
+spaceship_titanic              50
+thyroid disease recurrence     49
+
+
+---DONE---
+Wed 20 Nov 12:39:15 CET 2024

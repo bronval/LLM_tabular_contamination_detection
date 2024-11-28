@@ -1,0 +1,12 @@
+test_name,Adult,Bank,Berkeley,German,Housing,Iris,Wine,Titanic,Sp. Titanic,Thyroid_Diff,MathE
+features_list_uninf,0,0,0,0,0,1,1,1,0,0,0
+features_list_inf,1,1,0,0,1,1,0,1,0,0,0
+feature_values_uninf,0,0,1,0,0,0,0,1,0,0,0
+feature_values_inf,1,1,1,1,1,1,0,1,0,0,1
+incomplete_completion,1,1,0,0,0,0,0,0,0,1,0
+full_completion,0,0,0,0,0,0,0,0,0,0,0
+feature_completion,0,0,0,0,0,0,0,1,0,0,0
+recognition_feat,0,0,0,0,0,1,0,1,0,0,0
+recognition_ex,0,0,0,0,0,1,1,1,0,0,0
+membership,51,52,55,50,52,59,50,50,55,52,53
+incomplete_completion_random,0,1,0,0,0,0,0,0,0,0,0

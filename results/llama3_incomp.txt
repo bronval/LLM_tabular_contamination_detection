@@ -1,0 +1,220 @@
+Thu 24 Oct 09:36:43 CEST 2024
+---LLM: llama3---
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:02<00:07,  2.55s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:05<00:04,  2.49s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:06<00:02,  2.26s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:07<00:00,  1.59s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:07<00:00,  1.89s/it]
+
+### COMPLETION INCOMPLETE TEST (random) ###
+
+
+The attention mask is not set and cannot be inferred from input because pad token is same as eos token. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+---for dataset thyroid disease recurrence
+output:
+, The Stage is I, The Response is Excellent, The Recurred is No
+Expected:
+Age                                      50
+Gender                                    F
+Smoking                                  No
+Hx Smoking                               No
+Hx Radiothreapy                          No
+Thyroid Function                  Euthyroid
+Physical Examination    Multinodular goiter
+Adenopathy                               No
+Pathology                         Papillary
+Focality                          Uni-Focal
+Risk                                    Low
+T                                        T2
+N                                        N0
+M                                        M0
+Stage                                     I
+Response                      Indeterminate
+Recurred                                 No
+Name: 362, dtype: object
+matches:
+{'Stage': ('I', True), 'Response': ('Indeterminate', False), 'Recurred': ('No', True)}
+decision: False
+output:
+, The Stage is II, The Response is Indeterminate, The Recurred is No
+Expected:
+Age                                      28
+Gender                                    F
+Smoking                                  No
+Hx Smoking                               No
+Hx Radiothreapy                          No
+Thyroid Function                  Euthyroid
+Physical Examination    Multinodular goiter
+Adenopathy                            Right
+Pathology                         Papillary
+Focality                          Uni-Focal
+Risk                           Intermediate
+T                                        T2
+N                                       N1b
+M                                        M0
+Stage                                     I
+Response                          Excellent
+Recurred                                 No
+Name: 110, dtype: object
+matches:
+{'Stage': ('I', False), 'Response': ('Excellent', False), 'Recurred': ('No', True)}
+decision: False
+output:
+, The Stage is I, The Response is Excellent, The Recurred is No
+Expected:
+Age                                              40
+Gender                                            F
+Smoking                                          No
+Hx Smoking                                       No
+Hx Radiothreapy                                  No
+Thyroid Function                          Euthyroid
+Physical Examination    Single nodular goiter-right
+Adenopathy                                       No
+Pathology                                 Papillary
+Focality                                  Uni-Focal
+Risk                                   Intermediate
+T                                               T1b
+N                                                N0
+M                                                M0
+Stage                                             I
+Response                                  Excellent
+Recurred                                         No
+Name: 211, dtype: object
+matches:
+{'Stage': ('I', True), 'Response': ('Excellent', True), 'Recurred': ('No', True)}
+decision: True
+output:
+, The Stage is I, The Response is Excellent, The Recurred is No
+Expected:
+Age                                              32
+Gender                                            F
+Smoking                                          No
+Hx Smoking                                       No
+Hx Radiothreapy                                  No
+Thyroid Function                          Euthyroid
+Physical Examination    Single nodular goiter-right
+Adenopathy                                       No
+Pathology                                 Papillary
+Focality                                  Uni-Focal
+Risk                                            Low
+T                                                T2
+N                                                N0
+M                                                M0
+Stage                                             I
+Response                                  Excellent
+Recurred                                         No
+Name: 83, dtype: object
+matches:
+{'Stage': ('I', True), 'Response': ('Excellent', True), 'Recurred': ('No', True)}
+decision: True
+output:
+, The Stage is III, The Response is Excellent, The Recurred is No
+Expected:
+Age                                             52
+Gender                                           F
+Smoking                                         No
+Hx Smoking                                      No
+Hx Radiothreapy                                 No
+Thyroid Function                         Euthyroid
+Physical Examination    Single nodular goiter-left
+Adenopathy                                      No
+Pathology                                Papillary
+Focality                               Multi-Focal
+Risk                                           Low
+T                                              T3a
+N                                               N0
+M                                               M0
+Stage                                            I
+Response                             Indeterminate
+Recurred                                        No
+Name: 196, dtype: object
+matches:
+{'Stage': ('I', False), 'Response': ('Indeterminate', False), 'Recurred': ('No', True)}
+decision: False
+Final decision: False    (score: 0.4, threshold: 0.5)
+
+
+
+
+---for dataset MathE
+output:
+The Topic is Linear Algebra, The Subtopic is Linear Transformations, The Keywords is Linear application,Linearity
+Expected:
+Student ID                                                       455
+Student Country                                             Portugal
+Question ID                                                      443
+Type of Answer                                                     0
+Question Level                                                 Basic
+Topic                                                 Linear Algebra
+Subtopic                                      Linear Transformations
+Keywords           Injective linear application,Invertible linear...
+Name: 471, dtype: object
+matches:
+{'Topic': ('Linear Algebra', True), 'Subtopic': ('Linear Transformations', True), 'Keywords': ('Injective linear application,Invertible linear operator,Range,Kernel,Isomorphism', False)}
+decision: False
+output:
+The Topic is Probability, The Subtopic is Probability, The Keywords is Conditional probability,Bayes' Theorem
+Expected:
+Student ID                                      913
+Student Country                             Ireland
+Question ID                                     430
+Type of Answer                                    1
+Question Level                             Advanced
+Topic                                Linear Algebra
+Subtopic                              Vector Spaces
+Keywords           Subspace,Linear combination,Span
+Name: 2824, dtype: object
+matches:
+{'Topic': ('Linear Algebra', False), 'Subtopic': ('Vector Spaces', False), 'Keywords': ('Subspace,Linear combination,Span', False)}
+decision: False
+output:
+The Topic is Linear Algebra, The Subtopic is Linear Transformations, The Keywords is Linear application,Linearity
+Expected:
+Student ID                   1322
+Student Country             Italy
+Question ID                   455
+Type of Answer                  1
+Question Level              Basic
+Topic              Linear Algebra
+Subtopic            Vector Spaces
+Keywords                    Basis
+Name: 1672, dtype: object
+matches:
+{'Topic': ('Linear Algebra', True), 'Subtopic': ('Vector Spaces', False), 'Keywords': ('Basis', False)}
+decision: False
+output:
+The Topic is Linear Algebra, The Subtopic is Linear Transformations, The Keywords is Linear application,Linearity
+Expected:
+Student ID                                                       899
+Student Country                                            Lithuania
+Question ID                                                      378
+Type of Answer                                                     1
+Question Level                                                 Basic
+Topic                                                 Linear Algebra
+Subtopic                                      Linear Transformations
+Keywords           Invertible linear operator,Isomorphism,Injecti...
+Name: 1560, dtype: object
+matches:
+{'Topic': ('Linear Algebra', True), 'Subtopic': ('Linear Transformations', True), 'Keywords': ('Invertible linear operator,Isomorphism,Injective linear application', False)}
+decision: False
+output:
+The Topic is Linear Algebra, The Subtopic is Linear Transformations, The Keywords is Linear application,Linearity
+Expected:
+Student ID                                             913
+Student Country                                    Ireland
+Question ID                                            204
+Type of Answer                                           0
+Question Level                                       Basic
+Topic                                           Statistics
+Subtopic                                        Statistics
+Keywords           Student distribution,Hypothesis testing
+Name: 748, dtype: object
+matches:
+{'Topic': ('Statistics', False), 'Subtopic': ('Statistics', False), 'Keywords': ('Student distribution,Hypothesis testing', False)}
+decision: False
+Final decision: False    (score: 0.0, threshold: 0.5)
+
+
+
+
+{'incomplete_completion_random': {'thyroid disease recurrence': False, 'MathE': False}}
+
+
+---DONE---
+Thu 24 Oct 09:38:14 CEST 2024

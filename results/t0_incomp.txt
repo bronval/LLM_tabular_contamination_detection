@@ -1,0 +1,65 @@
+Thu 24 Oct 11:21:29 CEST 2024
+---LLM: t0---
+You are using the default legacy behaviour of the <class 'transformers.models.t5.tokenization_t5.T5Tokenizer'>. This is expected, and simply means that the `legacy` (previous) behavior will be used so nothing changes for you. If you want to use the new behaviour, set `legacy=False`. This should only be set if you understand what it means, and thoroughly read the reason why this was added as explained in https://github.com/huggingface/transformers/pull/24565
+Traceback (most recent call last):
+  File "/CECI/home/users/b/r/bronval/venv2023a/lib/python3.11/site-packages/urllib3/response.py", line 748, in _error_catcher
+    yield
+  File "/CECI/home/users/b/r/bronval/venv2023a/lib/python3.11/site-packages/urllib3/response.py", line 894, in _raw_read
+    raise IncompleteRead(self._fp_bytes_read, self.length_remaining)
+urllib3.exceptions.IncompleteRead: IncompleteRead(39984722321 bytes read, 4556858488 more expected)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/CECI/home/users/b/r/bronval/venv2023a/lib/python3.11/site-packages/requests/models.py", line 820, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/CECI/home/users/b/r/bronval/venv2023a/lib/python3.11/site-packages/urllib3/response.py", line 1060, in stream
+    data = self.read(amt=amt, decode_content=decode_content)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/CECI/home/users/b/r/bronval/venv2023a/lib/python3.11/site-packages/urllib3/response.py", line 977, in read
+    data = self._raw_read(amt)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/CECI/home/users/b/r/bronval/venv2023a/lib/python3.11/site-packages/urllib3/response.py", line 872, in _raw_read
+    with self._error_catcher():
+  File "/opt/sw/arch/easybuild/2023a/software/Python/3.11.3-GCCcore-12.3.0/lib/python3.11/contextlib.py", line 155, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/CECI/home/users/b/r/bronval/venv2023a/lib/python3.11/site-packages/urllib3/response.py", line 772, in _error_catcher
+    raise ProtocolError(arg, e) from e
+urllib3.exceptions.ProtocolError: ('Connection broken: IncompleteRead(39984722321 bytes read, 4556858488 more expected)', IncompleteRead(39984722321 bytes read, 4556858488 more expected))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/auto/home/users/b/r/bronval/research/LLM_tabular_contamination/llm_functions.py", line 1180, in <module>
+    llm_hf = AutoModelForSeq2SeqLM.from_pretrained(llm_hf, device_map="auto", use_auth_token=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/CECI/home/users/b/r/bronval/venv2023a/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 564, in from_pretrained
+    return model_class.from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/CECI/home/users/b/r/bronval/venv2023a/lib/python3.11/site-packages/transformers/modeling_utils.py", line 3557, in from_pretrained
+    resolved_archive_file = cached_file(
+                            ^^^^^^^^^^^^
+  File "/CECI/home/users/b/r/bronval/venv2023a/lib/python3.11/site-packages/transformers/utils/hub.py", line 402, in cached_file
+    resolved_file = hf_hub_download(
+                    ^^^^^^^^^^^^^^^^
+  File "/CECI/home/users/b/r/bronval/venv2023a/lib/python3.11/site-packages/huggingface_hub/utils/_deprecation.py", line 101, in inner_f
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/CECI/home/users/b/r/bronval/venv2023a/lib/python3.11/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/CECI/home/users/b/r/bronval/venv2023a/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 1240, in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/CECI/home/users/b/r/bronval/venv2023a/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 1389, in _hf_hub_download_to_cache_dir
+    _download_to_tmp_and_move(
+  File "/CECI/home/users/b/r/bronval/venv2023a/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 1915, in _download_to_tmp_and_move
+    http_get(
+  File "/CECI/home/users/b/r/bronval/venv2023a/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 549, in http_get
+    for chunk in r.iter_content(chunk_size=DOWNLOAD_CHUNK_SIZE):
+  File "/CECI/home/users/b/r/bronval/venv2023a/lib/python3.11/site-packages/requests/models.py", line 822, in generate
+    raise ChunkedEncodingError(e)
+requests.exceptions.ChunkedEncodingError: ('Connection broken: IncompleteRead(39984722321 bytes read, 4556858488 more expected)', IncompleteRead(39984722321 bytes read, 4556858488 more expected))
+srun: error: mb-mil102: task 0: Exited with exit code 1
+srun: Terminating StepId=53809017.0
+Thu 24 Oct 11:38:11 CEST 2024

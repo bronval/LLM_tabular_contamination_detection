@@ -1,0 +1,175 @@
+Comparison of pyenchant VS nltk to see if a word is in the english dictionary
+-----------------------------------------------------------------------------
+
+dname: adult income
+all_in (enchant): False
+not in (nltk)   : False
+not_in_dict: ['workclass', 'fnlwgt', 'education.num', 'marital.status', 'capital.gain', 'capital.loss', 'hours.per.week', 'native.country']
+nltk_dict  : ['workclass', 'fnlwgt', 'education.num', 'marital.status', 'capital.gain', 'capital.loss', 'hours.per.week', 'native.country']
+feature: income
+['<=50K' '>50K']
+all_in (enchant): False
+not in (nltk)   : False
+not_in_dict: ['<=50K', '>50K']
+nltk_dict  : ['<=50K', '>50K']
+-----
+feature: marital.status
+['Widowed' 'Divorced' 'Separated' 'Never-married' 'Married-civ-spouse'
+ 'Married-spouse-absent' 'Married-AF-spouse']
+all_in (enchant): False
+not in (nltk)   : False
+not_in_dict: ['Never-married', 'Married-civ-spouse', 'Married-spouse-absent', 'Married-AF-spouse']
+nltk_dict  : ['Widowed', 'Divorced', 'Separated', 'Never-married', 'Married-civ-spouse', 'Married-spouse-absent', 'Married-AF-spouse']
+-----
+
+
+dname: bank marketing
+all_in (enchant): False
+not in (nltk)   : False
+not_in_dict: ['pdays', 'poutcome']
+nltk_dict  : ['pdays', 'poutcome']
+feature: y
+['no' 'yes']
+all_in (enchant): True
+not in (nltk)   : True
+not_in_dict: []
+nltk_dict  : []
+-----
+feature: job
+['management' 'technician' 'entrepreneur' 'blue-collar' 'unknown'
+ 'retired' 'admin.' 'services' 'self-employed' 'unemployed' 'housemaid'
+ 'student']
+all_in (enchant): False
+not in (nltk)   : False
+not_in_dict: ['blue-collar', 'admin.', 'self-employed']
+nltk_dict  : ['blue-collar', 'admin.', 'services', 'self-employed']
+-----
+
+
+dname: berkeley admissions
+all_in (enchant): True
+not in (nltk)   : False
+not_in_dict: []
+nltk_dict  : ['Year', 'Gender', 'Admission']
+feature: Admission
+['Rejected' 'Accepted']
+all_in (enchant): True
+not in (nltk)   : False
+not_in_dict: []
+nltk_dict  : ['Rejected', 'Accepted']
+-----
+feature: Major
+['C' 'B' 'Other' 'F' 'A' 'D' 'E']
+all_in (enchant): True
+not in (nltk)   : False
+not_in_dict: []
+nltk_dict  : ['Other']
+-----
+
+
+dname: german credit
+all_in (enchant): False
+not in (nltk)   : False
+not_in_dict: ['Saving accounts', 'Checking account', 'Credit amount']
+nltk_dict  : ['Age', 'Sex', 'Housing', 'Saving accounts', 'Checking account', 'Credit amount', 'Duration', 'Purpose', 'Risk']
+feature: Risk
+['good' 'bad']
+all_in (enchant): True
+not in (nltk)   : True
+not_in_dict: []
+nltk_dict  : []
+-----
+feature: Saving accounts
+[nan 'little' 'quite rich' 'rich' 'moderate']
+all_in (enchant): False
+not in (nltk)   : False
+not_in_dict: ['quite rich']
+nltk_dict  : [nan, 'quite rich']
+-----
+
+
+dname: california housing
+all_in (enchant): False
+not in (nltk)   : False
+not_in_dict: ['housing_median_age', 'total_rooms', 'total_bedrooms', 'median_income', 'median_house_value', 'ocean_proximity']
+nltk_dict  : ['housing_median_age', 'total_rooms', 'total_bedrooms', 'households', 'median_income', 'median_house_value', 'ocean_proximity']
+feature: ocean_proximity
+['NEAR BAY' '<1H OCEAN' 'INLAND' 'NEAR OCEAN' 'ISLAND']
+all_in (enchant): False
+not in (nltk)   : False
+not_in_dict: ['NEAR BAY', '<1H OCEAN', 'NEAR OCEAN']
+nltk_dict  : ['NEAR BAY', '<1H OCEAN', 'INLAND', 'NEAR OCEAN', 'ISLAND']
+-----
+
+
+dname: iris
+all_in (enchant): False
+not in (nltk)   : False
+not_in_dict: ['sepal length (cm)', 'sepal width (cm)', 'petal length (cm)', 'petal width (cm)']
+nltk_dict  : ['sepal length (cm)', 'sepal width (cm)', 'petal length (cm)', 'petal width (cm)']
+feature: target
+['virginica' 'versicolor' 'setosa']
+all_in (enchant): True
+not in (nltk)   : False
+not_in_dict: []
+nltk_dict  : ['virginica', 'setosa']
+-----
+
+
+dname: wine
+all_in (enchant): False
+not in (nltk)   : False
+not_in_dict: ['malic_acid', 'alcalinity_of_ash', 'total_phenols', 'flavanoids', 'nonflavanoid_phenols', 'proanthocyanins', 'color_intensity', 'od280/od315_of_diluted_wines', 'proline']
+nltk_dict  : ['malic_acid', 'alcalinity_of_ash', 'total_phenols', 'flavanoids', 'nonflavanoid_phenols', 'proanthocyanins', 'color_intensity', 'od280/od315_of_diluted_wines']
+dname: titanic
+all_in (enchant): False
+not in (nltk)   : False
+not_in_dict: ['PassengerId', 'Pclass', 'SibSp']
+nltk_dict  : ['PassengerId', 'Pclass', 'Name', 'Sex', 'Age', 'SibSp', 'Parch', 'Ticket', 'Fare', 'Cabin', 'Embarked']
+feature: Embarked
+['Q' 'S' 'C']
+all_in (enchant): True
+not in (nltk)   : True
+not_in_dict: []
+nltk_dict  : []
+-----
+feature: Sex
+['male' 'female']
+all_in (enchant): True
+not in (nltk)   : True
+not_in_dict: []
+nltk_dict  : []
+-----
+
+
+dname: spaceship_titanic
+all_in (enchant): False
+not in (nltk)   : False
+not_in_dict: ['PassengerId', 'HomePlanet', 'CryoSleep', 'RoomService', 'FoodCourt', 'ShoppingMall', 'VRDeck']
+nltk_dict  : ['PassengerId', 'HomePlanet', 'CryoSleep', 'Cabin', 'Destination', 'Age', 'VIP', 'RoomService', 'FoodCourt', 'ShoppingMall', 'Spa', 'VRDeck', 'Name', 'Transported']
+feature: HomePlanet
+['Europa' 'Earth' 'Mars' nan]
+all_in (enchant): True
+not in (nltk)   : False
+not_in_dict: []
+nltk_dict  : ['Earth', nan]
+-----
+feature: Transported
+[False  True]
+all_in (enchant): True
+not in (nltk)   : False
+not_in_dict: []
+nltk_dict  : [False, True]
+-----
+
+
+time: 5.1802077293396
+
+
+total time enchant (no nltk): 0.12s
+total time nltk (no enchant): 5.22s
+
+
+
+
+

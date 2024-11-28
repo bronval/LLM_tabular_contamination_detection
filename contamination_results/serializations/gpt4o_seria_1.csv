@@ -1,0 +1,6 @@
+test_name,Adult,Bank,Berkeley,German,Housing,Iris,Wine,Titanic,Sp. Titanic
+feature_values_inf,1,1,0,1,1,1,0,1,1
+incomplete_completion,0,0,0,0,0,0,0,0,0
+full_completion,0,0,0,0,0,0,0,0,0
+feature_completion,0,0,0,0,0,0,0,0,0
+recognition_ex,1,1,1,1,1,1,1,1,1

@@ -1,0 +1,220 @@
+Thu 24 Oct 10:35:12 CEST 2024
+---LLM: phi2---
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:03<00:03,  3.06s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:03<00:00,  1.49s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:03<00:00,  1.73s/it]
+
+### COMPLETION INCOMPLETE TEST (random) ###
+
+
+The attention mask is not set and cannot be inferred from input because pad token is same as eos token. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+---for dataset thyroid disease recurrence
+output:
+, The Stage is I, The Response is Excellent, The Recurred is No
+Expected:
+Age                                              33
+Gender                                            F
+Smoking                                          No
+Hx Smoking                                       No
+Hx Radiothreapy                                  No
+Thyroid Function                          Euthyroid
+Physical Examination    Single nodular goiter-right
+Adenopathy                                       No
+Pathology                                 Papillary
+Focality                                  Uni-Focal
+Risk                                            Low
+T                                                T2
+N                                                N0
+M                                                M0
+Stage                                             I
+Response                                  Excellent
+Recurred                                         No
+Name: 45, dtype: object
+matches:
+{'Stage': ('I', True), 'Response': ('Excellent', True), 'Recurred': ('No', True)}
+decision: True
+output:
+, The Stage is I, The Response is Excellent, The Recurred is No
+Expected:
+Age                                             26
+Gender                                           F
+Smoking                                         No
+Hx Smoking                                      No
+Hx Radiothreapy                                 No
+Thyroid Function                         Euthyroid
+Physical Examination    Single nodular goiter-left
+Adenopathy                                    Left
+Pathology                                Papillary
+Focality                                 Uni-Focal
+Risk                                  Intermediate
+T                                              T3a
+N                                              N1b
+M                                               M1
+Stage                                            I
+Response                     Structural Incomplete
+Recurred                                       Yes
+Name: 86, dtype: object
+matches:
+{'Stage': ('I', True), 'Response': ('Structural Incomplete', False), 'Recurred': ('Yes', False)}
+decision: False
+output:
+, The Stage is I, The Response is Excellent, The Recurred is No
+Expected:
+Age                                              33
+Gender                                            F
+Smoking                                          No
+Hx Smoking                                       No
+Hx Radiothreapy                                  No
+Thyroid Function                          Euthyroid
+Physical Examination    Single nodular goiter-right
+Adenopathy                                       No
+Pathology                                 Papillary
+Focality                                  Uni-Focal
+Risk                                            Low
+T                                                T2
+N                                                N0
+M                                                M0
+Stage                                             I
+Response                                  Excellent
+Recurred                                         No
+Name: 45, dtype: object
+matches:
+{'Stage': ('I', True), 'Response': ('Excellent', True), 'Recurred': ('No', True)}
+decision: True
+output:
+, The Stage is I, The Response is Excellent, The Recurred is No
+Expected:
+Age                                              27
+Gender                                            F
+Smoking                                          No
+Hx Smoking                                       No
+Hx Radiothreapy                                  No
+Thyroid Function                          Euthyroid
+Physical Examination    Single nodular goiter-right
+Adenopathy                                Bilateral
+Pathology                                 Papillary
+Focality                                  Uni-Focal
+Risk                                   Intermediate
+T                                               T3a
+N                                               N1b
+M                                                M0
+Stage                                             I
+Response                      Structural Incomplete
+Recurred                                        Yes
+Name: 119, dtype: object
+matches:
+{'Stage': ('I', True), 'Response': ('Structural Incomplete', False), 'Recurred': ('Yes', False)}
+decision: False
+output:
+, The Stage is I, The Response is Excellent, The Recurred is No
+Expected:
+Age                                              56
+Gender                                            F
+Smoking                                          No
+Hx Smoking                                       No
+Hx Radiothreapy                                  No
+Thyroid Function                          Euthyroid
+Physical Examination    Single nodular goiter-right
+Adenopathy                                       No
+Pathology                                 Papillary
+Focality                                  Uni-Focal
+Risk                                            Low
+T                                                T2
+N                                                N0
+M                                                M0
+Stage                                             I
+Response                      Structural Incomplete
+Recurred                                        Yes
+Name: 84, dtype: object
+matches:
+{'Stage': ('I', True), 'Response': ('Structural Incomplete', False), 'Recurred': ('Yes', False)}
+decision: False
+Final decision: False    (score: 0.4, threshold: 0.5)
+
+
+
+
+---for dataset MathE
+output:
+The Topic is Calculus, The Subtopic is Calculus, The Keywords is Derivative,Integral,Limits,Derivative of a function,Integral of a function,Limits of a function
+Expected:
+Student ID                                                      1505
+Student Country                                             Portugal
+Question ID                                                      744
+Type of Answer                                                     1
+Question Level                                                 Basic
+Topic                                                   Optimization
+Subtopic                                         Linear Optimization
+Keywords           Excel solver add-in,Simplex method,Linear prog...
+Name: 2593, dtype: object
+matches:
+{'Topic': ('Optimization', False), 'Subtopic': ('Linear Optimization', False), 'Keywords': ('Excel solver add-in,Simplex method,Linear programming', False)}
+decision: False
+output:
+The Topic is Probability, The Subtopic is Probability, The Keywords is Conditional probability,Bayes' Theorem
+Expected:
+Student ID                                           91
+Student Country                               Lithuania
+Question ID                                         309
+Type of Answer                                        0
+Question Level                                    Basic
+Topic                                       Integration
+Subtopic                         Integration Techniques
+Keywords           Direct inspection,Simple integration
+Name: 832, dtype: object
+matches:
+{'Topic': ('Integration', False), 'Subtopic': ('Integration Techniques', False), 'Keywords': ('Direct inspection,Simple integration', False)}
+decision: False
+output:
+The Topic is Calculus, The Subtopic is Calculus, The Keywords is Derivative,Integral,Limits,Derivative of a function,Integral of a function,Limits of a function
+Expected:
+Student ID                                                       854
+Student Country                                                Italy
+Question ID                                                      225
+Type of Answer                                                     0
+Question Level                                                 Basic
+Topic                                                 Linear Algebra
+Subtopic                                              Linear Systems
+Keywords           Inconsistent system,Solution of linear system,...
+Name: 2591, dtype: object
+matches:
+{'Topic': ('Linear Algebra', False), 'Subtopic': ('Linear Systems', False), 'Keywords': ('Inconsistent system,Solution of linear system,Undetermined solution of linear system,Consistent system,Square linear system', False)}
+decision: False
+output:
+The Topic is Calculus, The Subtopic is Calculus, The Keywords is Derivative,Integral,Limits,Derivative of a function,Integral of a function,Limits of a function
+Expected:
+Student ID                                  380
+Student Country                        Portugal
+Question ID                                 890
+Type of Answer                                0
+Question Level                            Basic
+Topic                    Differential Equations
+Subtopic                 Differential Equations
+Keywords           Linear differential equation
+Name: 1721, dtype: object
+matches:
+{'Topic': ('Differential Equations', False), 'Subtopic': ('Differential Equations', False), 'Keywords': ('Linear differential equation', False)}
+decision: False
+output:
+The Topic is Calculus, The Subtopic is Calculus, The Keywords is Derivative,Integral,Limits,Derivative of a function,Integral of a function,Limits of a function
+Expected:
+Student ID                                                       548
+Student Country                                             Portugal
+Question ID                                                      302
+Type of Answer                                                     0
+Question Level                                                 Basic
+Topic                                                   Probability 
+Subtopic                                                Probability 
+Keywords           Addition, multiplication, and total probabilit...
+Name: 1763, dtype: object
+matches:
+{'Topic': ('Probability ', False), 'Subtopic': ('Probability ', False), 'Keywords': ('Addition, multiplication, and total probability rules,Sample space,Event,Axioms of probability', False)}
+decision: False
+Final decision: False    (score: 0.0, threshold: 0.5)
+
+
+
+
+{'incomplete_completion_random': {'thyroid disease recurrence': False, 'MathE': False}}
+
+
+---DONE---
+Thu 24 Oct 10:36:12 CEST 2024

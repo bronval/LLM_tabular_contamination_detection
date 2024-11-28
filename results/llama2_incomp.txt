@@ -1,0 +1,220 @@
+Wed 23 Oct 18:10:29 CEST 2024
+---LLM: llama2---
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:04<00:04,  4.57s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:06<00:00,  2.73s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:06<00:00,  3.01s/it]
+
+### COMPLETION INCOMPLETE TEST (random) ###
+
+
+The attention mask is not set and cannot be inferred from input because pad token is same as eos token. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+---for dataset thyroid disease recurrence
+output:
+, The Stage is I, The Response is Excellent, The Recurred is No
+Expected:
+Age                                              72
+Gender                                            F
+Smoking                                          No
+Hx Smoking                                       No
+Hx Radiothreapy                                  No
+Thyroid Function         Subclinical Hypothyroidism
+Physical Examination    Single nodular goiter-right
+Adenopathy                                       No
+Pathology                                 Papillary
+Focality                                  Uni-Focal
+Risk                                            Low
+T                                                T2
+N                                                N0
+M                                                M0
+Stage                                             I
+Response                              Indeterminate
+Recurred                                         No
+Name: 305, dtype: object
+matches:
+{'Stage': ('I', True), 'Response': ('Indeterminate', False), 'Recurred': ('No', True)}
+decision: False
+output:
+, The Stage is I, The Response is Excellent, The Recurred is No
+Expected:
+Age                                              31
+Gender                                            F
+Smoking                                          No
+Hx Smoking                                       No
+Hx Radiothreapy                                  No
+Thyroid Function                          Euthyroid
+Physical Examination    Single nodular goiter-right
+Adenopathy                                       No
+Pathology                                 Papillary
+Focality                                  Uni-Focal
+Risk                                            Low
+T                                                T2
+N                                                N0
+M                                                M0
+Stage                                             I
+Response                                  Excellent
+Recurred                                         No
+Name: 219, dtype: object
+matches:
+{'Stage': ('I', True), 'Response': ('Excellent', True), 'Recurred': ('No', True)}
+decision: True
+output:
+, The Stage is I, The Response is Excellent, The Recurred is No
+Expected:
+Age                                        33
+Gender                                      M
+Smoking                                    No
+Hx Smoking                                 No
+Hx Radiothreapy                            No
+Thyroid Function                    Euthyroid
+Physical Examination      Multinodular goiter
+Adenopathy                                 No
+Pathology                           Papillary
+Focality                            Uni-Focal
+Risk                                      Low
+T                                          T2
+N                                          N0
+M                                          M0
+Stage                                       I
+Response                Structural Incomplete
+Recurred                                  Yes
+Name: 136, dtype: object
+matches:
+{'Stage': ('I', True), 'Response': ('Structural Incomplete', False), 'Recurred': ('Yes', False)}
+decision: False
+output:
+, The Stage is I, The Response is Excellent, The Recurred is No
+Expected:
+Age                                      34
+Gender                                    F
+Smoking                                  No
+Hx Smoking                               No
+Hx Radiothreapy                          No
+Thyroid Function                  Euthyroid
+Physical Examination    Multinodular goiter
+Adenopathy                               No
+Pathology                         Papillary
+Focality                          Uni-Focal
+Risk                                    Low
+T                                        T2
+N                                        N0
+M                                        M0
+Stage                                     I
+Response                          Excellent
+Recurred                                 No
+Name: 112, dtype: object
+matches:
+{'Stage': ('I', True), 'Response': ('Excellent', True), 'Recurred': ('No', True)}
+decision: True
+output:
+, The Stage is I, The Response is Excellent, The Recurred is No
+Expected:
+Age                                30
+Gender                              F
+Smoking                            No
+Hx Smoking                         No
+Hx Radiothreapy                    No
+Thyroid Function            Euthyroid
+Physical Examination           Normal
+Adenopathy                         No
+Pathology                   Papillary
+Focality                    Uni-Focal
+Risk                              Low
+T                                  T2
+N                                  N0
+M                                  M0
+Stage                               I
+Response                Indeterminate
+Recurred                           No
+Name: 153, dtype: object
+matches:
+{'Stage': ('I', True), 'Response': ('Indeterminate', False), 'Recurred': ('No', True)}
+decision: False
+Final decision: False    (score: 0.4, threshold: 0.5)
+
+
+
+
+---for dataset MathE
+output:
+The Topic is Linear Algebra, The Subtopic is Linear Transformations, The Keywords is Linear application,Linearity
+Expected:
+Student ID                                                        41
+Student Country                                             Portugal
+Question ID                                                      113
+Type of Answer                                                     0
+Question Level                                                 Basic
+Topic                                        Fundamental Mathematics
+Subtopic           Algebraic expressions, Equations, and Inequali...
+Keywords                                        Simplify expressions
+Name: 2226, dtype: object
+matches:
+{'Topic': ('Fundamental Mathematics', False), 'Subtopic': ('Algebraic expressions, Equations, and Inequalities', False), 'Keywords': ('Simplify expressions', False)}
+decision: False
+output:
+The Topic is Linear Algebra, The Subtopic is Linear Transformations, The Keywords is Linear application,Linearity
+Expected:
+Student ID                                         626
+Student Country                                  Italy
+Question ID                                         83
+Type of Answer                                       1
+Question Level                                   Basic
+Topic              Real Functions of a single variable
+Subtopic                    Domain, Image and Graphics
+Keywords                    Domain,Image of a function
+Name: 2270, dtype: object
+matches:
+{'Topic': ('Real Functions of a single variable', False), 'Subtopic': ('Domain, Image and Graphics', False), 'Keywords': ('Domain,Image of a function', False)}
+decision: False
+output:
+The Topic is Linear Algebra, The Subtopic is Linear Transformations, The Keywords is Linear application,Linearity
+Expected:
+Student ID                                                       636
+Student Country                                                Italy
+Question ID                                                       77
+Type of Answer                                                     1
+Question Level                                                 Basic
+Topic                                                     Statistics
+Subtopic                                                  Statistics
+Keywords           Stem and Leaf diagram,Relative frequency,Sampl...
+Name: 1300, dtype: object
+matches:
+{'Topic': ('Statistics', False), 'Subtopic': ('Statistics', False), 'Keywords': ('Stem and Leaf diagram,Relative frequency,Sample,Frequency', False)}
+decision: False
+output:
+The Topic is Linear Algebra, The Subtopic is Linear Transformations, The Keywords is Linear application,Linearity
+Expected:
+Student ID                                                      1487
+Student Country                                             Portugal
+Question ID                                                      331
+Type of Answer                                                     1
+Question Level                                                 Basic
+Topic                                                Complex Numbers
+Subtopic                                             Complex Numbers
+Keywords           Conjugate number,Real part,De Moivre formulas,...
+Name: 2653, dtype: object
+matches:
+{'Topic': ('Complex Numbers', False), 'Subtopic': ('Complex Numbers', False), 'Keywords': ('Conjugate number,Real part,De Moivre formulas,Operations with complex numbers,Imaginary part', False)}
+decision: False
+output:
+The Topic is Complex Numbers, The Subtopic is Complex Numbers, The Keywords is Imaginary part,Modulus of a complex number,Operations with complex numbers,Conjugate number,Real part
+Expected:
+Student ID                                       91
+Student Country                           Lithuania
+Question ID                                     439
+Type of Answer                                    1
+Question Level                             Advanced
+Topic                                Linear Algebra
+Subtopic                              Vector Spaces
+Keywords           Span,Subspace,Linear combination
+Name: 2009, dtype: object
+matches:
+{'Topic': ('Linear Algebra', False), 'Subtopic': ('Vector Spaces', False), 'Keywords': ('Span,Subspace,Linear combination', False)}
+decision: False
+Final decision: False    (score: 0.0, threshold: 0.5)
+
+
+
+
+{'incomplete_completion_random': {'thyroid disease recurrence': False, 'MathE': False}}
+
+
+---DONE---
+Wed 23 Oct 18:11:59 CEST 2024

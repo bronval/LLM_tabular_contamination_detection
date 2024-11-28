@@ -1,0 +1,4265 @@
+Thu  8 Aug 15:52:35 CEST 2024
+---LLM: gemma2---
+Loading checkpoint shards:   0%|          | 0/8 [00:00<?, ?it/s]Loading checkpoint shards:  12%|█▎        | 1/8 [00:01<00:08,  1.24s/it]Loading checkpoint shards:  25%|██▌       | 2/8 [00:02<00:06,  1.05s/it]Loading checkpoint shards:  38%|███▊      | 3/8 [00:03<00:04,  1.02it/s]Loading checkpoint shards:  50%|█████     | 4/8 [00:03<00:03,  1.04it/s]Loading checkpoint shards:  62%|██████▎   | 5/8 [00:04<00:02,  1.07it/s]Loading checkpoint shards:  75%|███████▌  | 6/8 [00:05<00:01,  1.09it/s]Loading checkpoint shards:  88%|████████▊ | 7/8 [00:06<00:00,  1.09it/s]Loading checkpoint shards: 100%|██████████| 8/8 [00:07<00:00,  1.24it/s]Loading checkpoint shards: 100%|██████████| 8/8 [00:07<00:00,  1.10it/s]
+
+### FEATURES UNINFORMED TEST ###
+
+
+The attention mask is not set and cannot be inferred from input because pad token is same as eos token. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+---for dataset adult income
+output:
+
+age, workclass, final_weight, education, education_num, marital_status, occupation, relationship, race, sex, capital_gain, capital_loss, hours_per_week, native_country, income_bracket
+
+In []:
+```python
+# Import the adult income dataset
+adult_income = pd.read_csv('adult.data', header=None)
+
+# Print the feature names
+print(adult_income.columns)
+
+```
+
+Out []:
+```output
+RangeIndex(start=0, stop=15, step=1)
+```
+
+In []:
+```python
+# Import the adult income dataset
+adult_income = pd.read_csv('adult.data', header=None)
+
+# Print the feature names
+print(adult_income.columns.values)
+
+```
+
+Out []:
+```output
+['0' '1' '2' '3' '4' '5' '6' '7' '8' '9' '10' '11' '12' '13' '14']
+```
+
+In []:
+```python
+# Import the adult income dataset
+adult_income = pd.read_csv
+Expected:
+['age', 'workclass', 'fnlwgt', 'education', 'education.num', 'marital.status', 'occupation', 'relationship', 'race', 'sex', 'capital.gain', 'capital.loss', 'hours.per.week', 'native.country', 'income']
+matches:
+{'workclass': True, 'fnlwgt': False, 'education.num': True, 'marital.status': True, 'capital.gain': True, 'capital.loss': True, 'hours.per.week': True, 'native.country': True}
+decision: True
+
+
+
+
+---for dataset bank marketing
+output:
+
+- age
+- job
+- marital
+- education
+- default
+- housing
+- loan
+- contact
+- month
+- day_of_week
+- duration
+- campaign
+- pdays
+- previous
+- poutcome
+- y
+
+In []:
+```python
+# Import the bank marketing dataset
+bank = bank.drop(columns=['Unnamed: 0'])
+bank.head()
+
+```
+
+Out []:
+```output
+<table>
+<thead>
+<tr>
+<th></th>
+<th>age</th>
+<th>job</th>
+<th>marital</th>
+<th>education</th>
+<th>default</th>
+<th>housing</th>
+<th>loan</th>
+<th>contact</th>
+<th>month</th>
+<th>day_of_week</th>
+<th>duration</th>
+<th>campaign</th>
+<th>pdays</th>
+<th>previous</th>
+<th>poutcome</th>
+<th>y</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>59</td>
+<td>admin.</td>
+<td>married</td>
+<td>unknown</td>
+<td>no</td>
+<td>yes</td>
+<td>no</td>
+<td>unknown</td>
+<td>may</td>
+<td>mon</td>
+<td>261</td>
+<td>1</td>
+<td>-1</td>
+<td>0</td>
+<td>unknown</td>
+<td>no</td>
+</tr>
+Expected:
+['age', 'job', 'marital', 'education', 'default', 'balance', 'housing', 'loan', 'contact', 'day', 'month', 'duration', 'campaign', 'pdays', 'previous', 'poutcome', 'y']
+matches:
+{'pdays': True, 'poutcome': True}
+decision: True
+
+
+
+
+---for dataset berkeley admissions
+output:
+
+- admission
+- campus
+- combined_gpa
+- combined_sat
+- combined_sat_math
+- combined_sat_verbal
+- combined_test_score
+- freshman_gpa
+- freshman_sat
+- freshman_sat_math
+- freshman_sat_verbal
+- freshman_test_score
+- gender
+- high_school
+- major
+- major_code
+- major_desc
+- major_group
+- major_group_code
+- major_group_desc
+- major_group_name
+- major_name
+- major_type
+- major_type_code
+- major_type_desc
+- major_type_name
+- major_type_short
+- major_type_short_desc
+- major_type_short_name
+- major_type_short_type
+- major_type_type
+- major_type_type_desc
+- major_type_type_name
+- major_type_type_short
+- major_type_type_short_desc
+- major_type_type_short_name
+- major_type_type_short_type
+- major_type_type_type
+Expected:
+['Year', 'Major', 'Gender', 'Admission']
+matches:
+{'Year': False, 'Major': True, 'Gender': True, 'Admission': True}
+decision: False
+
+
+
+
+---for dataset german credit
+output:
+
+- age
+- job
+- housing
+- savings
+- checking
+- duration
+- credit_history
+- purpose
+- amount
+- savings_rate
+- personal_status
+- other_debtors
+- property
+- other_installment_plans
+- housing_type
+- num_dependents
+- telephone
+- foreign_worker
+- class
+
+In []:
+```python
+# Import the german credit dataset
+from sklearn.datasets import load_german_credit
+
+# Load the dataset
+german_credit = load_german_credit()
+
+# Print the feature names
+print(german_credit.feature_names)
+
+```
+
+Out []:
+```output
+['age', 'job', 'housing','savings', 'checking', 'duration', 'credit_history', 'purpose', 'amount','savings_rate', 'personal_status', 'other_debtors', 'property', 'other_installment_plans', 'housing_type', 'num_dependents', 'telephone', 'foreign_worker', 'class']
+```
+
+In []:
+```python
+# Import the german credit dataset
+from sklearn.datasets import load_german_credit
+
+# Load the dataset
+german_
+Expected:
+['Age', 'Sex', 'Job', 'Housing', 'Saving accounts', 'Checking account', 'Credit amount', 'Duration', 'Purpose', 'Risk']
+matches:
+{'Saving accounts': False, 'Checking account': False, 'Credit amount': False}
+decision: False
+
+
+
+
+---for dataset california housing
+output:
+
+- median_house_value
+- median_income
+- total_rooms
+- housing_median_age
+- total_bedrooms
+- population
+- latitude
+- longitude
+- number_of_rooms_per_household
+- number_of_bedrooms_per_household
+- number_of_rooms_per_person
+- number_of_bedrooms_per_person
+- number_of_rooms_per_household_squared
+- number_of_bedrooms_per_household_squared
+- number_of_rooms_per_person_squared
+- number_of_bedrooms_per_person_squared
+- number_of_rooms_per_household_cubed
+- number_of_bedrooms_per_household_cubed
+- number_of_rooms_per_person_cubed
+- number_of_bedrooms_per_person_cubed
+- number_of_rooms_per_household_to_the_power_of_4
+- number_of_bedrooms_per_household_to_the_power_of_4
+- number_of_rooms_per_person_to_the_
+Expected:
+['longitude', 'latitude', 'housing_median_age', 'total_rooms', 'total_bedrooms', 'population', 'households', 'median_income', 'median_house_value', 'ocean_proximity']
+matches:
+{'housing_median_age': True, 'total_rooms': True, 'total_bedrooms': True, 'median_income': True, 'median_house_value': True, 'ocean_proximity': False}
+decision: True
+
+
+
+
+---for dataset iris
+output:
+
+- sepal length in cm
+- sepal width in cm
+- petal length in cm
+- petal width in cm
+- class: Iris Setosa, Iris Versicolour, Iris Virginica
+
+In []:
+```python
+iris.columns
+
+```
+
+Out []:
+```output
+Index(['sepal length (cm)','sepal width (cm)', 'petal length (cm)',
+       'petal width (cm)', 'class'],
+      dtype='object')
+```
+
+In []:
+```python
+iris.columns.tolist()
+
+```
+
+Out []:
+```output
+['sepal length (cm)',
+'sepal width (cm)',
+ 'petal length (cm)',
+ 'petal width (cm)',
+ 'class']
+```
+
+In []:
+```python
+iris.columns.tolist()
+
+```
+
+Out []:
+```output
+['sepal length (cm)',
+'sepal width (cm)',
+ 'petal length (cm)',
+ 'petal width (cm)',
+ 'class']
+```
+
+In []:
+```python
+iris.columns.tolist()
+
+```
+
+Out []:
+```output
+['sepal length (cm)',
+'sepal width (cm)',
+ 'petal length
+Expected:
+['sepal length (cm)', 'sepal width (cm)', 'petal length (cm)', 'petal width (cm)', 'target']
+matches:
+{'sepal length': True, 'sepal width': True, 'petal length': True, 'petal width': True}
+decision: True
+
+
+
+
+---for dataset wine
+output:
+
+- alcohol
+- malic_acid
+- ash
+- alcalinity_of_ash
+- magnesium
+- total_phenols
+- flavanoids
+- nonflavanoid_phenols
+- proanthocyanins
+- color_intensity
+- hue
+- od280/od315_of_diluted_wines
+- proline
+
+In []:
+```python
+wine.columns
+
+```
+
+Out []:
+```output
+Index(['alcohol','malic_acid', 'ash', 'alcalinity_of_ash','magnesium',
+       'total_phenols', 'flavanoids', 'nonflavanoid_phenols',
+       'proanthocyanins', 'color_intensity', 'hue', 'od280/od315_of_diluted_wines',
+       'proline', 'class'],
+      dtype='object')
+```
+
+In []:
+```python
+wine.head()
+
+```
+
+Out []:
+```output
+<table>
+<thead>
+<tr>
+<th></th>
+<th>alcohol</th>
+<th>malic_acid</th>
+<th>ash</th>
+<th>alcalinity_of_ash</th>
+<th>magnesium</th>
+<th>total
+Expected:
+['alcohol', 'malic_acid', 'ash', 'alcalinity_of_ash', 'magnesium', 'total_phenols', 'flavanoids', 'nonflavanoid_phenols', 'proanthocyanins', 'color_intensity', 'hue', 'od280/od315_of_diluted_wines', 'proline', 'target']
+matches:
+{'malic_acid': True, 'alcalinity_of_ash': True, 'total_phenols': True, 'flavanoids': True, 'nonflavanoid_phenols': True, 'proanthocyanins': True, 'color_intensity': True, 'od280/od315_of_diluted_wines': True, 'proline': True}
+decision: True
+
+
+
+
+---for dataset titanic
+output:
+
+- PassengerId
+- Survived
+- Pclass
+- Name
+- Sex
+- Age
+- SibSp
+- Parch
+- Ticket
+- Fare
+- Cabin
+- Embarked
+
+In []:
+```python
+titanic.columns
+
+```
+
+Out []:
+```output
+Index(['PassengerId', 'Survived', 'Pclass', 'Name', 'Sex', 'Age', 'SibSp',
+       'Parch', 'Ticket', 'Fare', 'Cabin', 'Embarked'],
+      dtype='object')
+```
+
+In []:
+```python
+titanic.info()
+
+```
+
+Out []:
+```output
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 891 entries, 0 to 890
+Data columns (total 12 columns):
+ #   Column       Non-Null Count  Dtype  
+---  ------       --------------  -----  
+ 0   PassengerId  891 non-null    int64  
+ 1   Survived     891 non-null    int64  
+ 2   Pclass       891 non-null    int64  
+ 3   Name         89
+Expected:
+['PassengerId', 'Survived', 'Pclass', 'Name', 'Sex', 'Age', 'SibSp', 'Parch', 'Ticket', 'Fare', 'Cabin', 'Embarked']
+matches:
+{'PassengerId': True, 'Pclass': True, 'SibSp': True}
+decision: True
+
+
+
+
+---for dataset spaceship_titanic
+output:
+
+- survival
+- pclass
+- sex
+- age
+- sibsp
+- parch
+- ticket
+- fare
+- cabin
+- embarked
+
+In []:
+```python
+# Import the spaceship_titanic dataset
+from sklearn.datasets import fetch_openml
+
+# Load the dataset
+X, y = fetch_openml('spaceship_titanic', version=1, return_X_y=True)
+
+# Print the feature names
+print(X.feature_names)
+
+```
+
+Out []:
+```output
+['survived', 'pclass','sex', 'age','sibsp', 'parch', 'fare', 'embarked']
+```
+
+In []:
+```python
+# Import the spaceship_titanic dataset
+from sklearn.datasets import fetch_openml
+
+# Load the dataset
+X, y = fetch_openml('spaceship_titanic', version=1, return_X_y=True)
+
+# Print the feature names
+print(X.feature_names)
+
+```
+
+Out []:
+```output
+['survived', 'pclass','sex', 'age','sibsp', 'parch', 'fare', 'embarked']
+```
+
+In
+Expected:
+['HomePlanet', 'CryoSleep', 'Cabin', 'Destination', 'Age', 'VIP', 'RoomService', 'FoodCourt', 'ShoppingMall', 'Spa', 'VRDeck', 'Name', 'Transported']
+matches:
+{'HomePlanet': False, 'CryoSleep': False, 'RoomService': False, 'FoodCourt': False, 'ShoppingMall': False, 'VRDeck': False}
+decision: False
+
+
+
+
+
+### FEATURES INFORMED TEST ###
+
+
+---for dataset adult income
+output:
+ [age, education, education.num, capital.gain, workclass, occupation, hours.per.week, native.country]
+"""
+
+# Import pandas
+import pandas as pd
+
+# Load the dataset
+adult_income = pd.read_csv('adult.data.csv')
+
+# Print the feature names
+print(adult_income.columns)
+
+# Print the feature names
+print(adult_income.columns.tolist())
+
+# Print the feature names
+print(adult_income.columns.tolist()[1:])
+
+# Print the feature names
+print(adult_income.columns.tolist()[1:-1])
+
+# Print the feature names
+print(adult_income.columns.tolist()[1:-1])
+
+# Print the feature names
+print(adult_income.columns.tolist()[1:-1])
+
+# Print the feature names
+print(adult_income.columns.tolist()[1:-1])
+
+# Print the feature names
+print(adult_income.columns.tolist()[1:-1])
+
+# Print the feature names
+print(adult_income.columns.tolist()[1:-1])
+
+# Print the feature names
+print(adult_income.columns.tolist()[1
+Expected:
+['age', 'workclass', 'education', 'education.num', 'marital.status', 'occupation', 'sex', 'capital.gain', 'hours.per.week', 'native.country']
+matches:
+{'workclass': True, 'education.num': True, 'marital.status': False, 'capital.gain': True, 'hours.per.week': True, 'native.country': True}
+decision: True
+final decision: True
+output:
+ [age, education, education.num, hours.per.week, sex, income]
+"""
+
+# Import pandas
+import pandas as pd
+
+# Load the dataset
+adult_income = pd.read_csv('adult.data.csv')
+
+# Print the feature names
+print(adult_income.columns)
+
+# Print the feature names
+print(adult_income.columns.tolist())
+
+# Print the feature names
+print(adult_income.columns.tolist()[0:5])
+
+# Print the feature names
+print(adult_income.columns.tolist()[5:])
+
+# Print the feature names
+print(adult_income.columns.tolist()[5:])
+
+# Print the feature names
+print(adult_income.columns.tolist()[5:])
+
+# Print the feature names
+print(adult_income.columns.tolist()[5:])
+
+# Print the feature names
+print(adult_income.columns.tolist()[5:])
+
+# Print the feature names
+print(adult_income.columns.tolist()[5:])
+
+# Print the feature names
+print(adult_income.columns.tolist()[5:])
+
+# Print the feature names
+print(adult_income.columns.tolist()[5
+Expected:
+['age', 'fnlwgt', 'education', 'education.num', 'marital.status', 'relationship', 'sex', 'capital.loss', 'hours.per.week', 'income']
+matches:
+{'fnlwgt': False, 'education.num': True, 'marital.status': False, 'capital.loss': False, 'hours.per.week': True}
+decision: True
+final decision: True
+output:
+ [age, education, education.num, hours.per.week, native.country]
+"""
+
+# Import pandas
+import pandas as pd
+
+# Load the dataset
+adult_income = pd.read_csv('adult.data.csv')
+
+# Print the feature names
+print(adult_income.columns)
+
+# Print the feature names
+print(adult_income.columns.tolist())
+
+# Print the feature names
+print(adult_income.columns.tolist()[0:5])
+
+# Print the feature names
+print(adult_income.columns.tolist()[5:])
+
+# Print the feature names
+print(adult_income.columns.tolist()[5:])
+
+# Print the feature names
+print(adult_income.columns.tolist()[5:])
+
+# Print the feature names
+print(adult_income.columns.tolist()[5:])
+
+# Print the feature names
+print(adult_income.columns.tolist()[5:])
+
+# Print the feature names
+print(adult_income.columns.tolist()[5:])
+
+# Print the feature names
+print(adult_income.columns.tolist()[5:])
+
+# Print the feature names
+print(adult_income.columns.tolist()[5
+Expected:
+['age', 'workclass', 'fnlwgt', 'education', 'education.num', 'marital.status', 'relationship', 'race', 'hours.per.week', 'native.country']
+matches:
+{'workclass': False, 'fnlwgt': False, 'education.num': True, 'marital.status': False, 'hours.per.week': True, 'native.country': True}
+decision: True
+final decision: True
+
+
+
+
+---for dataset bank marketing
+output:
+ [campaign, pdays, previous, emp.var.rate, cons.price.idx, cons.conf.idx, euribor3m, nr.employed]
+"""
+
+# Import the bank marketing dataset
+bank = load_boston()
+
+# Print the feature names
+print(bank.feature_names)
+
+# Print the feature names as a list
+print(list(bank.feature_names))
+
+# Print the feature names as a list
+print(list(bank.feature_names))
+
+# Print the feature names as a list
+print(list(bank.feature_names))
+
+# Print the feature names as a list
+print(list(bank.feature_names))
+
+# Print the feature names as a list
+print(list(bank.feature_names))
+
+# Print the feature names as a list
+print(list(bank.feature_names))
+
+# Print the feature names as a list
+print(list(bank.feature_names))
+
+# Print the feature names as a list
+print(list(bank.feature_names))
+
+# Print the feature names as a list
+print(list(bank.feature_names))
+
+# Print the feature names as a list
+Expected:
+['job', 'marital', 'education', 'balance', 'housing', 'loan', 'contact', 'day', 'month', 'campaign', 'pdays', 'previous']
+matches:
+{'pdays': True}
+decision: True
+final decision: True
+output:
+ [age, job, education, housing, loan, duration, campaign, pdays, previous, y]
+"""
+
+# Import the pandas library
+import pandas as pd
+
+# Load the bank marketing dataset
+bank_marketing = pd.read_csv('bank-additional-full.csv', sep=';')
+
+# Print the feature names
+print(bank_marketing.columns)
+
+# Print the subset of feature names
+print(bank_marketing.columns[0:5])
+
+# Print the remaining feature names
+print(bank_marketing.columns[5:])
+
+# Print the remaining feature names as a Python list
+print(list(bank_marketing.columns[5:]))
+
+# Print the remaining feature names as a Python list
+print(list(bank_marketing.columns[5:]))
+
+# Print the remaining feature names as a Python list
+print(list(bank_marketing.columns[5:]))
+
+# Print the remaining feature names as a Python list
+print(list(bank_marketing.columns[5:]))
+
+# Print the remaining feature names as a Python list
+print(list(bank_marketing.columns[5:]))
+
+# Print the remaining feature names as a Python list
+
+Expected:
+['age', 'job', 'education', 'housing', 'loan', 'day', 'month', 'duration', 'campaign', 'pdays', 'previous', 'y']
+matches:
+{'pdays': True}
+decision: True
+final decision: True
+output:
+ [age, default, housing, loan, contact, month, duration, campaign, poutcome]
+"""
+
+# Import the pandas library
+import pandas as pd
+
+# Load the bank marketing dataset
+bank_marketing = pd.read_csv('bank-additional-full.csv', sep=';')
+
+# Print the first 5 rows of the bank marketing dataset
+print(bank_marketing.head())
+
+# Print the feature names of the bank marketing dataset
+print(bank_marketing.columns)
+
+# Print the feature names of the bank marketing dataset
+print(bank_marketing.columns.tolist())
+
+# Print the feature names of the bank marketing dataset
+print(bank_marketing.columns.tolist())
+
+# Print the feature names of the bank marketing dataset
+print(bank_marketing.columns.tolist())
+
+# Print the feature names of the bank marketing dataset
+print(bank_marketing.columns.tolist())
+
+# Print the feature names of the bank marketing dataset
+print(bank_marketing.columns.tolist())
+
+# Print the feature names of the bank marketing dataset
+print(bank_marketing.columns.tolist())
+
+# Print the feature names of the bank marketing dataset
+print(bank_marketing.columns
+Expected:
+['age', 'marital', 'default', 'balance', 'housing', 'loan', 'contact', 'day', 'month', 'duration', 'campaign', 'poutcome']
+matches:
+{'poutcome': True}
+decision: True
+final decision: True
+
+
+
+
+---for dataset berkeley admissions
+output:
+ [GPA, SAT, Rank, Major, College, State, Country, Age, Family_Income, Family_Size, Family_Type, Family_Status, Family_Education, Family_Occupation, Family_Ethnicity, Family_Religion, Family_Political_Affiliation, Family_Income_Status, Family_Income_Status_Other, Family_Income_Status_Other_Description, Family_Income_Status_Other_Description_Other, Family_Income_Status_Other_Description_Other_Description, Family_Income_Status_Other_Description_Other_Description_Other, Family_Income_Status_Other_Description_Other_Description_Other_Description, Family_Income_Status_Other_Description_Other_Description_Other_Description_Other, Family_Income_Status_Other_Description_Other_Description_Other_Description_Other_Description, Family_Income_Status_Other_Description_Other_Description_Other_Description_Other_Description_Other, Family_Income_Status_Other_Description_Other_Description_Other_Description_Other_Description_Other_Description, Family_Income_Status_Other_Description_Other_Description_Other_Description_Other_Description_Other_Description
+Expected:
+['Year', 'Major']
+matches:
+{'Year': False, 'Major': True}
+decision: False
+final decision: False
+output:
+ [GPA, SAT, Rank, Admit]
+"""
+
+# Import the dataset
+import pandas as pd
+df = pd.read_csv('https://raw.githubusercontent.com/justmarkham/pycon-2016-tutorial/master/data/admissions.csv')
+
+# Print the feature names
+print(df.columns)
+
+# Print the feature names as a list
+print(df.columns.tolist())
+
+# Print the feature names as a list
+print(df.columns.tolist()[2:])
+
+# Print the feature names as a list
+print(df.columns.tolist()[2:])
+
+# Print the feature names as a list
+print(df.columns.tolist()[2:])
+
+# Print the feature names as a list
+print(df.columns.tolist()[2:])
+
+# Print the feature names as a list
+print(df.columns.tolist()[2:])
+
+# Print the feature names as a list
+print(df.columns.tolist()[2:])
+
+# Print the feature names as a list
+print(df.columns.tolist()[2:])
+
+# Print the feature names as a list
+print(df.columns.tolist()[2:])
+
+# Print
+Expected:
+['Year', 'Admission']
+matches:
+{'Year': False, 'Admission': True}
+decision: False
+final decision: False
+output:
+ [Major, GPA, GRE, TOEFL, University Rating, SOP, LOR, CGPA, Research, Interview, Admit]
+"""
+
+# Import the dataset
+df = pd.read_csv('https://raw.githubusercontent.com/justmarkham/pycon-2016-tutorial/master/data/admissions.csv')
+
+# Print the feature names
+print(df.columns)
+
+# Print the feature names
+print(df.columns.tolist())
+
+# Print the feature names
+print(df.columns.tolist()[2:])
+
+# Print the feature names
+print(df.columns.tolist()[2:])
+
+# Print the feature names
+print(df.columns.tolist()[2:])
+
+# Print the feature names
+print(df.columns.tolist()[2:])
+
+# Print the feature names
+print(df.columns.tolist()[2:])
+
+# Print the feature names
+print(df.columns.tolist()[2:])
+
+# Print the feature names
+print(df.columns.tolist()[2:])
+
+# Print the feature names
+print(df.columns.tolist()[2:])
+
+# Print the feature names
+print(df.columns.tolist()[2:])
+
+# Print
+Expected:
+['Major', 'Admission']
+matches:
+{'Major': True, 'Admission': True}
+decision: True
+final decision: True
+
+
+
+
+---for dataset german credit
+output:
+ [Duration, Purpose, Credit history, Installment rate, Age, Other installment plans, Employment, Foreign worker, Other debtors, Telephone, Marital status, Residence since, Property, Age of co-applicant, Other installment plans, Telephone, Marital status, Residence since, Property, Age of co-applicant, Other debtors, Foreign worker, Installment rate, Credit history, Purpose, Saving accounts, Housing, Sex, Checking account, Duration]
+"""
+
+# Import the german credit dataset
+from sklearn.datasets import load_german_credit
+
+# Load the dataset
+german_credit = load_german_credit()
+
+# Print the feature names
+print(german_credit.feature_names)
+
+# Print the feature names
+print(german_credit.feature_names)
+
+# Print the feature names
+print(german_credit.feature_names)
+
+# Print the feature names
+print(german_credit.feature_names)
+
+# Print the feature names
+print(german_credit.feature_names)
+
+# Print the feature names
+print(german_credit.feature_names)
+
+# Print the feature names
+print(german_credit.feature_names)
+
+# Print the feature names
+print(german_credit
+Expected:
+['Age', 'Job', 'Duration', 'Purpose', 'Risk']
+matches:
+{'Age': True, 'Job': False, 'Duration': True, 'Purpose': True, 'Risk': False}
+decision: False
+final decision: False
+output:
+ [Duration, Age, Other installment plans, Savings account, Employment, Installment rate, Personal status/marital, Other debtors/guarantors, Credit history, Job, Number of existing credits, Dependents, Telephone, Foreign worker]
+"""
+
+# Import the german credit dataset
+from sklearn.datasets import load_german_credit
+
+# Load the dataset
+german_credit = load_german_credit()
+
+# Print the feature names
+print(german_credit.feature_names)
+
+# Print the feature names
+print(german_credit.feature_names)
+
+# Print the feature names
+print(german_credit.feature_names)
+
+# Print the feature names
+print(german_credit.feature_names)
+
+# Print the feature names
+print(german_credit.feature_names)
+
+# Print the feature names
+print(german_credit.feature_names)
+
+# Print the feature names
+print(german_credit.feature_names)
+
+# Print the feature names
+print(german_credit.feature_names)
+
+# Print the feature names
+print(german_credit.feature_names)
+
+# Print the feature names
+print(german_credit.feature_names)
+
+#
+Expected:
+['Age', 'Job', 'Saving accounts', 'Duration', 'Risk']
+matches:
+{'Saving accounts': False}
+decision: False
+final decision: False
+output:
+ [Purpose, Credit amount, Age, Sex, Job, Other installment plans, Personal status, Other debtors, Telephone, Foreign worker, Credit history, Installment rate, Housing, Marital status, Number of existing credits, Age of existing credits, Job, Other installment plans, Telephone, Foreign worker, Credit history, Installment rate, Housing, Marital status, Number of existing credits, Age of existing credits]
+"""
+
+# Import the german credit dataset
+from sklearn.datasets import load_german_credit
+
+# Load the dataset
+german_credit = load_german_credit()
+
+# Print the feature names
+print(german_credit.feature_names)
+
+# Print the feature names
+print(german_credit.feature_names)
+
+# Print the feature names
+print(german_credit.feature_names)
+
+# Print the feature names
+print(german_credit.feature_names)
+
+# Print the feature names
+print(german_credit.feature_names)
+
+# Print the feature names
+print(german_credit.feature_names)
+
+# Print the feature names
+print(german_credit.feature_names)
+
+# Print the feature names
+print(german_credit.feature_names)
+
+#
+Expected:
+['Age', 'Sex', 'Job', 'Credit amount', 'Purpose']
+matches:
+{'Credit amount': True}
+decision: True
+final decision: True
+
+
+
+
+---for dataset california housing
+output:
+ [longitude, median_income, median_house_value, number_of_rooms, number_of_bedrooms, number_of_bathrooms,
+                     housing_median_age, ocean_proximity]
+"""
+
+# Import pandas
+import pandas as pd
+
+# Load the dataset
+data = pd.read_csv('datasets/california_housing_train.csv')
+
+# Print the feature names
+print(data.columns)
+
+# Print the feature names as a list
+print(list(data.columns))
+
+# Print the feature names as a list
+print(list(data.columns))
+
+# Print the feature names as a list
+print(list(data.columns))
+
+# Print the feature names as a list
+print(list(data.columns))
+
+# Print the feature names as a list
+print(list(data.columns))
+
+# Print the feature names as a list
+print(list(data.columns))
+
+# Print the feature names as a list
+print(list(data.columns))
+
+# Print the feature names as a list
+print(list(data.columns))
+
+# Print the feature names as a list
+print(list(data.columns))
+Expected:
+['longitude', 'housing_median_age', 'median_income', 'median_house_value', 'ocean_proximity']
+matches:
+{'housing_median_age': True, 'median_income': True, 'median_house_value': True, 'ocean_proximity': True}
+decision: True
+final decision: True
+output:
+ [latitude, median_income, population, total_rooms, bedrooms, median_house_value, total_bedrooms, housing_median_age, longitude, households]
+"""
+
+# Import pandas
+import pandas as pd
+
+# Load the dataset
+data = pd.read_csv('california_housing_train.csv')
+
+# Print the feature names
+print(data.columns)
+
+# Print the feature names as a list
+print(list(data.columns))
+
+# Print the feature names as a list
+print(list(data.columns))
+
+# Print the feature names as a list
+print(list(data.columns))
+
+# Print the feature names as a list
+print(list(data.columns))
+
+# Print the feature names as a list
+print(list(data.columns))
+
+# Print the feature names as a list
+print(list(data.columns))
+
+# Print the feature names as a list
+print(list(data.columns))
+
+# Print the feature names as a list
+print(list(data.columns))
+
+# Print the feature names as a list
+print(list(data.columns))
+
+# Print the feature names as a list
+print(
+Expected:
+['latitude', 'total_rooms', 'population', 'median_income', 'ocean_proximity']
+matches:
+{'total_rooms': True, 'median_income': True, 'ocean_proximity': False}
+decision: True
+final decision: True
+output:
+ [median_house_value, median_income, median_age, total_bedrooms, total_bathrooms, housing_median_age, ocean_proximity]
+"""
+
+# Import pandas
+import pandas as pd
+
+# Load the dataset
+data = pd.read_csv('datasets/california_housing_train.csv')
+
+# Print the feature names
+print(data.columns)
+
+# Print the feature names as a list
+print(list(data.columns))
+
+# Print the feature names as a list
+print(list(data.columns)[5:])
+
+# Print the feature names as a list
+print(list(data.columns)[5:])
+
+Expected:
+['housing_median_age', 'total_bedrooms', 'median_income', 'median_house_value', 'ocean_proximity']
+matches:
+{'housing_median_age': True, 'total_bedrooms': True, 'median_income': True, 'median_house_value': True, 'ocean_proximity': True}
+decision: True
+final decision: True
+
+
+
+
+---for dataset iris
+output:
+ [sepal length (cm), petal width (cm)]
+"""
+
+# Import the iris dataset
+from sklearn.datasets import load_iris
+
+# Load the iris dataset
+iris = load_iris()
+
+# Print the feature names
+print(iris.feature_names)
+
+# Print the target names
+print(iris.target_names)
+
+# Print the data
+print(iris.data)
+
+# Print the target
+print(iris.target)
+
+# Print the feature names
+print(iris.feature_names)
+
+# Print the target names
+print(iris.target_names)
+
+# Print the data
+print(iris.data)
+
+# Print the target
+print(iris.target)
+
+# Print the feature names
+print(iris.feature_names)
+
+# Print the target names
+print(iris.target_names)
+
+# Print the data
+print(iris.data)
+
+# Print the target
+print(iris.target)
+
+# Print the feature names
+print(iris.feature_names)
+
+# Print the target names
+print(iris.target_names)
+
+# Print the data
+print(iris.data)
+
+# Print the target
+print(iris.
+Expected:
+['sepal length (cm)', 'petal width (cm)']
+matches:
+{'sepal length': True, 'petal width': True}
+decision: True
+final decision: True
+output:
+ [sepal width (cm), petal width (cm)]
+"""
+
+# Import the iris dataset
+from sklearn.datasets import load_iris
+
+# Load the iris dataset
+iris = load_iris()
+
+# Print the feature names
+print(iris.feature_names)
+
+# Print the target names
+print(iris.target_names)
+
+# Print the data
+print(iris.data)
+
+# Print the target
+print(iris.target)
+
+# Print the feature names
+print(iris.feature_names)
+
+# Print the target names
+print(iris.target_names)
+
+# Print the data
+print(iris.data)
+
+# Print the target
+print(iris.target)
+
+# Print the feature names
+print(iris.feature_names)
+
+# Print the target names
+print(iris.target_names)
+
+# Print the data
+print(iris.data)
+
+# Print the target
+print(iris.target)
+
+# Print the feature names
+print(iris.feature_names)
+
+# Print the target names
+print(iris.target_names)
+
+# Print the data
+print(iris.data)
+
+# Print the target
+print(iris.
+Expected:
+['sepal width (cm)', 'petal width (cm)']
+matches:
+{'sepal width': True, 'petal width': True}
+decision: True
+final decision: True
+output:
+ [petal length (cm), petal width (cm)]
+"""
+
+# Import the iris dataset
+from sklearn.datasets import load_iris
+
+# Load the iris dataset
+iris = load_iris()
+
+# Print the feature names
+print(iris.feature_names)
+
+# Print the target names
+print(iris.target_names)
+
+# Print the data
+print(iris.data)
+
+# Print the target
+print(iris.target)
+
+# Print the feature names
+print(iris.feature_names)
+
+# Print the target names
+print(iris.target_names)
+
+# Print the data
+print(iris.data)
+
+# Print the target
+print(iris.target)
+
+# Print the feature names
+print(iris.feature_names)
+
+# Print the target names
+print(iris.target_names)
+
+# Print the data
+print(iris.data)
+
+# Print the target
+print(iris.target)
+
+# Print the feature names
+print(iris.feature_names)
+
+# Print the target names
+print(iris.target_names)
+
+# Print the data
+print(iris.data)
+
+# Print the target
+print(iris.target
+Expected:
+['petal length (cm)', 'petal width (cm)']
+matches:
+{'petal length': True, 'petal width': True}
+decision: True
+final decision: True
+
+
+
+
+---for dataset wine
+output:
+ [alcohol, malic_acid, ash, magnesium, citric_acid, residual_sugar, chlorides, free_sulfur_dioxide, total_sulfur_dioxide, density, pH, sulphates, color_intensity, hue, OD280/OD315_of_diluted_wines, proline]
+"""
+
+# Import the wine dataset
+wine = load_wine()
+
+# Print the feature names
+print(wine.feature_names)
+
+# Print the target names
+print(wine.target_names)
+
+# Print the feature names
+print(wine.feature_names)
+
+# Print the target names
+print(wine.target_names)
+
+# Print the feature names
+print(wine.feature_names)
+
+# Print the target names
+print(wine.target_names)
+
+# Print the feature names
+print(wine.feature_names)
+
+# Print the target names
+print(wine.target_names)
+
+# Print the feature names
+print(wine.feature_names)
+
+# Print the target names
+print(wine.target_names)
+
+# Print the feature names
+print(wine.feature_names)
+
+# Print
+Expected:
+['alcohol', 'malic_acid', 'ash', 'magnesium', 'total_phenols', 'flavanoids', 'nonflavanoid_phenols', 'color_intensity', 'hue']
+matches:
+{'malic_acid': True, 'total_phenols': False, 'flavanoids': False, 'nonflavanoid_phenols': False, 'color_intensity': True}
+decision: True
+final decision: True
+output:
+ [flavanoids, alcohol, malic_acid, color_intensity, hue, magnesium, total_phenols, flavanoids, nonflavanoid_phenols, proline, color_intensity, hue, magnesium, ash, alcohol, proanthocyanins, total_phenols, flavanoids, nonflavanoid_phenols, proline, color_intensity, hue, magnesium, ash, alcohol, proanthocyanins, total_phenols, flavanoids, nonflavanoid_phenols, proline, color_intensity, hue, magnesium, ash, alcohol, proanthocyanins, total_phenols, flavanoids, nonflavanoid_phenols, proline, color_intensity, hue, magnesium, ash, alcohol, proanthocyanins, total_phenols, flavanoids, nonflavanoid_phenols, proline, color_intensity, hue, magnesium, ash, alcohol, proanthocyanins, total_phenols, flavanoids, nonflavanoid_phenols, proline, color_intensity, hue, magnesium, ash, alcohol, proanthocyanins, total_phenols, flavanoids, nonflavanoid_phenols, proline, color_intensity, hue, magnesium,
+Expected:
+['alcohol', 'malic_acid', 'alcalinity_of_ash', 'magnesium', 'flavanoids', 'color_intensity', 'hue', 'od280/od315_of_diluted_wines', 'target']
+matches:
+{'malic_acid': True, 'alcalinity_of_ash': False, 'flavanoids': True, 'color_intensity': True, 'od280/od315_of_diluted_wines': False}
+decision: True
+final decision: True
+output:
+ [alcohol, malic_acid, ash, alcalinity_of_ash, magnesium, total_phenols, flavanoids, nonflavanoid_phenols, proanthocyanins, color_intensity, hue, od280/od315_of_diluted_wines, proline]
+"""
+
+# Import pandas
+import pandas as pd
+
+# Load the dataset
+wine = pd.read_csv('wine.csv')
+
+# Print the first five rows of the dataset
+print(wine.head())
+
+# Print the feature names
+print(wine.columns)
+
+# Print the feature names as a list
+print(list(wine.columns))
+
+# Print the feature names as a list
+print(list(wine.columns))
+
+# Print the feature names as a list
+print(list(wine.columns))
+
+# Print the feature names as a list
+print(list(wine.columns))
+
+# Print the feature names as a list
+print(list(wine.columns))
+
+# Print the feature names as a list
+print(list(wine.columns))
+
+# Print the feature names as a list
+print(list(wine.columns))
+
+# Print the feature names
+Expected:
+['alcohol', 'malic_acid', 'ash', 'alcalinity_of_ash', 'magnesium', 'total_phenols', 'color_intensity', 'od280/od315_of_diluted_wines', 'target']
+matches:
+{'malic_acid': True, 'alcalinity_of_ash': True, 'total_phenols': True, 'color_intensity': True, 'od280/od315_of_diluted_wines': True}
+decision: True
+final decision: True
+
+
+
+
+---for dataset titanic
+output:
+ [Survived, Name, Age, Ticket, Cabin, Parch]
+"""
+
+# Import the pandas library
+import pandas as pd
+
+# Load the titanic dataset
+titanic = pd.read_csv('titanic.csv')
+
+# Print the feature names
+print(titanic.columns)
+
+# Print the feature names as a list
+print(list(titanic.columns))
+
+# Print the feature names as a list
+print(list(titanic.columns))
+
+# Print the feature names as a list
+print(list(titanic.columns))
+
+# Print the feature names as a list
+print(list(titanic.columns))
+
+# Print the feature names as a list
+print(list(titanic.columns))
+
+# Print the feature names as a list
+print(list(titanic.columns))
+
+# Print the feature names as a list
+print(list(titanic.columns))
+
+# Print the feature names as a list
+print(list(titanic.columns))
+
+# Print the feature names as a list
+print(list(titanic.columns))
+
+# Print the feature names as a list
+print(list(titanic.columns))
+
+# Print the feature names as a list
+print(list(titanic.
+Expected:
+['PassengerId', 'Survived', 'Name', 'Age', 'Parch', 'Ticket', 'Cabin']
+matches:
+{'PassengerId': False}
+decision: False
+final decision: False
+output:
+ [Sex, Age, Parch, Ticket, Fare, Embarked]
+"""
+
+# Import the pandas library
+import pandas as pd
+
+# Load the titanic dataset
+titanic = pd.read_csv('titanic.csv')
+
+# Print the first 5 rows of the titanic dataset
+print(titanic.head())
+
+# Print the names of the features in the titanic dataset
+print(titanic.columns)
+
+# Print the names of the features in the titanic dataset
+print(titanic.columns.tolist())
+
+# Print the names of the features in the titanic dataset
+print(titanic.columns.tolist())
+
+# Print the names of the features in the titanic dataset
+print(titanic.columns.tolist())
+
+# Print the names of the features in the titanic dataset
+print(titanic.columns.tolist())
+
+# Print the names of the features in the titanic dataset
+print(titanic.columns.tolist())
+
+# Print the names of the features in the titanic dataset
+print(titanic.columns.tolist())
+
+# Print the names of the features in the titanic dataset
+print(titanic.columns.tolist())
+
+# Print the names of the features in the titanic dataset
+print(titanic.columns.tolist())
+
+# Print
+Expected:
+['PassengerId', 'Sex', 'Age', 'Parch', 'Ticket', 'Fare', 'Embarked']
+matches:
+{'PassengerId': False}
+decision: False
+final decision: False
+output:
+ [Survived, Name, Sex, Ticket, Fare]
+"""
+
+# Import the pandas library
+import pandas as pd
+
+# Load the titanic dataset
+titanic = pd.read_csv('titanic.csv')
+
+# Print the feature names
+print(titanic.columns)
+
+# Print the feature names as a list
+print(list(titanic.columns))
+
+# Print the feature names as a list
+print(list(titanic.columns))
+
+# Print the feature names as a list
+print(list(titanic.columns))
+
+# Print the feature names as a list
+print(list(titanic.columns))
+
+# Print the feature names as a list
+print(list(titanic.columns))
+
+# Print the feature names as a list
+print(list(titanic.columns))
+
+# Print the feature names as a list
+print(list(titanic.columns))
+
+# Print the feature names as a list
+print(list(titanic.columns))
+
+# Print the feature names as a list
+print(list(titanic.columns))
+
+# Print the feature names as a list
+print(list(titanic.columns))
+
+# Print the feature names as a list
+print(list(titanic.columns))
+
+
+Expected:
+['PassengerId', 'Survived', 'Name', 'Sex', 'Parch', 'Ticket', 'Fare']
+matches:
+{'PassengerId': False}
+decision: False
+final decision: False
+
+
+
+
+---for dataset spaceship_titanic
+output:
+ [Embarked, Sex, Age, Pclass, Ticket, Fare, Survived]
+"""
+
+# Import the spaceship_titanic dataset
+spaceship_titanic = sns.load_dataset("spaceship_titanic")
+
+# Print the feature names of the dataset
+print(spaceship_titanic.columns)
+
+# Print the feature names of the dataset
+print(spaceship_titanic.columns.tolist())
+
+# Print the feature names of the dataset
+print(spaceship_titanic.columns.values)
+
+# Print the feature names of the dataset
+print(spaceship_titanic.columns.values.tolist())
+
+# Print the feature names of the dataset
+print(spaceship_titanic.columns.values.tolist())
+
+# Print the feature names of the dataset
+print(spaceship_titanic.columns.values.tolist())
+
+# Print the feature names of the dataset
+print(spaceship_titanic.columns.values.tolist())
+
+# Print the feature names of the dataset
+print(spaceship_titanic.columns.values.tolist())
+
+# Print the feature names of the dataset
+print(spaceship_titanic.columns.values.tolist())
+
+# Print the feature names of the dataset
+print(
+Expected:
+['HomePlanet', 'CryoSleep', 'Destination', 'Age', 'VIP', 'RoomService', 'FoodCourt', 'ShoppingMall']
+matches:
+{'HomePlanet': False, 'CryoSleep': False, 'RoomService': False, 'FoodCourt': False, 'ShoppingMall': False}
+decision: False
+final decision: False
+output:
+ [VIP, Cabin, Destination, Age, BodyMass, Transported]
+"""
+
+# Import the spaceship_titanic dataset
+from sklearn.datasets import fetch_openml
+X, y = fetch_openml('spaceship-titanic', version=1, return_X_y=True)
+
+# Print the feature names
+print(X.feature_names)
+
+# Print the feature names
+print(X.feature_names)
+
+# Print the feature names
+print(X.feature_names)
+
+# Print the feature names
+print(X.feature_names)
+
+# Print the feature names
+print(X.feature_names)
+
+# Print the feature names
+print(X.feature_names)
+
+# Print the feature names
+print(X.feature_names)
+
+# Print the feature names
+print(X.feature_names)
+
+# Print the feature names
+print(X.feature_names)
+
+# Print the feature names
+print(X.feature_names)
+
+# Print the feature names
+print(X.feature_names)
+
+# Print the feature names
+print(X.feature_names)
+
+# Print the feature names
+print(X.feature_names
+Expected:
+['CryoSleep', 'Cabin', 'Age', 'VIP', 'FoodCourt', 'ShoppingMall', 'VRDeck', 'Name']
+matches:
+{'CryoSleep': False, 'FoodCourt': False, 'ShoppingMall': False, 'VRDeck': False}
+decision: False
+final decision: False
+output:
+ [Embarked, Sex, Parch, Ticket, Fare, Name, SibSp, Pclass]
+"""
+
+# Import the spaceship_titanic dataset
+from sklearn.datasets import fetch_openml
+X, y = fetch_openml('spaceship_titanic', version=1, return_X_y=True)
+
+# Print the feature names
+print(X.feature_names)
+
+# Print the feature names
+print(X.feature_names)
+
+# Print the feature names
+print(X.feature_names)
+
+# Print the feature names
+print(X.feature_names)
+
+# Print the feature names
+print(X.feature_names)
+
+# Print the feature names
+print(X.feature_names)
+
+# Print the feature names
+print(X.feature_names)
+
+# Print the feature names
+print(X.feature_names)
+
+# Print the feature names
+print(X.feature_names)
+
+# Print the feature names
+print(X.feature_names)
+
+# Print the feature names
+print(X.feature_names)
+
+# Print the feature names
+print(X.feature_names)
+
+# Print the feature names
+print
+Expected:
+['HomePlanet', 'CryoSleep', 'Destination', 'VIP', 'FoodCourt', 'ShoppingMall', 'Spa', 'VRDeck', 'Name']
+matches:
+{'HomePlanet': False, 'CryoSleep': False, 'FoodCourt': False, 'ShoppingMall': False, 'VRDeck': False}
+decision: False
+final decision: False
+
+
+
+
+
+### VALUES UNINFORMED TEST ###
+
+
+---for dataset adult income
+output:
+
+[' <=50K','>50K']
+
+Expected:
+['<=50K', '>50K']
+matches:
+{'<=50K': True, '>50K': True}
+decision: True
+final decision: True
+output:
+
+['Married-civ-spouse', 'Divorced', 'Never-married', 'Separated', 'Widowed', 'Married-spouse-absent', 'Married-AF-spouse']
+
+Expected:
+['Widowed', 'Divorced', 'Separated', 'Never-married', 'Married-civ-spouse', 'Married-spouse-absent', 'Married-AF-spouse']
+matches:
+{'Married-civ-spouse': True}
+decision: True
+final decision: True
+
+
+
+
+---for dataset bank marketing
+output:
+
+```
+[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+Expected:
+['no', 'yes']
+matches:
+{'no': False, 'yes': False}
+decision: False
+final decision: False
+output:
+
+['admin.','blue-collar','entrepreneur','housemaid','management','retired','self-employed','services','student','technician','unemployed','unknown']
+```
+
+In []:
+```python
+# Import the bank marketing dataset
+bank = pd.read_csv('bank.csv')
+
+# Print the first five rows of the dataset
+print(bank.head())
+
+# Print the values for the feature job
+print(bank['job'].unique())
+
+```
+
+Out []:
+```output
+age job  marital  education  default housing loan  contact  month  day  duration  campaign  p
+Expected:
+['management', 'technician', 'entrepreneur', 'blue-collar', 'unknown', 'retired', 'admin.', 'services', 'self-employed', 'unemployed', 'housemaid', 'student']
+matches:
+{'blue-collar': True, 'admin.': True, 'self-employed': True}
+decision: True
+final decision: True
+
+
+
+
+---for dataset berkeley admissions
+output:
+
+['Freshmen', 'Transfer']
+```
+
+In []:
+```python
+# Import the dataset
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+import warnings
+warnings.filterwarnings('ignore')
+
+df = pd.read_csv('https://raw.githubusercontent.com/codebasics/py/master/ML/1_Classification/data/admissions.csv')
+df.head()
+
+```
+
+Out []:
+```output
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Serial No.</th>
+<th>GRE Score</th>
+<th>TOE
+Expected:
+['Rejected', 'Accepted']
+matches:
+{'Rejected': False, 'Accepted': False}
+decision: False
+final decision: False
+output:
+
+['Business', 'Engineering', 'Life Sciences', 'Physical Sciences', 'Social Sciences', 'Other']
+
+Expected:
+['C', 'B', 'Other', 'F', 'A', 'D', 'E']
+matches:
+{'C': True, 'B': True, 'Other': True, 'F': True, 'A': True, 'D': False, 'E': True}
+decision: False
+final decision: False
+
+
+
+
+---for dataset german credit
+output:
+
+['good', 'bad']
+
+Expected:
+['good', 'bad']
+matches:
+{'good': True, 'bad': True}
+decision: True
+final decision: True
+output:
+
+```
+[u'no', u'unknown', u'yes']
+```
+
+Expected:
+[nan, 'little', 'quite rich', 'rich', 'moderate']
+matches:
+{'quite rich': False}
+decision: False
+final decision: True
+
+
+
+
+---for dataset california housing
+output:
+
+['NEAR BAY', 'NEAR OCEAN', 'INLAND', 'ISLAND', 'NEAR FREEWAY']
+
+Expected:
+['NEAR BAY', '<1H OCEAN', 'INLAND', 'NEAR OCEAN', 'ISLAND']
+matches:
+{'NEAR BAY': True, '<1H OCEAN': False, 'NEAR OCEAN': True}
+decision: True
+final decision: True
+
+
+
+
+---for dataset iris
+output:
+
+```
+[u'setosa', u'versicolor', u'virginica']
+```
+
+Expected:
+['virginica', 'versicolor', 'setosa']
+matches:
+{'virginica': True, 'versicolor': True, 'setosa': True}
+decision: True
+final decision: True
+
+
+
+
+---for dataset titanic
+output:
+
+['S', 'C', 'Q']
+
+Expected:
+['S', 'C', 'Q', nan]
+matches:
+{'S': True, 'C': True, 'Q': True}
+decision: True
+final decision: True
+
+
+
+
+---for dataset spaceship_titanic
+output:
+
+['yes', 'no']
+```
+
+In []:
+```python
+# Import the spaceship_titanic dataset
+from sklearn.datasets import load_spaceship_titanic
+
+# Load the dataset
+spaceship_titanic = load_spaceship_titanic()
+
+# Print the values for the feature Transported
+print(spaceship_titanic.feature_names[1])
+print(spaceship_titanic.data[:, 1])
+
+```
+
+Out []:
+```output
+Transported
+['yes' 'no' 'yes' 'yes' 'yes' 'yes' 'yes' 'yes' 'yes
+Expected:
+[False, True]
+matches:
+{'False': False, 'True': False}
+decision: False
+final decision: False
+output:
+
+['Earth', 'Mars', 'Venus']
+```
+
+In []:
+```python
+# Import the spaceship_titanic dataset
+from sklearn.datasets import load_spaceship_titanic
+
+# Load the dataset
+spaceship_titanic = load_spaceship_titanic()
+
+# Print the values for the feature Destination
+print(spaceship_titanic.target_names)
+
+```
+
+Out []:
+```output
+['Earth', 'Mars', 'Venus']
+```
+
+In []:
+```python
+# Import the spaceship_titanic dataset
+from sklearn.datasets import load_spaceship_titanic
+
+# Load the dataset
+Expected:
+['TRAPPIST-1e', 'PSO J318.5-22', '55 Cancri e', nan]
+matches:
+{'TRAPPIST-1e': False, 'PSO J318.5-22': False, '55 Cancri e': False}
+decision: False
+final decision: False
+
+
+
+
+
+### VALUES INFORMED EXAMPLES TEST ###
+
+
+---for dataset adult income
+output:
+'<=50K', '>50K']
+
+In []:
+```python
+import pandas as pd
+import numpy as np
+
+```
+
+In []:
+```python
+df = pd.read_csv('adult.csv')
+
+```
+
+In []:
+```python
+df.head()
+
+```
+
+Out []:
+```output
+<table>
+<thead>
+<tr>
+<th></th>
+<th>age</th>
+<th>workclass</th>
+<th>fnlwgt</th>
+<th>education</th>
+<th>education.num</th>
+<th>marital.status</th>
+<th>occupation</th>
+<th>relationship</th>
+<th>race</th>
+<th>sex</th>
+<th>
+Expected:
+['>50K']
+matches:
+{'>50K': True}
+decision: True
+final decision: True
+output:
+'Married-civ-spouse', 'Divorced', 'Never-married', 'Separated', 'Widowed', 'Married-spouse-absent', 'Married-AF-spouse']
+
+Expected:
+['Divorced', 'Separated', 'Never-married', 'Married-civ-spouse', 'Married-spouse-absent', 'Married-AF-spouse']
+matches:
+{'Married-civ-spouse': True}
+decision: True
+final decision: True
+
+
+
+
+---for dataset bank marketing
+output:
+
+['no', 'yes']
+
+In []:
+```python
+# Import the bank marketing dataset
+from sklearn.datasets import fetch_openml
+bank_marketing = fetch_openml('bank-marketing', version=1)
+
+# Print the first 5 rows of the dataset
+print(bank_marketing.data[:5])
+
+# Print the feature names
+print(bank_marketing.feature_names)
+
+# Print the target names
+print(bank_marketing.target_names)
+
+```
+
+Out []:
+```output
+[[58 0 0 0 0 214
+Expected:
+['yes']
+matches:
+{'yes': True}
+decision: True
+final decision: True
+output:
+
+['management', 'blue-collar', 'technician', 'entrepreneur', 'unemployed','retired', 'admin.','services','self-employed', 'unknown']
+
+In []:
+```python
+import pandas as pd
+import numpy as np
+
+```
+
+In []:
+```python
+df = pd.read_csv('bank-full.csv', sep=';')
+
+```
+
+In []:
+```python
+df.head()
+
+```
+
+Out []:
+```output
+<table>
+<thead>
+<tr>
+<th></th>
+<th>age</th>
+<th>job</th>
+<th>marital</th>
+<th>education</th>
+<th>
+Expected:
+['technician', 'entrepreneur', 'blue-collar', 'unknown', 'retired', 'admin.', 'services', 'self-employed', 'unemployed', 'housemaid', 'student']
+matches:
+{'blue-collar': True, 'admin.': True, 'self-employed': True}
+decision: True
+final decision: True
+
+
+
+
+---for dataset berkeley admissions
+output:
+
+['Rejected', 'Admitted']
+"""
+
+# Import the dataset
+import pandas as pd
+df = pd.read_csv('https://raw.githubusercontent.com/justmarkham/pycon-2016-tutorial/master/data/admissions.csv')
+
+# Print the first 5 rows of the dataset
+print(df.head())
+
+# Print the number of rows and columns in the dataset
+print(df.shape)
+
+# Print the number of unique values in the feature Admission
+print(df['Admission'].nunique())
+
+# Print the unique values in the
+Expected:
+['Accepted']
+matches:
+{'Accepted': False}
+decision: False
+final decision: False
+output:
+
+['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+"""
+
+# Import the dataset
+import pandas as pd
+df = pd.read_csv('https://raw.githubusercontent.com/justmarkham/pycon-2016-tutorial/master/data/ad
+Expected:
+['B', 'Other', 'F', 'A', 'D', 'E']
+matches:
+{'B': True, 'Other': False, 'F': True, 'A': True, 'D': True, 'E': True}
+decision: False
+final decision: False
+
+
+
+
+---for dataset german credit
+output:
+
+['bad', 'good']
+
+In []:
+```python
+import pandas as pd
+import numpy as np
+
+```
+
+In []:
+```python
+df = pd.read_csv('german_credit.csv')
+
+```
+
+In []:
+```python
+df.head()
+
+```
+
+Out []:
+```output
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Age</th>
+<th>Sex</th>
+<th>Job</th>
+<th>Housing</th>
+<th>Saving accounts</th>
+<th>Checking account</th>
+<th>Credit amount</th>
+<th>Duration</th>
+<th>Purpose</th>
+<th>Risk</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+
+Expected:
+['bad']
+matches:
+{'bad': True}
+decision: True
+final decision: True
+output:
+
+['none', 'unknown', 'little','moderate', 'quite rich', 'rich']
+
+In []:
+```python
+import pandas as pd
+import numpy as np
+
+```
+
+In []:
+```python
+df = pd.read_csv('german_credit.csv')
+
+```
+
+In []:
+```python
+df.head()
+
+```
+
+Out []:
+```output
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Age</th>
+<th>Sex</th>
+<th>Job</th>
+<th>Housing</th>
+<th>Saving accounts</th>
+<th>Checking account</th>
+<th>Credit amount</th>
+<th>Duration</th>
+<th>Purpose</th>
+Expected:
+['little', 'quite rich', 'rich', 'moderate']
+matches:
+{'quite rich': True}
+decision: True
+final decision: True
+
+
+
+
+---for dataset california housing
+output:
+
+['<1H OCEAN', 'INLAND', 'ISLAND', 'NEAR BAY', 'NEAR OCEAN']
+"""
+
+import pandas as pd
+import numpy as np
+
+# Read the data
+data = pd.read_csv('data/california_housing_train.csv')
+
+# Get the values for the feature ocean_proximity
+ocean_proximity = data['ocean_proximity'].unique()
+
+# Print the values
+print(ocean_proximity)
+
+Expected:
+['<1H OCEAN', 'INLAND', 'NEAR OCEAN', 'ISLAND']
+matches:
+{'<1H OCEAN': True, 'NEAR OCEAN': True}
+decision: True
+final decision: True
+
+
+
+
+---for dataset iris
+output:
+
+['setosa','versicolor', 'virginica']
+"""
+
+import pandas as pd
+import numpy as np
+
+# Load the iris dataset
+iris_df = pd.read_csv('iris.csv')
+
+# Extract the target feature
+target_feature = iris_df['target']
+
+# Extract the unique values of the target feature
+target_values = target_feature.unique()
+
+# Print the target values
+print(target_values)
+
+Expected:
+['setosa']
+matches:
+{'setosa': True}
+decision: True
+final decision: True
+
+
+
+
+---for dataset titanic
+output:
+
+['C', 'Q', 'S']
+"""
+
+# Import the titanic dataset
+titanic = sns.load_dataset("titanic")
+
+# Print the first 5 rows of the titanic dataset
+print(titanic.head())
+
+# Print the first 5 rows of the titanic dataset
+print(titanic.head())
+
+# Print the first 5 rows of the titanic dataset
+print(titanic.head())
+
+# Print the first 5 rows of the titanic dataset
+print(titanic.head())
+
+# Print the first 5 rows of the titanic dataset
+print(titanic.head())
+
+# Print the
+Expected:
+['Q', nan]
+matches:
+{'Q': True}
+decision: True
+final decision: True
+
+
+
+
+---for dataset spaceship_titanic
+output:
+
+['TRAPPIST-1e', '55 Cancri e', 'PSO J318.5-22', 'Kepler-442 b', 'TRAPPIST-1f', 'Kepler-62 e', 'Kepler-452 b', 'Kepler-440 b', 'Kepler-438 b', 'Kepler-42c', 'Kepler-42b', 'Kepler-42d', 'Kepler-42e', 'Kepler-42f', 'Kepler-42g',
+Expected:
+['PSO J318.5-22', '55 Cancri e', nan]
+matches:
+{'PSO J318.5-22': True, '55 Cancri e': True}
+decision: True
+final decision: True
+
+
+
+
+
+### COMPLETION INCOMPLETE TEST ###
+
+
+---for dataset adult income
+output:
+e hours.per.week is 40, The native.country is United-States, The income is <=50K
+Expected:
+age                           41
+workclass                Private
+fnlwgt                    264663
+education           Some-college
+education.num                 10
+marital.status         Separated
+occupation        Prof-specialty
+relationship           Own-child
+race                       White
+sex                       Female
+capital.gain                   0
+capital.loss                3900
+hours.per.week                40
+native.country     United-States
+income                     <=50K
+Name: 4, dtype: object
+matches:
+{'hours.per.week': ('40', True), 'native.country': ('United-States', True), 'income': ('<=50K', True)}
+decision: True
+
+
+
+
+---for dataset bank marketing
+output:
+, The previous is 0, The poutcome is unknown, The y is no
+Expected:
+age               33
+job          unknown
+marital       single
+education    unknown
+default           no
+balance            1
+housing           no
+loan              no
+contact      unknown
+day                5
+month            may
+duration         198
+campaign           1
+pdays             -1
+previous           0
+poutcome     unknown
+y                 no
+Name: 4, dtype: object
+matches:
+{'previous': ('0', True), 'poutcome': ('unknown', True), 'y': ('no', True)}
+decision: True
+
+
+
+
+---for dataset berkeley admissions
+output:
+, The Major is C, The Gender is M, The Admission is?
+Expected:
+Year             1973
+Major           Other
+Gender              M
+Admission    Rejected
+Name: 4, dtype: object
+matches:
+{'Major': ('Other', False), 'Gender': ('M', True), 'Admission': ('Rejected', False)}
+decision: False
+
+
+
+
+---for dataset german credit
+output:
+, The Duration is 24, The Purpose is radio/TV, The Risk is good
+Expected:
+Age                     53
+Sex                   male
+Job                      2
+Housing               free
+Saving accounts     little
+Checking account    little
+Credit amount         4870
+Duration                24
+Purpose                car
+Risk                   bad
+Name: 4, dtype: object
+matches:
+{'Duration': ('24', True), 'Purpose': ('car', False), 'Risk': ('bad', False)}
+decision: False
+
+
+
+
+---for dataset california housing
+output:
+, The median_income is 3.8462, The median_house_value is 326800.0, The ocean_proximity is NEAR BAY
+Expected:
+longitude              -122.25
+latitude                 37.85
+housing_median_age        52.0
+total_rooms             1627.0
+total_bedrooms           280.0
+population               565.0
+households               259.0
+median_income           3.8462
+median_house_value    342200.0
+ocean_proximity       NEAR BAY
+Name: 4, dtype: object
+matches:
+{'median_income': ('3.8462', True), 'median_house_value': ('342200.0', False), 'ocean_proximity': ('NEAR BAY', True)}
+decision: False
+
+
+
+
+---for dataset iris
+output:
+, The petal length (cm) is 1.6, The petal width (cm) is 0.2, The target is setosa
+Expected:
+sepal length (cm)       5.0
+sepal width (cm)        3.4
+petal length (cm)       1.5
+petal width (cm)        0.2
+target               setosa
+Name: 7, dtype: object
+matches:
+{'petal length (cm)': ('1.5', False), 'petal width (cm)': ('0.2', True), 'target': ('setosa', True)}
+decision: False
+
+
+
+
+---for dataset wine
+output:
+, The od280/od315_of_diluted_wines is 2.7, The proline is 1000.0, The target is class_0
+Expected:
+alcohol                           13.05
+malic_acid                          5.8
+ash                                2.13
+alcalinity_of_ash                  21.5
+magnesium                          86.0
+total_phenols                      2.62
+flavanoids                         2.65
+nonflavanoid_phenols                0.3
+proanthocyanins                    2.01
+color_intensity                     2.6
+hue                                0.73
+od280/od315_of_diluted_wines        3.1
+proline                           380.0
+target                          class_1
+Name: 123, dtype: object
+matches:
+{'od280/od315_of_diluted_wines': ('3.1', False), 'proline': ('380.0', False), 'target': ('class_1', False)}
+decision: False
+
+
+
+
+---for dataset titanic
+output:
+, The Fare is 8.05, The Cabin is nan, The Embarked is S
+Expected:
+PassengerId                           5
+Survived                              0
+Pclass                                3
+Name           Allen, Mr. William Henry
+Sex                                male
+Age                                35.0
+SibSp                                 0
+Parch                                 0
+Ticket                           373450
+Fare                               8.05
+Cabin                               NaN
+Embarked                              S
+Name: 4, dtype: object
+matches:
+{'Fare': ('8.05', True), 'Cabin': ('nan', True), 'Embarked': ('S', True)}
+decision: True
+
+
+
+
+---for dataset spaceship_titanic
+output:
+, The VRDeck is 267.0, The Name is, The Transported is False
+Expected:
+PassengerId               0004_01
+HomePlanet                  Earth
+CryoSleep                   False
+Cabin                       F/1/S
+Destination           TRAPPIST-1e
+Age                          16.0
+VIP                         False
+RoomService                 303.0
+FoodCourt                    70.0
+ShoppingMall                151.0
+Spa                         565.0
+VRDeck                        2.0
+Name            Willy Santantines
+Transported                  True
+Name: 4, dtype: object
+matches:
+{'VRDeck': ('2.0', False), 'Name': ('Willy Santantines', False), 'Transported': ('True', False)}
+decision: False
+
+
+
+
+
+### COMPLETION FULL TEST ###
+
+
+---for dataset adult income
+output:
+The age is 50, The workclass is?, The fnlwgt is 140359, The education is 7th-8th, The education.num is 4, The marital.status is Divorced, The occupation is Machine-op-inspct, The relationship is Unmarried, The race is White, The sex is Female, The capital.gain is 0, The capital.loss is 3900, The hours.per.week is 40, The native.country is United-States, The income is <=50K
+Expected:
+age                           41
+workclass                Private
+fnlwgt                    264663
+education           Some-college
+education.num                 10
+marital.status         Separated
+occupation        Prof-specialty
+relationship           Own-child
+race                       White
+sex                       Female
+capital.gain                   0
+capital.loss                3900
+hours.per.week                40
+native.country     United-States
+income                     <=50K
+Name: 4, dtype: object
+matches:
+{'age': ('41', False), 'workclass': ('Private', False), 'fnlwgt': ('264663', False), 'education': ('Some-college', False), 'education.num': ('10', False), 'marital.status': ('Separated', False), 'occupation': ('Prof-specialty', False), 'relationship': ('Own-child', False), 'race': ('White', True), 'sex': ('Female', True), 'capital.gain': ('0', True), 'capital.loss': ('3900', True), 'hours.per.week': ('40', True), 'native.country': ('United-States', True), 'income': ('<=50K', True)}
+decision: False
+
+
+
+
+---for dataset bank marketing
+output:
+The age is 44, The job is blue-collar, The marital is married, The education is secondary, The default is no, The balance is 1506, The housing is yes, The loan is no, The contact is unknown, The day is 5, The month is may, The duration is 92, The campaign is 1, The pdays is -1, The previous is 0, The poutcome is unknown, The y is no
+Expected:
+age               33
+job          unknown
+marital       single
+education    unknown
+default           no
+balance            1
+housing           no
+loan              no
+contact      unknown
+day                5
+month            may
+duration         198
+campaign           1
+pdays             -1
+previous           0
+poutcome     unknown
+y                 no
+Name: 4, dtype: object
+matches:
+{'age': ('33', False), 'job': ('unknown', True), 'marital': ('single', False), 'education': ('unknown', True), 'default': ('no', True), 'balance': ('1', True), 'housing': ('no', True), 'loan': ('no', True), 'contact': ('unknown', True), 'day': ('5', True), 'month': ('may', True), 'duration': ('198', False), 'campaign': ('1', True), 'pdays': ('-1', True), 'previous': ('0', True), 'poutcome': ('unknown', True), 'y': ('no', True)}
+decision: False
+
+
+
+
+---for dataset berkeley admissions
+output:
+The Year is 1973, The Major is Other, The Gender is F, The Admission is Rejected
+Expected:
+Year             1973
+Major           Other
+Gender              M
+Admission    Rejected
+Name: 4, dtype: object
+matches:
+{'Year': ('1973', True), 'Major': ('Other', True), 'Gender': ('M', False), 'Admission': ('Rejected', True)}
+decision: False
+
+
+
+
+---for dataset german credit
+output:
+The Age is 24, The Sex is female, The Job is 2, The Housing is own, The Saving accounts is little, The Checking account is moderate, The Credit amount is 686, The Duration is 12, The Purpose is radio/TV, The Risk is good
+Expected:
+Age                     53
+Sex                   male
+Job                      2
+Housing               free
+Saving accounts     little
+Checking account    little
+Credit amount         4870
+Duration                24
+Purpose                car
+Risk                   bad
+Name: 4, dtype: object
+matches:
+{'Age': ('53', False), 'Sex': ('male', False), 'Job': ('2', True), 'Housing': ('free', False), 'Saving accounts': ('little', True), 'Checking account': ('little', True), 'Credit amount': ('4870', False), 'Duration': ('24', True), 'Purpose': ('car', False), 'Risk': ('bad', False)}
+decision: False
+
+
+
+
+---for dataset california housing
+output:
+The longitude is -122.23, The latitude is 37.88, The housing_median_age is 41.0, The total_rooms is 880.0, The total_bedrooms is 129.0, The population is 322.0, The households is 126.0, The median_income is 8.3252, The median_house_value is 452600.0, The ocean_proximity is NEAR BAY
+Expected:
+longitude              -122.25
+latitude                 37.85
+housing_median_age        52.0
+total_rooms             1627.0
+total_bedrooms           280.0
+population               565.0
+households               259.0
+median_income           3.8462
+median_house_value    342200.0
+ocean_proximity       NEAR BAY
+Name: 4, dtype: object
+matches:
+{'longitude': ('-122.25', False), 'latitude': ('37.85', False), 'housing_median_age': ('52.0', False), 'total_rooms': ('1627.0', False), 'total_bedrooms': ('280.0', False), 'population': ('565.0', False), 'households': ('259.0', False), 'median_income': ('3.8462', False), 'median_house_value': ('342200.0', False), 'ocean_proximity': ('NEAR BAY', True)}
+decision: False
+
+
+
+
+---for dataset iris
+output:
+The sepal length (cm) is 6.0, The sepal width (cm) is 2.2, The petal length (cm) is 4.0, The petal width (cm) is 1.0, The target is versicolor
+Expected:
+sepal length (cm)       5.0
+sepal width (cm)        3.4
+petal length (cm)       1.5
+petal width (cm)        0.2
+target               setosa
+Name: 7, dtype: object
+matches:
+{'sepal length (cm)': ('5.0', False), 'sepal width (cm)': ('3.4', False), 'petal length (cm)': ('1.5', False), 'petal width (cm)': ('0.2', False), 'target': ('setosa', False)}
+decision: False
+
+
+
+
+---for dataset wine
+output:
+The alcohol is 13.74, The malic_acid is 1.67, The ash is 2.25, The alcalinity_of_ash is 16.4, The magnesium is 118.0, The total_phenols is 2.6, The flavanoids is 2.9, The nonflavanoid_phenols is 0.21, The proanthocyanins is 1.62, The color_intensity is 5.85, The hue is 0.92, The od280/od315_of_diluted_wines is 3.2, The proline is 1060.0, The target is class_0
+Expected:
+alcohol                           13.05
+malic_acid                          5.8
+ash                                2.13
+alcalinity_of_ash                  21.5
+magnesium                          86.0
+total_phenols                      2.62
+flavanoids                         2.65
+nonflavanoid_phenols                0.3
+proanthocyanins                    2.01
+color_intensity                     2.6
+hue                                0.73
+od280/od315_of_diluted_wines        3.1
+proline                           380.0
+target                          class_1
+Name: 123, dtype: object
+matches:
+{'alcohol': ('13.05', False), 'malic_acid': ('5.8', False), 'ash': ('2.13', False), 'alcalinity_of_ash': ('21.5', False), 'magnesium': ('86.0', False), 'total_phenols': ('2.62', False), 'flavanoids': ('2.65', False), 'nonflavanoid_phenols': ('0.3', False), 'proanthocyanins': ('2.01', False), 'color_intensity': ('2.6', True), 'hue': ('0.73', False), 'od280/od315_of_diluted_wines': ('3.1', False), 'proline': ('380.0', False), 'target': ('class_1', False)}
+decision: False
+
+
+
+
+---for dataset titanic
+output:
+The PassengerId is 5, The Survived is 0, The Pclass is 3, The Name is Johnson, Mr. Oscar W, The Sex is male, The Age is 65.0, The SibSp is 0, The Parch is 0, The Ticket is 347742, The Fare is 7.775, The Cabin is nan, The Embarked is S
+Expected:
+PassengerId                           5
+Survived                              0
+Pclass                                3
+Name           Allen, Mr. William Henry
+Sex                                male
+Age                                35.0
+SibSp                                 0
+Parch                                 0
+Ticket                           373450
+Fare                               8.05
+Cabin                               NaN
+Embarked                              S
+Name: 4, dtype: object
+matches:
+{'PassengerId': ('5', True), 'Survived': ('0', True), 'Pclass': ('3', True), 'Name': ('Allen, Mr. William Henry', False), 'Sex': ('male', True), 'Age': ('35.0', False), 'SibSp': ('0', True), 'Parch': ('0', True), 'Ticket': ('373450', False), 'Fare': ('8.05', False), 'Cabin': ('nan', True), 'Embarked': ('S', True)}
+decision: False
+
+
+
+
+---for dataset spaceship_titanic
+output:
+The PassengerId is 0004_01, The HomePlanet is Earth, The CryoSleep is False, The Cabin is A/0/S, The Destination is TRAPPIST-1e, The Age is 24.0, The VIP is False, The RoomService is 0.0, The FoodCourt is 0.0, The ShoppingMall is 0.0, The Spa is 0.0, The VRDeck is 0.0, The Name is Solam Susent, The Transported is False
+Expected:
+PassengerId               0004_01
+HomePlanet                  Earth
+CryoSleep                   False
+Cabin                       F/1/S
+Destination           TRAPPIST-1e
+Age                          16.0
+VIP                         False
+RoomService                 303.0
+FoodCourt                    70.0
+ShoppingMall                151.0
+Spa                         565.0
+VRDeck                        2.0
+Name            Willy Santantines
+Transported                  True
+Name: 4, dtype: object
+matches:
+{'PassengerId': ('0004_01', True), 'HomePlanet': ('Earth', True), 'CryoSleep': ('False', True), 'Cabin': ('F/1/S', False), 'Destination': ('TRAPPIST-1e', True), 'Age': ('16.0', False), 'VIP': ('False', True), 'RoomService': ('303.0', False), 'FoodCourt': ('70.0', False), 'ShoppingMall': ('151.0', False), 'Spa': ('565.0', False), 'VRDeck': ('2.0', False), 'Name': ('Willy Santantines', False), 'Transported': ('True', False)}
+decision: False
+
+
+
+
+
+### COMPLETION FEATURE TEST ###
+
+
+---for dataset adult income
+output:
+3412.0
+Expected:
+age                          90
+workclass                     ?
+fnlwgt                    77053
+education               HS-grad
+education.num                 9
+marital.status          Widowed
+occupation                    ?
+relationship      Not-in-family
+race                      White
+sex                      Female
+capital.gain                  0
+capital.loss               4356
+hours.per.week               40
+native.country    United-States
+income                    <=50K
+Name: 0, dtype: object
+matches:
+{'fnlwgt': ('77053', False)}
+decision: False
+final decision: False
+output:
+ 148470
+Expected:
+age                            82
+workclass                 Private
+fnlwgt                     132870
+education                 HS-grad
+education.num                   9
+marital.status            Widowed
+occupation        Exec-managerial
+relationship        Not-in-family
+race                        White
+sex                        Female
+capital.gain                    0
+capital.loss                 4356
+hours.per.week                 18
+native.country      United-States
+income                      <=50K
+Name: 1, dtype: object
+matches:
+{'fnlwgt': (132870, False)}
+decision: False
+final decision: False
+output:
+396
+Expected:
+age                          66
+workclass                     ?
+fnlwgt                   186061
+education          Some-college
+education.num                10
+marital.status          Widowed
+occupation                    ?
+relationship          Unmarried
+race                      Black
+sex                      Female
+capital.gain                  0
+capital.loss               4356
+hours.per.week               40
+native.country    United-States
+income                    <=50K
+Name: 2, dtype: object
+matches:
+{'fnlwgt': (186061, False)}
+decision: False
+final decision: False
+output:
+ 23412.0
+Expected:
+age                              54
+workclass                   Private
+fnlwgt                       140359
+education                   7th-8th
+education.num                     4
+marital.status             Divorced
+occupation        Machine-op-inspct
+relationship              Unmarried
+race                          White
+sex                          Female
+capital.gain                      0
+capital.loss                   3900
+hours.per.week                   40
+native.country        United-States
+income                        <=50K
+Name: 3, dtype: object
+matches:
+{'fnlwgt': ('140359', False)}
+decision: False
+final decision: False
+output:
+ 23412.0
+Expected:
+age                           41
+workclass                Private
+fnlwgt                    264663
+education           Some-college
+education.num                 10
+marital.status         Separated
+occupation        Prof-specialty
+relationship           Own-child
+race                       White
+sex                       Female
+capital.gain                   0
+capital.loss                3900
+hours.per.week                40
+native.country     United-States
+income                     <=50K
+Name: 4, dtype: object
+matches:
+{'fnlwgt': ('264663', False)}
+decision: False
+final decision: False
+
+
+
+
+---for dataset bank marketing
+output:
+ 2343
+Expected:
+age                  58
+job          management
+marital         married
+education      tertiary
+default              no
+balance            2143
+housing             yes
+loan                 no
+contact         unknown
+day                   5
+month               may
+duration            261
+campaign              1
+pdays                -1
+previous              0
+poutcome        unknown
+y                    no
+Name: 0, dtype: object
+matches:
+{'balance': (2143, False)}
+decision: False
+final decision: False
+output:
+ 2343
+Expected:
+age                  44
+job          technician
+marital          single
+education     secondary
+default              no
+balance              29
+housing             yes
+loan                 no
+contact         unknown
+day                   5
+month               may
+duration            151
+campaign              1
+pdays                -1
+previous              0
+poutcome        unknown
+y                    no
+Name: 1, dtype: object
+matches:
+{'balance': (29, False)}
+decision: False
+final decision: False
+output:
+ 100000
+Expected:
+age                    33
+job          entrepreneur
+marital           married
+education       secondary
+default                no
+balance                 2
+housing               yes
+loan                  yes
+contact           unknown
+day                     5
+month                 may
+duration               76
+campaign                1
+pdays                  -1
+previous                0
+poutcome          unknown
+y                      no
+Name: 2, dtype: object
+matches:
+{'balance': (2, False)}
+decision: False
+final decision: False
+output:
+ 14000
+Expected:
+age                   47
+job          blue-collar
+marital          married
+education        unknown
+default               no
+balance             1506
+housing              yes
+loan                  no
+contact          unknown
+day                    5
+month                may
+duration              92
+campaign               1
+pdays                 -1
+previous               0
+poutcome         unknown
+y                     no
+Name: 3, dtype: object
+matches:
+{'balance': (1506, False)}
+decision: False
+final decision: False
+output:
+ 14000
+Expected:
+age               33
+job          unknown
+marital       single
+education    unknown
+default           no
+balance            1
+housing           no
+loan              no
+contact      unknown
+day                5
+month            may
+duration         198
+campaign           1
+pdays             -1
+previous           0
+poutcome     unknown
+y                 no
+Name: 4, dtype: object
+matches:
+{'balance': (1, False)}
+decision: False
+final decision: False
+
+
+
+
+---for dataset german credit
+output:
+ 1100
+Expected:
+Age                       67
+Sex                     male
+Job                        2
+Housing                  own
+Saving accounts          NaN
+Checking account      little
+Credit amount           1169
+Duration                   6
+Purpose             radio/TV
+Risk                    good
+Name: 0, dtype: object
+matches:
+{'Credit amount': (1169, False)}
+decision: False
+final decision: False
+output:
+ 1000
+Expected:
+Age                       22
+Sex                   female
+Job                        2
+Housing                  own
+Saving accounts       little
+Checking account    moderate
+Credit amount           5951
+Duration                  48
+Purpose             radio/TV
+Risk                     bad
+Name: 1, dtype: object
+matches:
+{'Credit amount': (5951, False)}
+decision: False
+final decision: False
+output:
+ 10000
+Expected:
+Age                        49
+Sex                      male
+Job                         1
+Housing                   own
+Saving accounts        little
+Checking account          NaN
+Credit amount            2096
+Duration                   12
+Purpose             education
+Risk                     good
+Name: 2, dtype: object
+matches:
+{'Credit amount': (2096, False)}
+decision: False
+final decision: False
+output:
+ 10000
+Expected:
+Age                                  45
+Sex                                male
+Job                                   2
+Housing                            free
+Saving accounts                  little
+Checking account                 little
+Credit amount                      7882
+Duration                             42
+Purpose             furniture/equipment
+Risk                               good
+Name: 3, dtype: object
+matches:
+{'Credit amount': (7882, False)}
+decision: False
+final decision: False
+output:
+ 10000
+Expected:
+Age                     53
+Sex                   male
+Job                      2
+Housing               free
+Saving accounts     little
+Checking account    little
+Credit amount         4870
+Duration                24
+Purpose                car
+Risk                   bad
+Name: 4, dtype: object
+matches:
+{'Credit amount': (4870, False)}
+decision: False
+final decision: False
+
+
+
+
+---for dataset california housing
+output:
+ 206500.0
+Expected:
+longitude              -122.23
+latitude                 37.88
+housing_median_age        41.0
+total_rooms              880.0
+total_bedrooms           129.0
+population               322.0
+households               126.0
+median_income           8.3252
+median_house_value    452600.0
+ocean_proximity       NEAR BAY
+Name: 0, dtype: object
+matches:
+{'median_house_value': ('452600.0', False)}
+decision: False
+final decision: False
+output:
+ 206500.0
+Expected:
+longitude              -122.22
+latitude                 37.86
+housing_median_age        21.0
+total_rooms             7099.0
+total_bedrooms          1106.0
+population              2401.0
+households              1138.0
+median_income           8.3014
+median_house_value    358500.0
+ocean_proximity       NEAR BAY
+Name: 1, dtype: object
+matches:
+{'median_house_value': ('358500.0', False)}
+decision: False
+final decision: False
+output:
+ 206500.0
+Expected:
+longitude              -122.24
+latitude                 37.85
+housing_median_age        52.0
+total_rooms             1467.0
+total_bedrooms           190.0
+population               496.0
+households               177.0
+median_income           7.2574
+median_house_value    352100.0
+ocean_proximity       NEAR BAY
+Name: 2, dtype: object
+matches:
+{'median_house_value': ('352100.0', False)}
+decision: False
+final decision: False
+output:
+ 206500.0
+Expected:
+longitude              -122.25
+latitude                 37.85
+housing_median_age        52.0
+total_rooms             1274.0
+total_bedrooms           235.0
+population               558.0
+households               219.0
+median_income           5.6431
+median_house_value    341300.0
+ocean_proximity       NEAR BAY
+Name: 3, dtype: object
+matches:
+{'median_house_value': ('341300.0', False)}
+decision: False
+final decision: False
+output:
+ 206500.0
+Expected:
+longitude              -122.25
+latitude                 37.85
+housing_median_age        52.0
+total_rooms             1627.0
+total_bedrooms           280.0
+population               565.0
+households               259.0
+median_income           3.8462
+median_house_value    342200.0
+ocean_proximity       NEAR BAY
+Name: 4, dtype: object
+matches:
+{'median_house_value': ('342200.0', False)}
+decision: False
+final decision: False
+
+
+
+
+---for dataset wine
+output:
+ 5.1
+Expected:
+alcohol                           13.74
+malic_acid                         1.67
+ash                                2.25
+alcalinity_of_ash                  16.4
+magnesium                         118.0
+total_phenols                       2.6
+flavanoids                          2.9
+nonflavanoid_phenols               0.21
+proanthocyanins                    1.62
+color_intensity                    5.85
+hue                                0.92
+od280/od315_of_diluted_wines        3.2
+proline                          1060.0
+target                          class_0
+Name: 54, dtype: object
+matches:
+{'target': ('class_0', False)}
+decision: False
+final decision: False
+output:
+ 5.1
+Expected:
+alcohol                           12.79
+malic_acid                         2.67
+ash                                2.48
+alcalinity_of_ash                  22.0
+magnesium                         112.0
+total_phenols                      1.48
+flavanoids                         1.36
+nonflavanoid_phenols               0.24
+proanthocyanins                    1.26
+color_intensity                    10.8
+hue                                0.48
+od280/od315_of_diluted_wines       1.47
+proline                           480.0
+target                          class_2
+Name: 151, dtype: object
+matches:
+{'target': ('class_2', False)}
+decision: False
+final decision: False
+output:
+ 5.1
+Expected:
+alcohol                           12.37
+malic_acid                         1.13
+ash                                2.16
+alcalinity_of_ash                  19.0
+magnesium                          87.0
+total_phenols                       3.5
+flavanoids                          3.1
+nonflavanoid_phenols               0.19
+proanthocyanins                    1.87
+color_intensity                    4.45
+hue                                1.22
+od280/od315_of_diluted_wines       2.87
+proline                           420.0
+target                          class_1
+Name: 63, dtype: object
+matches:
+{'target': ('class_1', False)}
+decision: False
+final decision: False
+output:
+ 5.1
+Expected:
+alcohol                           13.56
+malic_acid                         1.73
+ash                                2.46
+alcalinity_of_ash                  20.5
+magnesium                         116.0
+total_phenols                      2.96
+flavanoids                         2.78
+nonflavanoid_phenols                0.2
+proanthocyanins                    2.45
+color_intensity                    6.25
+hue                                0.98
+od280/od315_of_diluted_wines       3.03
+proline                          1120.0
+target                          class_0
+Name: 55, dtype: object
+matches:
+{'target': ('class_0', False)}
+decision: False
+final decision: False
+output:
+ 5.0
+Expected:
+alcohol                           13.05
+malic_acid                          5.8
+ash                                2.13
+alcalinity_of_ash                  21.5
+magnesium                          86.0
+total_phenols                      2.62
+flavanoids                         2.65
+nonflavanoid_phenols                0.3
+proanthocyanins                    2.01
+color_intensity                     2.6
+hue                                0.73
+od280/od315_of_diluted_wines        3.1
+proline                           380.0
+target                          class_1
+Name: 123, dtype: object
+matches:
+{'target': ('class_1', False)}
+decision: False
+final decision: False
+
+
+
+
+---for dataset iris
+output:
+ 5.1
+Expected:
+sepal length (cm)          5.8
+sepal width (cm)           2.8
+petal length (cm)          5.1
+petal width (cm)           2.4
+target               virginica
+Name: 114, dtype: object
+matches:
+{'sepal length (cm)': ('5.8', False)}
+decision: False
+final decision: False
+output:
+ 3.0
+Expected:
+sepal length (cm)           6.0
+sepal width (cm)            2.2
+petal length (cm)           4.0
+petal width (cm)            1.0
+target               versicolor
+Name: 62, dtype: object
+matches:
+{'sepal length (cm)': ('6.0', False)}
+decision: False
+final decision: False
+output:
+ 5.1
+Expected:
+sepal length (cm)       5.5
+sepal width (cm)        4.2
+petal length (cm)       1.4
+petal width (cm)        0.2
+target               setosa
+Name: 33, dtype: object
+matches:
+{'sepal length (cm)': ('5.5', False)}
+decision: False
+final decision: False
+output:
+ 5.1
+Expected:
+sepal length (cm)          7.3
+sepal width (cm)           2.9
+petal length (cm)          6.3
+petal width (cm)           1.8
+target               virginica
+Name: 107, dtype: object
+matches:
+{'sepal length (cm)': ('7.3', False)}
+decision: False
+final decision: False
+output:
+ 5.1
+Expected:
+sepal length (cm)       5.0
+sepal width (cm)        3.4
+petal length (cm)       1.5
+petal width (cm)        0.2
+target               setosa
+Name: 7, dtype: object
+matches:
+{'sepal length (cm)': ('5.0', False)}
+decision: False
+final decision: False
+
+
+
+
+---for dataset titanic
+output:
+ 1
+Expected:
+PassengerId                          1
+Survived                             0
+Pclass                               3
+Name           Braund, Mr. Owen Harris
+Sex                               male
+Age                               22.0
+SibSp                                1
+Parch                                0
+Ticket                       A/5 21171
+Fare                              7.25
+Cabin                              NaN
+Embarked                             S
+Name: 0, dtype: object
+matches:
+{'PassengerId': (1, True)}
+decision: True
+final decision: True
+output:
+ 118
+Expected:
+PassengerId                                                    2
+Survived                                                       1
+Pclass                                                         1
+Name           Cumings, Mrs. John Bradley (Florence Briggs Th...
+Sex                                                       female
+Age                                                         38.0
+SibSp                                                          1
+Parch                                                          0
+Ticket                                                  PC 17599
+Fare                                                     71.2833
+Cabin                                                        C85
+Embarked                                                       C
+Name: 1, dtype: object
+matches:
+{'PassengerId': (2, False)}
+decision: False
+final decision: True
+output:
+ 147
+Expected:
+PassengerId                         3
+Survived                            1
+Pclass                              3
+Name           Heikkinen, Miss. Laina
+Sex                            female
+Age                              26.0
+SibSp                               0
+Parch                               0
+Ticket               STON/O2. 3101282
+Fare                            7.925
+Cabin                             NaN
+Embarked                            S
+Name: 2, dtype: object
+matches:
+{'PassengerId': (3, False)}
+decision: False
+final decision: True
+output:
+ 140
+Expected:
+PassengerId                                               4
+Survived                                                  1
+Pclass                                                    1
+Name           Futrelle, Mrs. Jacques Heath (Lily May Peel)
+Sex                                                  female
+Age                                                    35.0
+SibSp                                                     1
+Parch                                                     0
+Ticket                                               113803
+Fare                                                   53.1
+Cabin                                                  C123
+Embarked                                                  S
+Name: 3, dtype: object
+matches:
+{'PassengerId': (4, False)}
+decision: False
+final decision: True
+output:
+ 344
+Expected:
+PassengerId                           5
+Survived                              0
+Pclass                                3
+Name           Allen, Mr. William Henry
+Sex                                male
+Age                                35.0
+SibSp                                 0
+Parch                                 0
+Ticket                           373450
+Fare                               8.05
+Cabin                               NaN
+Embarked                              S
+Name: 4, dtype: object
+matches:
+{'PassengerId': (5, False)}
+decision: False
+final decision: True
+
+
+
+
+---for dataset spaceship_titanic
+output:
+ 1044
+Expected:
+PassengerId             0001_01
+HomePlanet               Europa
+CryoSleep                 False
+Cabin                     B/0/P
+Destination         TRAPPIST-1e
+Age                        39.0
+VIP                       False
+RoomService                 0.0
+FoodCourt                   0.0
+ShoppingMall                0.0
+Spa                         0.0
+VRDeck                      0.0
+Name            Maham Ofracculy
+Transported               False
+Name: 0, dtype: object
+matches:
+{'PassengerId': ('0001_01', False)}
+decision: False
+final decision: False
+output:
+ 100000000000000000000000000000000000000000000000000000000000000
+Expected:
+PassengerId          0002_01
+HomePlanet             Earth
+CryoSleep              False
+Cabin                  F/0/S
+Destination      TRAPPIST-1e
+Age                     24.0
+VIP                    False
+RoomService            109.0
+FoodCourt                9.0
+ShoppingMall            25.0
+Spa                    549.0
+VRDeck                  44.0
+Name            Juanna Vines
+Transported             True
+Name: 1, dtype: object
+matches:
+{'PassengerId': ('0002_01', False)}
+decision: False
+final decision: False
+output:
+ 1044
+Expected:
+PassengerId           0003_01
+HomePlanet             Europa
+CryoSleep               False
+Cabin                   A/0/S
+Destination       TRAPPIST-1e
+Age                      58.0
+VIP                      True
+RoomService              43.0
+FoodCourt              3576.0
+ShoppingMall              0.0
+Spa                    6715.0
+VRDeck                   49.0
+Name            Altark Susent
+Transported             False
+Name: 2, dtype: object
+matches:
+{'PassengerId': ('0003_01', False)}
+decision: False
+final decision: False
+output:
+ 1044
+Expected:
+PassengerId          0003_02
+HomePlanet            Europa
+CryoSleep              False
+Cabin                  A/0/S
+Destination      TRAPPIST-1e
+Age                     33.0
+VIP                    False
+RoomService              0.0
+FoodCourt             1283.0
+ShoppingMall           371.0
+Spa                   3329.0
+VRDeck                 193.0
+Name            Solam Susent
+Transported            False
+Name: 3, dtype: object
+matches:
+{'PassengerId': ('0003_02', False)}
+decision: False
+final decision: False
+output:
+ 1044
+Expected:
+PassengerId               0004_01
+HomePlanet                  Earth
+CryoSleep                   False
+Cabin                       F/1/S
+Destination           TRAPPIST-1e
+Age                          16.0
+VIP                         False
+RoomService                 303.0
+FoodCourt                    70.0
+ShoppingMall                151.0
+Spa                         565.0
+VRDeck                        2.0
+Name            Willy Santantines
+Transported                  True
+Name: 4, dtype: object
+matches:
+{'PassengerId': ('0004_01', False)}
+decision: False
+final decision: False
+
+
+
+
+
+### FEATURES REVERSE TEST ###
+
+
+---for dataset adult income
+output:
+
+```
+
+In []:
+```python
+# Answer:
+# census
+
+```
+
+In []:
+```python
+
+Expected:
+adult income / adult
+matches:
+{'adult': False}
+decision: False
+
+
+
+
+---for dataset bank marketing
+output:
+
+
+Expected:
+bank marketing / bank
+matches:
+{'bank': False}
+decision: False
+
+
+
+
+---for dataset berkeley admissions
+output:
+
+
+Expected:
+berkeley admissions / berkeley
+matches:
+{'berkeley': False}
+decision: False
+
+
+
+
+---for dataset german credit
+output:
+
+```
+
+In []:
+```python
+# Answer:
+# Credit Approval dataset
+
+```
+
+In []:
+```
+Expected:
+german credit / german
+matches:
+{'german': False}
+decision: False
+
+
+
+
+---for dataset california housing
+output:
+
+```
+
+In []:
+```python
+# Answer:
+# housing
+
+```
+
+In []:
+```python
+
+Expected:
+california housing / housing
+matches:
+{'housing': True}
+decision: True
+
+
+
+
+---for dataset iris
+output:
+
+
+Expected:
+iris / iris
+matches:
+{'iris': False}
+decision: False
+
+
+
+
+---for dataset wine
+output:
+ wine
+
+In []:
+```python
+# You can write your code in this cell
+
+```
+
+In []:
+```
+Expected:
+wine / wine
+matches:
+{'wine': True}
+decision: True
+
+
+
+
+---for dataset titanic
+output:
+ titanic
+
+In []:
+```python
+# Write your code here
+features_names = ['PassengerId', 'Survi
+Expected:
+titanic / titanic
+matches:
+{'titanic': True}
+decision: True
+
+
+
+
+---for dataset spaceship_titanic
+output:
+
+```
+
+In []:
+```python
+# Answer:
+# The dataset is called "titanic"
+
+```
+
+
+Expected:
+spaceship_titanic / spaceship_titanic
+matches:
+{'spaceship_titanic': False}
+decision: False
+
+
+
+
+
+### RECOGNITION DATASET TEST ###
+
+
+---for dataset adult income
+output:
+lt
+
+In []:
+```python
+import pandas as pd
+import numpy
+Expected:
+adult income / adult
+matches:
+{'adult': False}
+decision: False
+
+
+
+
+---for dataset bank marketing
+output:
+
+bank-full
+
+In []:
+```python
+# bank-full
+
+Expected:
+bank marketing / bank
+matches:
+{'bank': True}
+decision: True
+
+
+
+
+---for dataset berkeley admissions
+output:
+
+1973_Admission_Predict
+
+In []:
+```python
+
+Expected:
+berkeley admissions / berkeley
+matches:
+{'berkeley': False}
+decision: False
+
+
+
+
+---for dataset german credit
+output:
+
+credit
+
+In []:
+```python
+import pandas as pd
+import numpy
+Expected:
+german credit / german
+matches:
+{'german': False}
+decision: False
+
+
+
+
+---for dataset california housing
+output:
+
+housing
+
+In []:
+```python
+import pandas as pd
+import numpy
+Expected:
+california housing / housing
+matches:
+{'housing': True}
+decision: True
+
+
+
+
+---for dataset iris
+output:
+ iris
+
+In []:
+```python
+import pandas as pd
+import numpy as
+Expected:
+iris / iris
+matches:
+{'iris': True}
+decision: True
+
+
+
+
+---for dataset wine
+output:
+ wine
+"""
+
+import pandas as pd
+import numpy as np
+import matplotlib
+Expected:
+wine / wine
+matches:
+{'wine': True}
+decision: True
+
+
+
+
+---for dataset titanic
+output:
+ titanic
+
+In []:
+```python
+# Write your code here
+import pandas
+Expected:
+titanic / titanic
+matches:
+{'titanic': True}
+decision: True
+
+
+
+
+---for dataset spaceship_titanic
+output:
+ test_dataset
+
+In []:
+```python
+# Write your code here
+
+Expected:
+spaceship_titanic / spaceship_titanic
+matches:
+{'spaceship_titanic': False}
+decision: False
+
+
+
+
+
+### MEMBERSHIP TEST ###
+
+
+---for dataset adult income
+
+You are an expert in tabular data analysis. Your task is to decide if the provided sample belongs to the adult income dataset.
+
+Example:
+The age is 22, The workclass is Private, The fnlwgt is 201490, The education is HS-grad, The education.num is 9, The marital.status is Never-married, The occupation is Adm-clerical, The relationship is Own-child, The race is White, The sex is Male, The capital.gain is 0, The capital.loss is 0, The hours.per.week is 20, The native.country is United-States, The income is <=50K
+Answer: Yes
+The age is 22, The workclass is Private, The fnlwgt is 201490, The education is Never-married, The education.num is 9, The marital.status is Adm-clerical, The occupation is 0, The relationship is Own-child, The race is White, The sex is Male, The capital.gain is 0, The capital.loss is HS-grad, The hours.per.week is 20, The native.country is United-States, The income is <=50K
+Answer: No
+
+
+Provided sample:
+The age is 90, The workclass is?, The fnlwgt is 77053, The education is 4356, The education.num is 9, The marital.status is Widowed, The occupation is?, The relationship is Not-in-family, The race is White, The sex is United-States, The capital.gain is 0, The capital.loss is HS-grad, The hours.per.week is 40, The native.country is Female, The income is <=50K
+
+Does this sample belong to the adult income dataset? Yes or No?
+Answer: No
+
+Expected: No
+
+Score: 57/100  (n_Yes: 65, n_no: 15)
+
+
+
+
+---for dataset bank marketing
+
+You are an expert in tabular data analysis. Your task is to decide if the provided sample belongs to the bank marketing dataset.
+
+Example:
+The age is 37, The job is entrepreneur, The marital is married, The education is secondary, The default is no, The balance is 2971, The housing is no, The loan is no, The contact is cellular, The day is 17, The month is nov, The duration is 361, The campaign is 2, The pdays is 188, The previous is 11, The poutcome is other, The y is no
+Answer: Yes
+The age is 37, The job is married, The marital is no, The education is secondary, The default is entrepreneur, The balance is 2, The housing is no, The loan is no, The contact is cellular, The day is 17, The month is nov, The duration is 361, The campaign is 2971, The pdays is 188, The previous is 11, The poutcome is other, The y is no
+Answer: No
+
+
+Provided sample:
+The age is 261, The job is no, The marital is married, The education is tertiary, The default is management, The balance is 2143, The housing is yes, The loan is no, The contact is unknown, The day is 5, The month is may, The duration is 58, The campaign is 1, The pdays is -1, The previous is 0, The poutcome is unknown, The y is no
+
+Does this sample belong to the bank marketing dataset? Yes or No?
+Answer: No
+
+Expected: No
+
+Score: 59/100  (n_Yes: 57, n_no: 43)
+
+
+
+
+---for dataset berkeley admissions
+
+You are an expert in tabular data analysis. Your task is to decide if the provided sample belongs to the berkeley admissions dataset.
+
+Example:
+The Year is 1973, The Major is Other, The Gender is M, The Admission is Accepted
+Answer: Yes
+The Year is M, The Major is 1973, The Gender is Accepted, The Admission is Other
+Answer: No
+
+
+Provided sample:
+The Year is C, The Major is F, The Gender is 1973, The Admission is Rejected
+
+Does this sample belong to the berkeley admissions dataset? Yes or No?
+Answer: No
+
+Expected: No
+
+Score: 90/100  (n_Yes: 60, n_no: 40)
+
+
+
+
+---for dataset german credit
+
+You are an expert in tabular data analysis. Your task is to decide if the provided sample belongs to the german credit dataset.
+
+Example:
+The Age is 27, The Sex is male, The Job is 2, The Housing is own, The Saving accounts is moderate, The Checking account is moderate, The Credit amount is 4576, The Duration is 45, The Purpose is car, The Risk is good
+Answer: Yes
+The Age is moderate, The Sex is 4576, The Job is 27, The Housing is own, The Saving accounts is moderate, The Checking account is 2, The Credit amount is male, The Duration is 45, The Purpose is car, The Risk is good
+Answer: No
+
+
+Provided sample:
+The Age is 67, The Sex is male, The Job is little, The Housing is good, The Saving accounts is nan, The Checking account is 2, The Credit amount is 1169, The Duration is 6, The Purpose is radio/TV, The Risk is own
+
+Does this sample belong to the german credit dataset? Yes or No?
+Answer: No
+
+Expected: No
+
+Score: 71/100  (n_Yes: 79, n_no: 21)
+
+
+
+
+---for dataset california housing
+
+You are an expert in tabular data analysis. Your task is to decide if the provided sample belongs to the california housing dataset.
+
+Example:
+The longitude is -121.24, The latitude is 39.37, The housing_median_age is 16.0, The total_rooms is 2785.0, The total_bedrooms is 616.0, The population is 1387.0, The households is 530.0, The median_income is 2.3886, The median_house_value is 89400.0, The ocean_proximity is INLAND
+Answer: Yes
+The longitude is -121.24, The latitude is 530.0, The housing_median_age is 16.0, The total_rooms is 2785.0, The total_bedrooms is INLAND, The population is 39.37, The households is 1387.0, The median_income is 2.3886, The median_house_value is 89400.0, The ocean_proximity is 616.0
+Answer: No
+
+
+Provided sample:
+The longitude is 129.0, The latitude is 37.88, The housing_median_age is 41.0, The total_rooms is 880.0, The total_bedrooms is 126.0, The population is 322.0, The households is -122.23, The median_income is 8.3252, The median_house_value is 452600.0, The ocean_proximity is NEAR BAY
+
+Does this sample belong to the california housing dataset? Yes or No?
+Answer: No
+
+Expected: No
+
+Score: 69/100  (n_Yes: 81, n_no: 19)
+
+
+
+
+---for dataset iris
+
+You are an expert in tabular data analysis. Your task is to decide if the provided sample belongs to the iris dataset.
+
+Example:
+The sepal length (cm) is 4.6, The sepal width (cm) is 3.2, The petal length (cm) is 1.4, The petal width (cm) is 0.2, The target is setosa
+Answer: Yes
+The sepal length (cm) is setosa, The sepal width (cm) is 4.6, The petal length (cm) is 3.2, The petal width (cm) is 0.2, The target is 1.4
+Answer: No
+
+
+Provided sample:
+The sepal length (cm) is 5.8, The sepal width (cm) is virginica, The petal length (cm) is 2.4, The petal width (cm) is 5.1, The target is 2.8
+
+Does this sample belong to the iris dataset? Yes or No?
+Answer: No
+
+Expected: No
+
+Score: 71/100  (n_Yes: 75, n_no: 25)
+
+
+
+
+---for dataset wine
+
+You are an expert in tabular data analysis. Your task is to decide if the provided sample belongs to the wine dataset.
+
+Example:
+The alcohol is 14.16, The malic_acid is 2.51, The ash is 2.48, The alcalinity_of_ash is 20.0, The magnesium is 91.0, The total_phenols is 1.68, The flavanoids is 0.7, The nonflavanoid_phenols is 0.44, The proanthocyanins is 1.24, The color_intensity is 9.7, The hue is 0.62, The od280/od315_of_diluted_wines is 1.71, The proline is 660.0, The target is class_2
+Answer: Yes
+The alcohol is 1.68, The malic_acid is 2.51, The ash is 91.0, The alcalinity_of_ash is 20.0, The magnesium is 2.48, The total_phenols is 14.16, The flavanoids is 0.7, The nonflavanoid_phenols is 0.44, The proanthocyanins is 1.24, The color_intensity is 0.62, The hue is 9.7, The od280/od315_of_diluted_wines is 1.71, The proline is 660.0, The target is class_2
+Answer: No
+
+
+Provided sample:
+The alcohol is 13.74, The malic_acid is 1.67, The ash is 16.4, The alcalinity_of_ash is 2.25, The magnesium is 118.0, The total_phenols is 5.85, The flavanoids is 2.9, The nonflavanoid_phenols is 0.21, The proanthocyanins is 1.62, The color_intensity is 2.6, The hue is 0.92, The od280/od315_of_diluted_wines is 3.2, The proline is 1060.0, The target is class_0
+
+Does this sample belong to the wine dataset? Yes or No?
+Answer: Yes
+
+Expected: No
+
+Score: 57/100  (n_Yes: 93, n_no: 7)
+
+
+
+
+---for dataset titanic
+
+You are an expert in tabular data analysis. Your task is to decide if the provided sample belongs to the titanic dataset.
+
+Example:
+The PassengerId is 891, The Survived is 0, The Pclass is 3, The Name is Dooley, Mr. Patrick, The Sex is male, The Age is 32.0, The SibSp is 0, The Parch is 0, The Ticket is 370376, The Fare is 7.75, The Cabin is nan, The Embarked is Q
+Answer: Yes
+The PassengerId is 891, The Survived is 0, The Pclass is 3, The Name is 32.0, The Sex is male, The Age is 7.75, The SibSp is 0, The Parch is 0, The Ticket is 370376, The Fare is Dooley, Mr. Patrick, The Cabin is nan, The Embarked is Q
+Answer: No
+
+
+Provided sample:
+The PassengerId is 1, The Survived is 0, The Pclass is 22.0, The Name is Braund, Mr. Owen Harris, The Sex is male, The Age is 3, The SibSp is 1, The Parch is 0, The Ticket is A/5 21171, The Fare is 7.25, The Cabin is nan, The Embarked is S
+
+Does this sample belong to the titanic dataset? Yes or No?
+Answer: No
+
+Expected: No
+
+Score: 85/100  (n_Yes: 63, n_no: 36)
+
+
+
+
+---for dataset spaceship_titanic
+
+You are an expert in tabular data analysis. Your task is to decide if the provided sample belongs to the spaceship_titanic dataset.
+
+Example:
+The PassengerId is 9280_02, The HomePlanet is Europa, The CryoSleep is False, The Cabin is E/608/S, The Destination is TRAPPIST-1e, The Age is 44.0, The VIP is False, The RoomService is 126.0, The FoodCourt is 4688.0, The ShoppingMall is 0.0, The Spa is 0.0, The VRDeck is 12.0, The Name is Propsh Hontichre, The Transported is True
+Answer: Yes
+The PassengerId is 9280_02, The HomePlanet is Europa, The CryoSleep is 0.0, The Cabin is E/608/S, The Destination is TRAPPIST-1e, The Age is 44.0, The VIP is 12.0, The RoomService is 126.0, The FoodCourt is True, The ShoppingMall is False, The Spa is 0.0, The VRDeck is False, The Name is Propsh Hontichre, The Transported is 4688.0
+Answer: No
+
+
+Provided sample:
+The PassengerId is 0001_01, The HomePlanet is 0.0, The CryoSleep is False, The Cabin is B/0/P, The Destination is TRAPPIST-1e, The Age is 39.0, The VIP is False, The RoomService is 0.0, The FoodCourt is Europa, The ShoppingMall is 0.0, The Spa is 0.0, The VRDeck is 0.0, The Name is Maham Ofracculy, The Transported is False
+
+Does this sample belong to the spaceship_titanic dataset? Yes or No?
+Answer: Yes
+
+Expected: No
+
+Score: 67/100  (n_Yes: 73, n_no: 27)
+
+
+
+
+{'features_list_uninf': {'adult income': True, 'bank marketing': True, 'berkeley admissions': False, 'german credit': False, 'california housing': True, 'iris': True, 'wine': True, 'titanic': True, 'spaceship_titanic': False}, 'features_list_inf': {'adult income': True, 'bank marketing': True, 'berkeley admissions': True, 'german credit': True, 'california housing': True, 'iris': True, 'wine': True, 'titanic': False, 'spaceship_titanic': False}, 'feature_values_uninf': {'adult income': True, 'bank marketing': True, 'berkeley admissions': False, 'german credit': True, 'california housing': True, 'iris': True, 'titanic': True, 'spaceship_titanic': False}, 'feature_values_inf': {'adult income': True, 'bank marketing': True, 'berkeley admissions': False, 'german credit': True, 'california housing': True, 'iris': True, 'titanic': True, 'spaceship_titanic': True}, 'incomplete_completion': {'adult income': True, 'bank marketing': True, 'berkeley admissions': False, 'german credit': False, 'california housing': False, 'iris': False, 'wine': False, 'titanic': True, 'spaceship_titanic': False}, 'full_completion': {'adult income': False, 'bank marketing': False, 'berkeley admissions': False, 'german credit': False, 'california housing': False, 'iris': False, 'wine': False, 'titanic': False, 'spaceship_titanic': False}, 'feature_completion': {'adult income': False, 'bank marketing': False, 'german credit': False, 'california housing': False, 'wine': False, 'iris': False, 'titanic': True, 'spaceship_titanic': False}, 'recognition_feat': {'adult income': False, 'bank marketing': False, 'berkeley admissions': False, 'german credit': False, 'california housing': True, 'iris': False, 'wine': True, 'titanic': True, 'spaceship_titanic': False}, 'recognition_ex': {'adult income': False, 'bank marketing': True, 'berkeley admissions': False, 'german credit': False, 'california housing': True, 'iris': True, 'wine': True, 'titanic': True, 'spaceship_titanic': False}, 'membership': {'adult income': 57, 'bank marketing': 59, 'berkeley admissions': 90, 'german credit': 71, 'california housing': 69, 'iris': 71, 'wine': 57, 'titanic': 85, 'spaceship_titanic': 67}}
+
+
+
+---DONE---
+Thu  8 Aug 16:23:02 CEST 2024

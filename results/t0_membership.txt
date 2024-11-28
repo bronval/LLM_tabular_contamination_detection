@@ -1,0 +1,106 @@
+Wed 20 Nov 13:42:49 CET 2024
+---LLM: t0---
+You are using the default legacy behaviour of the <class 'transformers.models.t5.tokenization_t5.T5Tokenizer'>. This is expected, and simply means that the `legacy` (previous) behavior will be used so nothing changes for you. If you want to use the new behaviour, set `legacy=False`. This should only be set if you understand what it means, and thoroughly read the reason why this was added as explained in https://github.com/huggingface/transformers/pull/24565
+Some parameters are on the meta device device because they were offloaded to the cpu.
+
+### MEMBERSHIP TEST ###
+
+
+The attention mask is not set and cannot be inferred from input because pad token is same as eos token. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+---for dataset adult income
+No
+Expected: No
+
+Score: 53/100  (n_Yes: 9, n_no: 91)
+
+
+
+
+---for dataset bank marketing
+No
+Expected: No
+
+Score: 50/100  (n_Yes: 0, n_no: 100)
+
+
+
+
+---for dataset german credit
+No
+Expected: No
+
+Score: 51/100  (n_Yes: 1, n_no: 99)
+
+
+
+
+---for dataset california housing
+No
+Expected: No
+
+Score: 49/100  (n_Yes: 1, n_no: 99)
+
+
+
+
+---for dataset iris
+No
+Expected: No
+
+Score: 56/100  (n_Yes: 10, n_no: 90)
+
+
+
+
+---for dataset wine
+No
+Expected: No
+
+Score: 50/100  (n_Yes: 0, n_no: 100)
+
+
+
+
+---for dataset titanic
+No
+Expected: No
+
+Score: 50/100  (n_Yes: 0, n_no: 100)
+
+
+
+
+---for dataset spaceship_titanic
+No
+Expected: No
+
+Score: 54/100  (n_Yes: 8, n_no: 92)
+
+
+
+
+---for dataset thyroid disease recurrence
+No
+Expected: No
+
+Score: 56/100  (n_Yes: 6, n_no: 94)
+
+
+
+
+{'membership': {'adult income': 53, 'bank marketing': 50, 'german credit': 51, 'california housing': 49, 'iris': 56, 'wine': 50, 'titanic': 50, 'spaceship_titanic': 54, 'thyroid disease recurrence': 56}}
+mean: 52.111111111111114
+                            value
+adult income                   53
+bank marketing                 50
+german credit                  51
+california housing             49
+iris                           56
+wine                           50
+titanic                        50
+spaceship_titanic              54
+thyroid disease recurrence     56
+
+
+---DONE---
+Wed 20 Nov 14:25:51 CET 2024

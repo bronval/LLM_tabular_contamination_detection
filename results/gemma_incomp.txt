@@ -1,0 +1,1098 @@
+Tue 22 Oct 09:36:40 CEST 2024
+---LLM: gemma---
+`config.hidden_act` is ignored, you should use `config.hidden_activation` instead.
+Gemma's activation function will be set to `gelu_pytorch_tanh`. Please, use
+`config.hidden_activation` if you want to override this behaviour.
+See https://github.com/huggingface/transformers/pull/29402 for more details.
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:05<00:15,  5.15s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:08<00:08,  4.08s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:11<00:03,  3.42s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:12<00:00,  2.55s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:12<00:00,  3.08s/it]
+
+### COMPLETION INCOMPLETE TEST ###
+
+
+The attention mask is not set and cannot be inferred from input because pad token is same as eos token. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+---for dataset adult income
+output:
+, The hours.per.week is 40, The native.country is United-States, The income is <=50K
+Expected:
+age                          61
+workclass               Private
+fnlwgt                    95929
+education                   9th
+education.num                 5
+marital.status         Divorced
+occupation        Other-service
+relationship      Not-in-family
+race                      White
+sex                        Male
+capital.gain                  0
+capital.loss                  0
+hours.per.week               40
+native.country    United-States
+income                    <=50K
+Name: 22720, dtype: object
+matches:
+{'hours.per.week': ('40', True), 'native.country': ('United-States', True), 'income': ('<=50K', True)}
+decision: True
+output:
+, The hours.per.week is 40, The native.country is United-States, The income is <=50K
+Expected:
+age                               37
+workclass                    Private
+fnlwgt                        224541
+education               Some-college
+education.num                     10
+marital.status    Married-civ-spouse
+occupation          Transport-moving
+relationship                 Husband
+race                           White
+sex                             Male
+capital.gain                       0
+capital.loss                       0
+hours.per.week                    40
+native.country         United-States
+income                         <=50K
+Name: 23784, dtype: object
+matches:
+{'hours.per.week': ('40', True), 'native.country': ('United-States', True), 'income': ('<=50K', True)}
+decision: True
+output:
+, The hours.per.week is 40, The native.country is United-States, The income is >50K
+Expected:
+age                               49
+workclass                    Private
+fnlwgt                        133969
+education                  Doctorate
+education.num                     16
+marital.status    Married-civ-spouse
+occupation            Prof-specialty
+relationship                 Husband
+race                           Other
+sex                             Male
+capital.gain                       0
+capital.loss                       0
+hours.per.week                    50
+native.country         United-States
+income                          >50K
+Name: 21813, dtype: object
+matches:
+{'hours.per.week': ('50', False), 'native.country': ('United-States', True), 'income': ('>50K', True)}
+decision: False
+output:
+, The hours.per.week is 40, The native.country is United-States, The income is <=50K
+Expected:
+age                            17
+workclass                 Private
+fnlwgt                     159849
+education                    11th
+education.num                   7
+marital.status      Never-married
+occupation        Protective-serv
+relationship            Own-child
+race                        White
+sex                        Female
+capital.gain                    0
+capital.loss                    0
+hours.per.week                 30
+native.country      United-States
+income                      <=50K
+Name: 14710, dtype: object
+matches:
+{'hours.per.week': ('30', False), 'native.country': ('United-States', True), 'income': ('<=50K', True)}
+decision: False
+output:
+, The hours.per.week is 40, The native.country is United-States, The income is >50K
+Expected:
+age                          51
+workclass               Private
+fnlwgt                   216475
+education             Bachelors
+education.num                13
+marital.status    Never-married
+occupation                Sales
+relationship      Not-in-family
+race                      White
+sex                      Female
+capital.gain                  0
+capital.loss               1564
+hours.per.week               43
+native.country    United-States
+income                     >50K
+Name: 1346, dtype: object
+matches:
+{'hours.per.week': ('43', False), 'native.country': ('United-States', True), 'income': ('>50K', True)}
+decision: False
+Final decision: False    (score: 0.4, threshold: 0.5)
+
+
+
+
+---for dataset bank marketing
+output:
+, The previous is 0, The poutcome is unknown, The y is no
+Expected:
+age                    48
+job          entrepreneur
+marital           married
+education         primary
+default                no
+balance               386
+housing                no
+loan                  yes
+contact          cellular
+day                    27
+month                 aug
+duration              185
+campaign                5
+pdays                  -1
+previous                0
+poutcome          unknown
+y                      no
+Name: 23190, dtype: object
+matches:
+{'previous': ('0', True), 'poutcome': ('unknown', True), 'y': ('no', True)}
+decision: True
+output:
+, The previous is 0, The poutcome is unknown, The y is no
+Expected:
+age                    48
+job          entrepreneur
+marital           married
+education         unknown
+default                no
+balance              2550
+housing               yes
+loan                   no
+contact           unknown
+day                    14
+month                 may
+duration              175
+campaign                3
+pdays                  -1
+previous                0
+poutcome          unknown
+y                      no
+Name: 2747, dtype: object
+matches:
+{'previous': ('0', True), 'poutcome': ('unknown', True), 'y': ('no', True)}
+decision: True
+output:
+, The previous is 0, The poutcome is unknown, The y is no
+Expected:
+age                  42
+job          management
+marital         married
+education      tertiary
+default              no
+balance            3713
+housing              no
+loan                 no
+contact        cellular
+day                  19
+month               nov
+duration            709
+campaign              2
+pdays                -1
+previous              0
+poutcome        unknown
+y                   yes
+Name: 26028, dtype: object
+matches:
+{'previous': ('0', True), 'poutcome': ('unknown', True), 'y': ('yes', False)}
+decision: False
+output:
+, The previous is 0, The poutcome is unknown, The y is no
+Expected:
+age                     34
+job          self-employed
+marital            married
+education         tertiary
+default                 no
+balance               2427
+housing                 no
+loan                    no
+contact          telephone
+day                      2
+month                  jun
+duration                50
+campaign                 2
+pdays                  120
+previous                 1
+poutcome             other
+y                       no
+Name: 39870, dtype: object
+matches:
+{'previous': ('1', False), 'poutcome': ('other', False), 'y': ('no', True)}
+decision: False
+output:
+, The previous is 0, The poutcome is unknown, The y is no
+Expected:
+age                 43
+job             admin.
+marital        married
+education    secondary
+default             no
+balance            372
+housing            yes
+loan                no
+contact        unknown
+day                 27
+month              may
+duration           162
+campaign             1
+pdays               -1
+previous             0
+poutcome       unknown
+y                   no
+Name: 6155, dtype: object
+matches:
+{'previous': ('0', True), 'poutcome': ('unknown', True), 'y': ('no', True)}
+decision: True
+Final decision: True    (score: 0.6, threshold: 0.5)
+
+
+
+
+---for dataset berkeley admissions
+output:
+, The Major is Other, The Gender is M, The Admission is Rejected
+Expected:
+Year             1973
+Major           Other
+Gender              M
+Admission    Rejected
+Name: 4332, dtype: object
+matches:
+{'Major': ('Other', True), 'Gender': ('M', True), 'Admission': ('Rejected', True)}
+decision: True
+output:
+, The Major is Other, The Gender is M, The Admission is Rejected
+Expected:
+Year             1973
+Major           Other
+Gender              M
+Admission    Rejected
+Name: 11948, dtype: object
+matches:
+{'Major': ('Other', True), 'Gender': ('M', True), 'Admission': ('Rejected', True)}
+decision: True
+output:
+, The Major is Other, The Gender is M, The Admission is Rejected
+Expected:
+Year             1973
+Major               F
+Gender              M
+Admission    Rejected
+Name: 7623, dtype: object
+matches:
+{'Major': ('F', False), 'Gender': ('M', True), 'Admission': ('Rejected', True)}
+decision: False
+output:
+, The Major is Other, The Gender is M, The Admission is Rejected
+Expected:
+Year             1973
+Major           Other
+Gender              F
+Admission    Rejected
+Name: 1805, dtype: object
+matches:
+{'Major': ('Other', True), 'Gender': ('F', False), 'Admission': ('Rejected', True)}
+decision: False
+output:
+, The Major is Other, The Gender is M, The Admission is Rejected
+Expected:
+Year             1973
+Major           Other
+Gender              F
+Admission    Rejected
+Name: 8461, dtype: object
+matches:
+{'Major': ('Other', True), 'Gender': ('F', False), 'Admission': ('Rejected', True)}
+decision: False
+Final decision: False    (score: 0.4, threshold: 0.5)
+
+
+
+
+---for dataset german credit
+output:
+, The Duration is 36, The Purpose is furniture/equipment, The Risk is good
+Expected:
+Age                                  26
+Sex                              female
+Job                                   3
+Housing                             own
+Saving accounts                  little
+Checking account                    NaN
+Credit amount                     10974
+Duration                             36
+Purpose             furniture/equipment
+Risk                                bad
+Name: 953, dtype: object
+matches:
+{'Duration': ('36', True), 'Purpose': ('furniture/equipment', True), 'Risk': ('bad', False)}
+decision: False
+output:
+, The Duration is 36, The Purpose is furniture/equipment, The Risk is good
+Expected:
+Age                       37
+Sex                   female
+Job                        2
+Housing                 rent
+Saving accounts       little
+Checking account      little
+Credit amount           7685
+Duration                  48
+Purpose             business
+Risk                     bad
+Name: 375, dtype: object
+matches:
+{'Duration': ('48', False), 'Purpose': ('business', False), 'Risk': ('bad', False)}
+decision: False
+output:
+, The Duration is 12, The Purpose is furniture/equipment, The Risk is good
+Expected:
+Age                       53
+Sex                     male
+Job                        2
+Housing                  own
+Saving accounts          NaN
+Checking account         NaN
+Credit amount           2424
+Duration                  24
+Purpose             radio/TV
+Risk                    good
+Name: 16, dtype: object
+matches:
+{'Duration': ('24', False), 'Purpose': ('radio/TV', False), 'Risk': ('good', True)}
+decision: False
+output:
+, The Duration is 12, The Purpose is furniture/equipment, The Risk is good
+Expected:
+Age                         66
+Sex                       male
+Job                          1
+Housing                    own
+Saving accounts     quite rich
+Checking account      moderate
+Credit amount              766
+Duration                    12
+Purpose               radio/TV
+Risk                       bad
+Name: 137, dtype: object
+matches:
+{'Duration': ('12', True), 'Purpose': ('radio/TV', False), 'Risk': ('bad', False)}
+decision: False
+output:
+, The Duration is 36, The Purpose is furniture/equipment, The Risk is good
+Expected:
+Age                     29
+Sex                 female
+Job                      2
+Housing                own
+Saving accounts     little
+Checking account    little
+Credit amount         3959
+Duration                15
+Purpose                car
+Risk                   bad
+Name: 858, dtype: object
+matches:
+{'Duration': ('15', False), 'Purpose': ('car', False), 'Risk': ('bad', False)}
+decision: False
+Final decision: False    (score: 0.0, threshold: 0.5)
+
+
+
+
+---for dataset california housing
+output:
+, The median_income is 3.571, The median_house_value is 328100.0, The ocean_proximity is ISLND
+Expected:
+longitude              -122.46
+latitude                 37.79
+housing_median_age        52.0
+total_rooms             2005.0
+total_bedrooms           359.0
+population               847.0
+households               356.0
+median_income           4.1029
+median_house_value    500001.0
+ocean_proximity       NEAR BAY
+Name: 16118, dtype: object
+matches:
+{'median_income': ('4.1029', False), 'median_house_value': ('500001.0', False), 'ocean_proximity': ('NEAR BAY', False)}
+decision: False
+output:
+, The median_income is 5.3821, The median_house_value is 175000.0, The ocean_proximity is <1H OCEAN
+Expected:
+longitude               -117.89
+latitude                  33.87
+housing_median_age         32.0
+total_rooms              1133.0
+total_bedrooms            216.0
+population                693.0
+households                228.0
+median_income            3.3594
+median_house_value     202100.0
+ocean_proximity       <1H OCEAN
+Name: 10225, dtype: object
+matches:
+{'median_income': ('3.3594', False), 'median_house_value': ('202100.0', False), 'ocean_proximity': ('<1H OCEAN', True)}
+decision: False
+output:
+, The median_income is 3.2146, The median_house_value is 266500.0, The ocean_proximity is ISLND
+Expected:
+longitude              -122.18
+latitude                 37.77
+housing_median_age        51.0
+total_rooms             2107.0
+total_bedrooms           471.0
+population              1173.0
+households               438.0
+median_income           3.2552
+median_house_value    120100.0
+ocean_proximity       NEAR BAY
+Name: 308, dtype: object
+matches:
+{'median_income': ('3.2552', False), 'median_house_value': ('120100.0', False), 'ocean_proximity': ('NEAR BAY', False)}
+decision: False
+output:
+, The median_income is 4.3216, The median_house_value is 175000.0, The ocean_proximity is <1H OCEAN
+Expected:
+longitude              -117.72
+latitude                 34.05
+housing_median_age        31.0
+total_rooms             2220.0
+total_bedrooms           526.0
+population              1662.0
+households               472.0
+median_income           2.7321
+median_house_value    104300.0
+ocean_proximity         INLAND
+Name: 13208, dtype: object
+matches:
+{'median_income': ('2.7321', False), 'median_house_value': ('104300.0', False), 'ocean_proximity': ('INLAND', False)}
+decision: False
+output:
+, The median_income is 4.5481, The median_house_value is 255300.0, The ocean_proximity is ISLND
+Expected:
+longitude                -122.36
+latitude                   37.54
+housing_median_age          23.0
+total_rooms               6184.0
+total_bedrooms             747.0
+population                2165.0
+households                 700.0
+median_income            10.1675
+median_house_value      500001.0
+ocean_proximity       NEAR OCEAN
+Name: 16914, dtype: object
+matches:
+{'median_income': ('10.1675', False), 'median_house_value': ('500001.0', False), 'ocean_proximity': ('NEAR OCEAN', False)}
+decision: False
+Final decision: False    (score: 0.0, threshold: 0.5)
+
+
+
+
+---for dataset iris
+output:
+, The petal length (cm) is 5.1, The petal width (cm) is 1.6, The target is virginica
+Expected:
+sepal length (cm)           6.0
+sepal width (cm)            2.7
+petal length (cm)           5.1
+petal width (cm)            1.6
+target               versicolor
+Name: 83, dtype: object
+matches:
+{'petal length (cm)': ('5.1', True), 'petal width (cm)': ('1.6', True), 'target': ('versicolor', False)}
+decision: False
+output:
+, The petal length (cm) is 3.7, The petal width (cm) is 1.6, The target is setosa
+Expected:
+sepal length (cm)           5.5
+sepal width (cm)            2.4
+petal length (cm)           3.7
+petal width (cm)            1.0
+target               versicolor
+Name: 81, dtype: object
+matches:
+{'petal length (cm)': ('3.7', True), 'petal width (cm)': ('1.0', False), 'target': ('versicolor', False)}
+decision: False
+output:
+, The petal length (cm) is 3.7, The petal width (cm) is 1.6, The target is setosa
+Expected:
+sepal length (cm)           5.5
+sepal width (cm)            2.4
+petal length (cm)           3.8
+petal width (cm)            1.1
+target               versicolor
+Name: 80, dtype: object
+matches:
+{'petal length (cm)': ('3.8', False), 'petal width (cm)': ('1.1', False), 'target': ('versicolor', False)}
+decision: False
+output:
+, The petal length (cm) is 1.6, The petal width (cm) is 0.2, The target is setosa
+Expected:
+sepal length (cm)       5.0
+sepal width (cm)        3.4
+petal length (cm)       1.6
+petal width (cm)        0.4
+target               setosa
+Name: 26, dtype: object
+matches:
+{'petal length (cm)': ('1.6', True), 'petal width (cm)': ('0.4', False), 'target': ('setosa', True)}
+decision: False
+output:
+, The petal length (cm) is 1.6, The petal width (cm) is 0.2, The target is setosa
+Expected:
+sepal length (cm)       5.1
+sepal width (cm)        3.8
+petal length (cm)       1.9
+petal width (cm)        0.4
+target               setosa
+Name: 44, dtype: object
+matches:
+{'petal length (cm)': ('1.9', False), 'petal width (cm)': ('0.4', False), 'target': ('setosa', True)}
+decision: False
+Final decision: False    (score: 0.0, threshold: 0.5)
+
+
+
+
+---for dataset wine
+output:
+, The od280/od315_of_diluted_wines is 3.0, The proline is 1035.0, The target is class_1
+Expected:
+alcohol                           13.45
+malic_acid                          3.7
+ash                                 2.6
+alcalinity_of_ash                  23.0
+magnesium                         111.0
+total_phenols                       1.7
+flavanoids                         0.92
+nonflavanoid_phenols               0.43
+proanthocyanins                    1.46
+color_intensity                   10.68
+hue                                0.85
+od280/od315_of_diluted_wines       1.56
+proline                           695.0
+target                          class_2
+Name: 166, dtype: object
+matches:
+{'od280/od315_of_diluted_wines': ('1.56', False), 'proline': ('695.0', False), 'target': ('class_2', False)}
+decision: False
+output:
+, The od280/od315_of_diluted_wines is 3.6, The proline is 1035.0, The target is class_0
+Expected:
+alcohol                           13.74
+malic_acid                         1.67
+ash                                2.25
+alcalinity_of_ash                  16.4
+magnesium                         118.0
+total_phenols                       2.6
+flavanoids                          2.9
+nonflavanoid_phenols               0.21
+proanthocyanins                    1.62
+color_intensity                    5.85
+hue                                0.92
+od280/od315_of_diluted_wines        3.2
+proline                          1060.0
+target                          class_0
+Name: 54, dtype: object
+matches:
+{'od280/od315_of_diluted_wines': ('3.2', False), 'proline': ('1060.0', False), 'target': ('class_0', True)}
+decision: False
+output:
+, The od280/od315_of_diluted_wines is 3.0, The proline is 1035.0, The target is class_0
+Expected:
+alcohol                           14.22
+malic_acid                         3.99
+ash                                2.51
+alcalinity_of_ash                  13.2
+magnesium                         128.0
+total_phenols                       3.0
+flavanoids                         3.04
+nonflavanoid_phenols                0.2
+proanthocyanins                    2.08
+color_intensity                     5.1
+hue                                0.89
+od280/od315_of_diluted_wines       3.53
+proline                           760.0
+target                          class_0
+Name: 39, dtype: object
+matches:
+{'od280/od315_of_diluted_wines': ('3.53', False), 'proline': ('760.0', False), 'target': ('class_0', True)}
+decision: False
+output:
+, The od280/od315_of_diluted_wines is 3.2, The proline is 1035.0, The target is class_1
+Expected:
+alcohol                           14.16
+malic_acid                         2.51
+ash                                2.48
+alcalinity_of_ash                  20.0
+magnesium                          91.0
+total_phenols                      1.68
+flavanoids                          0.7
+nonflavanoid_phenols               0.44
+proanthocyanins                    1.24
+color_intensity                     9.7
+hue                                0.62
+od280/od315_of_diluted_wines       1.71
+proline                           660.0
+target                          class_2
+Name: 172, dtype: object
+matches:
+{'od280/od315_of_diluted_wines': ('1.71', False), 'proline': ('660.0', False), 'target': ('class_2', False)}
+decision: False
+output:
+, The od280/od315_of_diluted_wines is 3.0, The proline is 1035.0, The target is class_1
+Expected:
+alcohol                           12.81
+malic_acid                         2.31
+ash                                 2.4
+alcalinity_of_ash                  24.0
+magnesium                          98.0
+total_phenols                      1.15
+flavanoids                         1.09
+nonflavanoid_phenols               0.27
+proanthocyanins                    0.83
+color_intensity                     5.7
+hue                                0.66
+od280/od315_of_diluted_wines       1.36
+proline                           560.0
+target                          class_2
+Name: 132, dtype: object
+matches:
+{'od280/od315_of_diluted_wines': ('1.36', False), 'proline': ('560.0', False), 'target': ('class_2', False)}
+decision: False
+Final decision: False    (score: 0.0, threshold: 0.5)
+
+
+
+
+---for dataset titanic
+output:
+, The Fare is 103.5000, The Cabin is nan, The Embarked is C
+Expected:
+PassengerId                           178
+Survived                                0
+Pclass                                  1
+Name           Isham, Miss. Ann Elizabeth
+Sex                                female
+Age                                  50.0
+SibSp                                   0
+Parch                                   0
+Ticket                           PC 17595
+Fare                              28.7125
+Cabin                                 C49
+Embarked                                C
+Name: 177, dtype: object
+matches:
+{'Fare': ('28.7125', False), 'Cabin': ('C49', False), 'Embarked': ('C', True)}
+decision: False
+output:
+, The Fare is 7.75, The Cabin is nan, The Embarked is S
+Expected:
+PassengerId                    294
+Survived                         0
+Pclass                           3
+Name           Haas, Miss. Aloisia
+Sex                         female
+Age                           24.0
+SibSp                            0
+Parch                            0
+Ticket                      349236
+Fare                          8.85
+Cabin                          NaN
+Embarked                         S
+Name: 293, dtype: object
+matches:
+{'Fare': ('8.85', False), 'Cabin': ('nan', True), 'Embarked': ('S', True)}
+decision: False
+output:
+, The Fare is 7.25, The Cabin is nan, The Embarked is S
+Expected:
+PassengerId                      612
+Survived                           0
+Pclass                             3
+Name           Jardin, Mr. Jose Neto
+Sex                             male
+Age                              NaN
+SibSp                              0
+Parch                              0
+Ticket            SOTON/O.Q. 3101305
+Fare                            7.05
+Cabin                            NaN
+Embarked                           S
+Name: 611, dtype: object
+matches:
+{'Fare': ('7.05', False), 'Cabin': ('nan', True), 'Embarked': ('S', True)}
+decision: False
+output:
+, The Fare is 7.25, The Cabin is nan, The Embarked is S
+Expected:
+PassengerId                 281
+Survived                      0
+Pclass                        3
+Name           Duane, Mr. Frank
+Sex                        male
+Age                        65.0
+SibSp                         0
+Parch                         0
+Ticket                   336439
+Fare                       7.75
+Cabin                       NaN
+Embarked                      Q
+Name: 280, dtype: object
+matches:
+{'Fare': ('7.75', False), 'Cabin': ('nan', True), 'Embarked': ('Q', False)}
+decision: False
+output:
+, The Fare is 151.5500, The Cabin is C23, The Embarked is S
+Expected:
+PassengerId                                                499
+Survived                                                     0
+Pclass                                                       1
+Name           Allison, Mrs. Hudson J C (Bessie Waldo Daniels)
+Sex                                                     female
+Age                                                       25.0
+SibSp                                                        1
+Parch                                                        2
+Ticket                                                  113781
+Fare                                                    151.55
+Cabin                                                  C22 C26
+Embarked                                                     S
+Name: 498, dtype: object
+matches:
+{'Fare': ('151.55', False), 'Cabin': ('C22 C26', False), 'Embarked': ('S', True)}
+decision: False
+Final decision: False    (score: 0.0, threshold: 0.5)
+
+
+
+
+---for dataset spaceship_titanic
+output:
+, The VRDeck is 0.0, The Name is Nan, The Transported is False
+Expected:
+PassengerId               6158_01
+HomePlanet                  Earth
+CryoSleep                    True
+Cabin                     G/996/S
+Destination         PSO J318.5-22
+Age                          14.0
+VIP                         False
+RoomService                   0.0
+FoodCourt                     0.0
+ShoppingMall                  0.0
+Spa                           0.0
+VRDeck                        0.0
+Name            Dawne Jacobbinson
+Transported                  True
+Name: 5820, dtype: object
+matches:
+{'VRDeck': ('0.0', True), 'Name': ('Dawne Jacobbinson', False), 'Transported': ('True', False)}
+decision: False
+output:
+, The VRDeck is 0.0, The Name is Nan, The Transported is False
+Expected:
+PassengerId           1034_01
+HomePlanet              Earth
+CryoSleep               False
+Cabin                 G/155/P
+Destination       TRAPPIST-1e
+Age                      31.0
+VIP                     False
+RoomService               0.0
+FoodCourt                 0.0
+ShoppingMall              0.0
+Spa                     675.0
+VRDeck                  213.0
+Name            Aliedy Cleman
+Transported             False
+Name: 975, dtype: object
+matches:
+{'VRDeck': ('213.0', False), 'Name': ('Aliedy Cleman', False), 'Transported': ('False', True)}
+decision: False
+output:
+, The VRDeck is 0.0, The Name is Nan, The Transported is False
+Expected:
+PassengerId                8708_01
+HomePlanet                   Earth
+CryoSleep                    False
+Cabin                     G/1413/P
+Destination          PSO J318.5-22
+Age                           28.0
+VIP                          False
+RoomService                  679.0
+FoodCourt                      0.0
+ShoppingMall                   0.0
+Spa                            0.0
+VRDeck                         0.0
+Name            Annard Jacostaffey
+Transported                  False
+Name: 8146, dtype: object
+matches:
+{'VRDeck': ('0.0', True), 'Name': ('Annard Jacostaffey', False), 'Transported': ('False', True)}
+decision: False
+output:
+, The VRDeck is 1000.0, The Name is Nan, The Transported is False
+Expected:
+PassengerId            0395_01
+HomePlanet              Europa
+CryoSleep                False
+Cabin                   B/17/P
+Destination        55 Cancri e
+Age                       31.0
+VIP                       True
+RoomService                0.0
+FoodCourt              11003.0
+ShoppingMall             552.0
+Spa                     8157.0
+VRDeck                  5688.0
+Name            Meropus Hervel
+Transported              False
+Name: 358, dtype: object
+matches:
+{'VRDeck': ('5688.0', False), 'Name': ('Meropus Hervel', False), 'Transported': ('False', True)}
+decision: False
+output:
+, The VRDeck is 0.0, The Name is Nan, The Transported is False
+Expected:
+PassengerId         3704_01
+HomePlanet            Earth
+CryoSleep             False
+Cabin               F/699/S
+Destination     TRAPPIST-1e
+Age                    21.0
+VIP                   False
+RoomService           120.0
+FoodCourt             235.0
+ShoppingMall            0.0
+Spa                     NaN
+VRDeck                  0.0
+Name              Dia Loway
+Transported           False
+Name: 3435, dtype: object
+matches:
+{'VRDeck': ('0.0', True), 'Name': ('Dia Loway', False), 'Transported': ('False', True)}
+decision: False
+Final decision: False    (score: 0.0, threshold: 0.5)
+
+
+
+
+---for dataset thyroid disease recurrence
+output:
+, The Stage is I, The Response is Excellent, The Recurred is No
+Expected:
+Age                                              24
+Gender                                            F
+Smoking                                          No
+Hx Smoking                                       No
+Hx Radiothreapy                                  No
+Thyroid Function                          Euthyroid
+Physical Examination    Single nodular goiter-right
+Adenopathy                                       No
+Pathology                                Follicular
+Focality                                  Uni-Focal
+Risk                                            Low
+T                                                T2
+N                                                N0
+M                                                M0
+Stage                                             I
+Response                                  Excellent
+Recurred                                         No
+Name: 150, dtype: object
+matches:
+{'Stage': ('I', True), 'Response': ('Excellent', True), 'Recurred': ('No', True)}
+decision: True
+output:
+, The Stage is I, The Response is Excellent, The Recurred is No
+Expected:
+Age                                             55
+Gender                                           F
+Smoking                                         No
+Hx Smoking                                      No
+Hx Radiothreapy                                 No
+Thyroid Function                         Euthyroid
+Physical Examination    Single nodular goiter-left
+Adenopathy                                      No
+Pathology                                Papillary
+Focality                                 Uni-Focal
+Risk                                           Low
+T                                               T2
+N                                               N0
+M                                               M0
+Stage                                            I
+Response                                 Excellent
+Recurred                                        No
+Name: 130, dtype: object
+matches:
+{'Stage': ('I', True), 'Response': ('Excellent', True), 'Recurred': ('No', True)}
+decision: True
+output:
+, The Stage is I, The Response is Excellent, The Recurred is No
+Expected:
+Age                                      50
+Gender                                    F
+Smoking                                  No
+Hx Smoking                               No
+Hx Radiothreapy                          No
+Thyroid Function                  Euthyroid
+Physical Examination    Multinodular goiter
+Adenopathy                               No
+Pathology                         Papillary
+Focality                          Uni-Focal
+Risk                                    Low
+T                                        T2
+N                                        N0
+M                                        M0
+Stage                                     I
+Response                      Indeterminate
+Recurred                                 No
+Name: 362, dtype: object
+matches:
+{'Stage': ('I', True), 'Response': ('Indeterminate', False), 'Recurred': ('No', True)}
+decision: False
+output:
+, The Stage is II, The Response is Indeterminate, The Recurred is No
+Expected:
+Age                                        60
+Gender                                      F
+Smoking                                    No
+Hx Smoking                                 No
+Hx Radiothreapy                            No
+Thyroid Function                    Euthyroid
+Physical Examination      Multinodular goiter
+Adenopathy                          Bilateral
+Pathology                           Papillary
+Focality                          Multi-Focal
+Risk                             Intermediate
+T                                          T2
+N                                         N1b
+M                                          M0
+Stage                                       I
+Response                Structural Incomplete
+Recurred                                  Yes
+Name: 64, dtype: object
+matches:
+{'Stage': ('I', False), 'Response': ('Structural Incomplete', False), 'Recurred': ('Yes', False)}
+decision: False
+output:
+, The Stage is III, The Response is Indeterminate, The Recurred is No
+Expected:
+Age                                        53
+Gender                                      M
+Smoking                                    No
+Hx Smoking                                 No
+Hx Radiothreapy                            No
+Thyroid Function                    Euthyroid
+Physical Examination      Multinodular goiter
+Adenopathy                          Bilateral
+Pathology                           Papillary
+Focality                          Multi-Focal
+Risk                             Intermediate
+T                                         T3a
+N                                         N1b
+M                                          M0
+Stage                                       I
+Response                Structural Incomplete
+Recurred                                  Yes
+Name: 326, dtype: object
+matches:
+{'Stage': ('I', False), 'Response': ('Structural Incomplete', False), 'Recurred': ('Yes', False)}
+decision: False
+Final decision: False    (score: 0.4, threshold: 0.5)
+
+
+
+
+---for dataset MathE
+output:
+The Topic is Linear Algebra, The Subtopic is Linear Transformations, The Keywords is Linear application,Linearity
+Expected:
+Student ID                             524
+Student Country                   Portugal
+Question ID                            363
+Type of Answer                           0
+Question Level                       Basic
+Topic              Fundamental Mathematics
+Subtopic               Elementary Geometry
+Keywords                   Platonic solids
+Name: 939, dtype: object
+matches:
+{'Topic': ('Fundamental Mathematics', False), 'Subtopic': ('Elementary Geometry', False), 'Keywords': ('Platonic solids', False)}
+decision: False
+output:
+The Topic is Linear Algebra, The Subtopic is Linear Transformations, The Keywords is Linear application,Linearity
+Expected:
+Student ID                                                       669
+Student Country                                             Portugal
+Question ID                                                      184
+Type of Answer                                                     1
+Question Level                                                 Basic
+Topic                                                     Statistics
+Subtopic                                                  Statistics
+Keywords           Frequency,Sample,Stem and Leaf diagram,Varianc...
+Name: 2615, dtype: object
+matches:
+{'Topic': ('Statistics', False), 'Subtopic': ('Statistics', False), 'Keywords': ('Frequency,Sample,Stem and Leaf diagram,Variance,Standard deviation,Relative frequency', False)}
+decision: False
+output:
+The Topic is Linear Algebra, The Subtopic is Linear Transformations, The Keywords is Linear application,Linearity
+Expected:
+Student ID                           1311
+Student Country                     Italy
+Question ID                           293
+Type of Answer                          1
+Question Level                   Advanced
+Topic                      Linear Algebra
+Subtopic           Linear Transformations
+Keywords                     Range,Kernel
+Name: 2478, dtype: object
+matches:
+{'Topic': ('Linear Algebra', True), 'Subtopic': ('Linear Transformations', True), 'Keywords': ('Range,Kernel', False)}
+decision: False
+output:
+The Topic is Linear Algebra, The Subtopic is Linear Transformations, The Keywords is Linear application,Linearity
+Expected:
+Student ID                                            1220
+Student Country                                   Slovenia
+Question ID                                            436
+Type of Answer                                           1
+Question Level                                       Basic
+Topic                                       Linear Algebra
+Subtopic                                     Vector Spaces
+Keywords           Euclidean spaces,Orthogonal basis,Basis
+Name: 717, dtype: object
+matches:
+{'Topic': ('Linear Algebra', True), 'Subtopic': ('Vector Spaces', False), 'Keywords': ('Euclidean spaces,Orthogonal basis,Basis', False)}
+decision: False
+output:
+The Topic is Linear Algebra, The Subtopic is Linear Transformations, The Keywords is Linear application,Linearity
+Expected:
+Student ID                                                       988
+Student Country                                             Portugal
+Question ID                                                       89
+Type of Answer                                                     1
+Question Level                                                 Basic
+Topic                                                 Linear Algebra
+Subtopic                                              Linear Systems
+Keywords           Square linear system,Inconsistent system,Solut...
+Name: 1944, dtype: object
+matches:
+{'Topic': ('Linear Algebra', True), 'Subtopic': ('Linear Systems', False), 'Keywords': ('Square linear system,Inconsistent system,Solution of linear system,Undetermined solution of linear system,Consistent system', False)}
+decision: False
+Final decision: False    (score: 0.0, threshold: 0.5)
+
+
+
+
+{'incomplete_completion': {'adult income': False, 'bank marketing': True, 'berkeley admissions': False, 'german credit': False, 'california housing': False, 'iris': False, 'wine': False, 'titanic': False, 'spaceship_titanic': False, 'thyroid disease recurrence': False, 'MathE': False}}
+
+
+---DONE---
+Tue 22 Oct 09:44:47 CEST 2024

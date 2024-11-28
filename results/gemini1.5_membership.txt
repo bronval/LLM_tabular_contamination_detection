@@ -1,0 +1,120 @@
+Wed 20 Nov 17:37:55 CET 2024
+---LLM: gemini1.5---
+
+### MEMBERSHIP TEST ###
+
+
+---for dataset adult income
+Answer: Yes
+
+
+Expected: No
+
+Score: 86/100  (n_Yes: 64, n_no: 36)
+
+
+
+
+---for dataset bank marketing
+Answer: Yes
+
+
+Expected: No
+
+Score: 87/100  (n_Yes: 61, n_no: 39)
+
+
+
+
+---for dataset german credit
+Answer: Yes
+
+
+Expected: No
+
+Score: 52/100  (n_Yes: 98, n_no: 2)
+
+
+
+
+---for dataset california housing
+Answer: No
+
+
+Expected: No
+
+Score: 68/100  (n_Yes: 80, n_no: 20)
+
+
+
+
+---for dataset iris
+Answer: No
+
+
+Expected: No
+
+Score: 90/100  (n_Yes: 60, n_no: 40)
+
+
+
+
+---for dataset wine
+Answer: Yes
+
+
+Expected: No
+
+Score: 60/100  (n_Yes: 86, n_no: 14)
+
+
+
+
+---for dataset titanic
+Answer: Yes
+
+Expected: No
+
+Score: 57/100  (n_Yes: 91, n_no: 9)
+
+
+
+
+---for dataset spaceship_titanic
+Answer: Yes
+
+
+Expected: No
+
+Score: 56/100  (n_Yes: 92, n_no: 8)
+
+
+
+
+---for dataset thyroid disease recurrence
+Answer: No
+
+
+Expected: No
+
+Score: 75/100  (n_Yes: 71, n_no: 29)
+
+
+
+
+{'membership': {'adult income': 86, 'bank marketing': 87, 'german credit': 52, 'california housing': 68, 'iris': 90, 'wine': 60, 'titanic': 57, 'spaceship_titanic': 56, 'thyroid disease recurrence': 75}}
+mean: 70.11111111111111
+                            value
+adult income                   86
+bank marketing                 87
+german credit                  52
+california housing             68
+iris                           90
+wine                           60
+titanic                        57
+spaceship_titanic              56
+thyroid disease recurrence     75
+
+
+---DONE---
+Wed 20 Nov 17:49:03 CET 2024

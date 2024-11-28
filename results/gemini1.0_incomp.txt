@@ -1,0 +1,218 @@
+Thu 24 Oct 15:44:19 CEST 2024
+---LLM: gemini1.0---
+
+### COMPLETION INCOMPLETE TEST (random) ###
+
+
+---for dataset thyroid disease recurrence
+output:
+The Stage is I, The Response is Excellent, The Recurred is No
+Expected:
+Age                                 39
+Gender                               F
+Smoking                             No
+Hx Smoking                          No
+Hx Radiothreapy                     No
+Thyroid Function             Euthyroid
+Physical Examination    Diffuse goiter
+Adenopathy                          No
+Pathology                 Hurthel cell
+Focality                     Uni-Focal
+Risk                               Low
+T                                   T2
+N                                   N0
+M                                   M0
+Stage                                I
+Response                 Indeterminate
+Recurred                            No
+Name: 192, dtype: object
+matches:
+{'Stage': ('I', True), 'Response': ('Indeterminate', False), 'Recurred': ('No', True)}
+decision: False
+output:
+The Stage is I, The Response is Excellent, The Recurred is No
+Expected:
+Age                                              30
+Gender                                            F
+Smoking                                          No
+Hx Smoking                                       No
+Hx Radiothreapy                                  No
+Thyroid Function                          Euthyroid
+Physical Examination    Single nodular goiter-right
+Adenopathy                                       No
+Pathology                                 Papillary
+Focality                                  Uni-Focal
+Risk                                            Low
+T                                               T1b
+N                                                N0
+M                                                M0
+Stage                                             I
+Response                                  Excellent
+Recurred                                         No
+Name: 53, dtype: object
+matches:
+{'Stage': ('I', True), 'Response': ('Excellent', True), 'Recurred': ('No', True)}
+decision: True
+output:
+The Stage is II, The Response is Excellent, The Recurred is No
+Expected:
+Age                                             62
+Gender                                           F
+Smoking                                         No
+Hx Smoking                                      No
+Hx Radiothreapy                                 No
+Thyroid Function                         Euthyroid
+Physical Examination    Single nodular goiter-left
+Adenopathy                                      No
+Pathology                             Hurthel cell
+Focality                               Multi-Focal
+Risk                                  Intermediate
+T                                              T3a
+N                                               N0
+M                                               M0
+Stage                                           II
+Response                             Indeterminate
+Recurred                                        No
+Name: 346, dtype: object
+matches:
+{'Stage': ('II', True), 'Response': ('Indeterminate', False), 'Recurred': ('No', True)}
+decision: False
+output:
+The Stage is II, The Response is Excellent, The Recurred is No
+Expected:
+Age                                             26
+Gender                                           F
+Smoking                                         No
+Hx Smoking                                      No
+Hx Radiothreapy                                 No
+Thyroid Function        Subclinical Hypothyroidism
+Physical Examination           Multinodular goiter
+Adenopathy                                   Right
+Pathology                                Papillary
+Focality                                 Uni-Focal
+Risk                                  Intermediate
+T                                              T3a
+N                                              N1a
+M                                               M0
+Stage                                            I
+Response                             Indeterminate
+Recurred                                        No
+Name: 250, dtype: object
+matches:
+{'Stage': ('I', False), 'Response': ('Indeterminate', False), 'Recurred': ('No', True)}
+decision: False
+output:
+The Stage is II, The Response is Excellent, The Recurred is No
+Expected:
+Age                                              28
+Gender                                            F
+Smoking                                         Yes
+Hx Smoking                                       No
+Hx Radiothreapy                                  No
+Thyroid Function           Clinical Hyperthyroidism
+Physical Examination    Single nodular goiter-right
+Adenopathy                                       No
+Pathology                                 Papillary
+Focality                                  Uni-Focal
+Risk                                            Low
+T                                                T2
+N                                               N1a
+M                                                M0
+Stage                                             I
+Response                              Indeterminate
+Recurred                                         No
+Name: 67, dtype: object
+matches:
+{'Stage': ('I', False), 'Response': ('Indeterminate', False), 'Recurred': ('No', True)}
+decision: False
+Final decision: False    (score: 0.2, threshold: 0.5)
+
+
+
+
+---for dataset MathE
+output:
+The Topic is Calculus, The Subtopic is Limits, The Keywords is Limit of a function,Limit of a sequence
+Expected:
+Student ID                                     1220
+Student Country                            Slovenia
+Question ID                                     429
+Type of Answer                                    0
+Question Level                                Basic
+Topic                                Linear Algebra
+Subtopic                              Vector Spaces
+Keywords           Subspace,Linear combination,Span
+Name: 2370, dtype: object
+matches:
+{'Topic': ('Linear Algebra', False), 'Subtopic': ('Vector Spaces', False), 'Keywords': ('Subspace,Linear combination,Span', False)}
+decision: False
+output:
+The Topic is Calculus, The Subtopic is Differential Calculus, The Keywords is Derivative of a function,Chain rule
+Expected:
+Student ID                                                        80
+Student Country                                            Lithuania
+Question ID                                                      530
+Type of Answer                                                     0
+Question Level                                                 Basic
+Topic                                                    Integration
+Subtopic                                          Double Integration
+Keywords           Iterate integrals,Area ,y-simple region (type ...
+Name: 1950, dtype: object
+matches:
+{'Topic': ('Integration', False), 'Subtopic': ('Double Integration', False), 'Keywords': ('Iterate integrals,Area ,y-simple region (type I),Cartesian coordinates', False)}
+decision: False
+output:
+The Topic is Calculus, The Subtopic is Differential Calculus, The Keywords is Derivative of a function,Chain rule
+Expected:
+Student ID                                       387
+Student Country                             Portugal
+Question ID                                      449
+Type of Answer                                     1
+Question Level                              Advanced
+Topic                                 Linear Algebra
+Subtopic                               Vector Spaces
+Keywords           Euclidean spaces,Orthogonal basis
+Name: 2599, dtype: object
+matches:
+{'Topic': ('Linear Algebra', False), 'Subtopic': ('Vector Spaces', False), 'Keywords': ('Euclidean spaces,Orthogonal basis', False)}
+decision: False
+output:
+The Topic is Calculus, The Subtopic is Differential Calculus, The Keywords is Derivative of a function,Chain rule
+Expected:
+Student ID                   81
+Student Country       Lithuania
+Question ID                 362
+Type of Answer                1
+Question Level            Basic
+Topic              Graph Theory
+Subtopic           Graph Theory
+Keywords           Simple graph
+Name: 295, dtype: object
+matches:
+{'Topic': ('Graph Theory', False), 'Subtopic': ('Graph Theory', False), 'Keywords': ('Simple graph', False)}
+decision: False
+output:
+The Topic is Calculus, The Subtopic is Limits, The Keywords is Limit of a function,Limit of a sequence
+Expected:
+Student ID                             455
+Student Country                   Portugal
+Question ID                            507
+Type of Answer                           1
+Question Level                       Basic
+Topic              Fundamental Mathematics
+Subtopic               Elementary Geometry
+Keywords                          Symmetry
+Name: 1170, dtype: object
+matches:
+{'Topic': ('Fundamental Mathematics', False), 'Subtopic': ('Elementary Geometry', False), 'Keywords': ('Symmetry', False)}
+decision: False
+Final decision: False    (score: 0.0, threshold: 0.5)
+
+
+
+
+{'incomplete_completion_random': {'thyroid disease recurrence': False, 'MathE': False}}
+
+
+---DONE---
+Thu 24 Oct 15:44:38 CEST 2024

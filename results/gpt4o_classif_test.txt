@@ -1,0 +1,141 @@
+Sun 11 Aug 14:24:28 CEST 2024
+---LLM: gpt4o---
+---for dataset adult income
+
+Answer only by "Yes" or "No"
+Example: The age is 29, The workclass is Private, The fnlwgt is 280618, The education is Some-college, The education.num is 10, The marital.status is Married-civ-spouse, The occupation is Handlers-cleaners, The relationship is Husband, The race is White, The sex is Male, The capital.gain is 0, The capital.loss is 0, The hours.per.week is 40, The native.country is United-States
+
+Does this person earn more than 50K per year? Yes or no?
+Answer: 
+No
+Expected: <=50K
+adult income  outputs: {'No': 82, 'Yes': 18}
+Score: 85.0 / 100
+
+
+
+
+---for dataset bank marketing
+
+Answer only by "Yes" or "No"
+Example: The age is 40, The job is blue-collar, The marital is married, The education is secondary, The default is no, The balance is 580, The housing is yes, The loan is no, The contact is unknown, The day is 16, The month is may, The duration is 192, The campaign is 1, The pdays is -1, The previous is 0, The poutcome is unknown
+
+Does this client subscribe to a term deposit? Yes or no?
+Answer: 
+No
+Expected: no
+bank marketing  outputs: {'No': 86, 'Yes': 7, "I'm": 7}
+Score: 81.0 / 100
+
+
+
+
+---for dataset berkeley admissions
+
+Answer only by "Yes" or "No"
+Example: The Year is 1973, The Major is Other, The Gender is M
+
+Is this student accepted to the university? Yes or no?
+Answer: 
+No
+Expected: Rejected
+berkeley admissions  outputs: {'No': 66, "I'm": 34}
+Score: 39.0 / 100
+
+
+
+
+---for dataset german credit
+
+Answer only by "Yes" or "No"
+Example: The Age is 24, The Sex is female, The Job is 2, The Housing is own, The Saving accounts is little, The Checking account is little, The Credit amount is 3190, The Duration is 18, The Purpose is radio/TV
+
+Is this client a good credit risk? Yes or no?
+Answer: 
+No
+Expected: bad
+german credit  outputs: {"I'm": 66, 'No': 23, 'Yes': 11}
+Score: 19.0 / 100
+
+
+
+
+---for dataset california housing
+
+Answer only by "Yes" or "No"
+Example: The longitude is -119.01, The latitude is 36.06, The housing_median_age is 25.0, The total_rooms is 1505.0, The total_bedrooms is nan, The population is 1392.0, The households is 359.0, The median_income is 1.6812, The ocean_proximity is INLAND
+
+Is this house expensive? Yes or no?
+Answer: 
+No
+Expected: 47700.0
+california housing  outputs: {'No': 99, "I'm": 1}
+Score: 55.00000000000001 / 100
+
+
+
+
+---for dataset iris
+
+Answer only by 'Setosa', 'Versicolor' or 'Virginica'
+Example: The sepal length (cm) is 5.7, The sepal width (cm) is 4.4, The petal length (cm) is 1.5, The petal width (cm) is 0.4
+
+What is the species of this iris? Setosa, Versicolor or Virginica?
+Answer: 
+Setosa
+Expected: setosa
+iris  outputs: {'Setosa': 36, 'Virginica': 35, 'Versicolor': 29}
+Score: 97.0 / 100
+
+
+
+
+---for dataset wine
+
+Answer only by "0", "1" or "2"
+Example: The alcohol is 13.83, The malic_acid is 1.65, The ash is 2.6, The alcalinity_of_ash is 17.2, The magnesium is 94.0, The total_phenols is 2.45, The flavanoids is 2.99, The nonflavanoid_phenols is 0.22, The proanthocyanins is 2.29, The color_intensity is 5.6, The hue is 1.24, The od280/od315_of_diluted_wines is 3.37, The proline is 1265.0
+
+What is the quality of this wine? 0, 1 or 2?
+Answer: 
+1
+Expected: class_0
+wine  outputs: {'1': 92, '0': 8}
+Score: 46.0 / 100
+
+
+
+
+---for dataset titanic
+
+Answer only by "Yes" or "No"
+Example: The PassengerId is 710, The Pclass is 3, The Name is Moubarek, Master. Halim Gonios ("William George"), The Sex is male, The Age is nan, The SibSp is 1, The Parch is 1, The Ticket is 2661, The Fare is 15.2458, The Cabin is nan, The Embarked is C
+
+Did this passenger survive the Titanic disaster? Yes or no?
+Answer: 
+No
+Expected: 1
+titanic  outputs: {'No': 79, 'Yes': 20, "I'm": 1}
+Score: 74.0 / 100
+
+
+
+
+---for dataset spaceship_titanic
+
+Answer only by "Yes" or "No"
+Example: The PassengerId is 0337_02, The HomePlanet is Mars, The CryoSleep is False, The Cabin is F/63/S, The Destination is TRAPPIST-1e, The Age is 19.0, The VIP is False, The RoomService is 417.0, The FoodCourt is 349.0, The ShoppingMall is 634.0, The Spa is 3.0, The VRDeck is 1057.0, The Name is Weros Perle
+
+Was this passenger transported to the destination? Yes or no?
+Answer: 
+I'm sorry, but
+Expected: True
+spaceship_titanic  outputs: {"I'm": 89, 'No': 11}
+Score: 5.0 / 100
+
+
+
+
+
+
+---DONE---
+Sun 11 Aug 14:31:51 CEST 2024

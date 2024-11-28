@@ -1,0 +1,5782 @@
+Wed 31 Jul 10:26:11 CEST 2024
+---LLM: llama2---
+Downloading shards:   0%|          | 0/2 [00:00<?, ?it/s]Downloading shards:  50%|█████     | 1/2 [00:33<00:33, 33.08s/it]Downloading shards: 100%|██████████| 2/2 [00:46<00:00, 21.25s/it]Downloading shards: 100%|██████████| 2/2 [00:46<00:00, 23.02s/it]
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:15<00:15, 15.08s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:20<00:00,  9.30s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:20<00:00, 10.17s/it]
+
+### FEATURES UNINFORMED TEST ###
+
+
+---for dataset adult income
+output:
+
+
+    - age
+    - education
+    - race
+    - sex
+    - workclass
+    - occupation
+    - class
+    - hours
+    - earnings
+    - capitalgain
+    - hoursparttime
+    - capitalloss
+    - savings
+    - investment
+    - retirement
+    - income
+    - ncash
+    - noninc
+    - comm
+    - taxes
+    - nkeep
+    - nwks
+    - nchild
+    - nchld
+    - nchildb
+    - nchildc
+    - nchildd
+    - nchilde
+    - nchildf
+    - nchildg
+    - nchildh
+    - nchildi
+    - nchildj
+    - nchildk
+    - nchildl
+    - nchildm
+    - nchildn
+    - nchildo
+    - nchildp
+    - nchildq
+    - nchildr
+    - nchilds
+    - nchildt
+    - nchildu
+    - nchildv
+    - nchildw
+    - nchildx
+
+Expected:
+['age', 'workclass', 'fnlwgt', 'education', 'education.num', 'marital.status', 'occupation', 'relationship', 'race', 'sex', 'capital.gain', 'capital.loss', 'hours.per.week', 'native.country', 'income']
+matches:
+{'workclass': True, 'fnlwgt': False, 'education.num': False, 'marital.status': False, 'capital.gain': False, 'capital.loss': False, 'hours.per.week': False, 'native.country': False}
+decision: True
+
+
+
+
+---for dataset bank marketing
+output:
+
+
+    - id: integer
+    - name: string
+    - age: integer
+    - gender: string
+    - income: integer
+    - marital_status: string
+    - zip_code: string
+    - city: string
+    - state: string
+    - country: string
+    - email: string
+    - phone: string
+    - credit_score: integer
+    - credit_history: string
+    - loan_amount: integer
+    - loan_type: string
+    - loan_term: integer
+    - loan_purpose: string
+    - loan_status: string
+    - loan_date: string
+    - loan_payment_date: string
+    - loan_payment_amount: integer
+    - loan_payment_type: string
+    - loan_payment_frequency: string
+    - loan_payment_status: string
+    - loan_payment_date_type: string
+    - loan_payment_date_value: string
+    - loan_payment_date_unit: string
+    - loan_payment_date_interval: string
+    - loan_payment_date_interval_unit: string
+Expected:
+['age', 'job', 'marital', 'education', 'default', 'balance', 'housing', 'loan', 'contact', 'day', 'month', 'duration', 'campaign', 'pdays', 'previous', 'poutcome', 'y']
+matches:
+{'pdays': False, 'poutcome': False}
+decision: False
+
+
+
+
+---for dataset berkeley admissions
+output:
+
+
+  - SAT
+  - SAT_M
+  - SAT_E
+  - SAT_W
+  - SAT_B
+  - SAT_Q
+  - SAT_V
+  - SAT_M_P
+  - SAT_E_P
+  - SAT_W_P
+  - SAT_B_P
+  - SAT_Q_P
+  - SAT_V_P
+  - SAT_M_F
+  - SAT_E_F
+  - SAT_W_F
+  - SAT_B_F
+  - SAT_Q_F
+  - SAT_V_F
+  - SAT_M_R
+  - SAT_E_R
+  - SAT_W_R
+  - SAT_B_R
+  - SAT_Q_R
+  - SAT_V_R
+  - SAT_M_G
+  - SAT_E_G
+  - SAT_W_G
+  - SAT_B_G
+  - SAT_Q_G
+
+Expected:
+['Year', 'Major', 'Gender', 'Admission']
+matches:
+{'Year': False, 'Major': False, 'Gender': False, 'Admission': False}
+decision: False
+
+
+
+
+---for dataset german credit
+output:
+
+
+- id
+- loan_amount
+- loan_duration
+- loan_type
+- loan_status
+- loan_purpose
+- loan_country
+- loan_region
+- loan_city
+- loan_zip
+- loan_address
+- loan_gender
+- loan_salary
+- loan_marital_status
+- loan_employment_status
+- loan_education_level
+- loan_housing_status
+- loan_housing_type
+- loan_housing_year_built
+- loan_housing_area
+- loan_housing_rooms
+- loan_housing_bathrooms
+- loan_housing_garage_cars
+- loan_housing_parking_cars
+- loan_housing_furnished
+- loan_housing_floors
+- loan_housing_floors_area
+- loan_housing_floors_rooms
+- loan_housing_floors_bathrooms
+- loan_housing_floors_garage_cars
+
+Expected:
+['Age', 'Sex', 'Job', 'Housing', 'Saving accounts', 'Checking account', 'Credit amount', 'Duration', 'Purpose', 'Risk']
+matches:
+{'Saving accounts': False, 'Checking account': False, 'Credit amount': False}
+decision: False
+
+
+
+
+---for dataset california housing
+output:
+
+
+    house_price
+    bedrooms
+    bathrooms
+    year_built
+    square_feet
+    lot_size
+    garage_size
+    garage_year_built
+    garage_sqft
+    garage_lot_size
+    garage_year_built
+    garage_sqft
+    garage_lot_size
+    garage_year_built
+    garage_sqft
+    garage_lot_size
+    garage_year_built
+    garage_sqft
+    garage_lot_size
+    garage_year_built
+    garage_sqft
+    garage_lot_size
+    garage_year_built
+    garage_sqft
+    garage_lot_size
+    garage_year_built
+    garage_sqft
+    garage_lot_size
+    garage_year_built
+    garage_sqft
+    garage_lot_size
+    garage_year_built
+    garage_sqft
+    garage_lot_size
+    garage_year_built
+    garage_
+Expected:
+['longitude', 'latitude', 'housing_median_age', 'total_rooms', 'total_bedrooms', 'population', 'households', 'median_income', 'median_house_value', 'ocean_proximity']
+matches:
+{'housing_median_age': False, 'total_rooms': False, 'total_bedrooms': False, 'median_income': False, 'median_house_value': False, 'ocean_proximity': False}
+decision: False
+
+
+
+
+---for dataset iris
+output:
+
+
+  sepal length
+  sepal width
+  petal length
+  petal width
+  class
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Expected:
+['sepal length (cm)', 'sepal width (cm)', 'petal length (cm)', 'petal width (cm)', 'target']
+matches:
+{'sepal length': True, 'sepal width': True, 'petal length': True, 'petal width': True}
+decision: True
+
+
+
+
+---for dataset wine
+output:
+
+
+    - 'year'
+    - 'country'
+    -'region'
+    - 'grapes'
+    - 'variety'
+    - 'vintage'
+    - 'alcohol'
+    -'residual_sugar'
+    - 'chaptalization'
+    - 'total_acidity'
+    -'sulfur_dioxide'
+    - 'ph'
+    - 'citric_acid'
+    -'malic_acid'
+    - 'density'
+    - 'pH'
+    -'sulphates'
+    -'sulphites'
+    -'sulphides'
+    - 'volatile_acidity'
+    - 'volatile_acidity_total'
+    - 'volatile_acidity_acetic'
+    - 'volatile_acidity_acetate'
+    - 'volatile_acidity_propionic'
+    - 'volatile_acidity_butyric'
+    - 'volatile_acidity_isoval
+Expected:
+['alcohol', 'malic_acid', 'ash', 'alcalinity_of_ash', 'magnesium', 'total_phenols', 'flavanoids', 'nonflavanoid_phenols', 'proanthocyanins', 'color_intensity', 'hue', 'od280/od315_of_diluted_wines', 'proline', 'target']
+matches:
+{'malic_acid': True, 'alcalinity_of_ash': False, 'total_phenols': False, 'flavanoids': False, 'nonflavanoid_phenols': False, 'proanthocyanins': False, 'color_intensity': False, 'od280/od315_of_diluted_wines': False, 'proline': False}
+decision: True
+
+
+
+
+---for dataset titanic
+output:
+
+
+    ['PassengerId', 'Survived', 'Pclass', 'Sex', 'Age', 'SibSp', 'Parch', 'Ticket', 'Fare', 'Cabin', 'Embarked', 'Name', 'Surname']
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Expected:
+['PassengerId', 'Survived', 'Pclass', 'Name', 'Sex', 'Age', 'SibSp', 'Parch', 'Ticket', 'Fare', 'Cabin', 'Embarked']
+matches:
+{'PassengerId': True, 'Pclass': True, 'SibSp': True}
+decision: True
+
+
+
+
+---for dataset spaceship_titanic
+output:
+
+
+    ['passenger_id','survived', 'pclass', 'name','sibsp', 'parch', 'ticket', 'cabin', 'embarked','sex', 'age', 'fare', 'parents', 'children', 'infants', 'fare_paid', 'cabin_class', 'adults', 'children', 'infants', 'total_passengers', 'ticket_number', 'brother','sister','mother', 'father', 'boarded', 'embarked_at', 'disembarked_at', 'departure_port', 'arrival_port', 'departure_city', 'arrival_city', 'departure_country', 'arrival_country', 'departure_date', 'arrival_date', 'departure_time', 'arrival_time', 'departure_port_code', 'arrival_port_code', 'departure_country_code', 'arrival_country_code', 'departure_date_utc', 'arrival_date_utc', 'depart
+Expected:
+['HomePlanet', 'CryoSleep', 'Cabin', 'Destination', 'Age', 'VIP', 'RoomService', 'FoodCourt', 'ShoppingMall', 'Spa', 'VRDeck', 'Name', 'Transported']
+matches:
+{'HomePlanet': False, 'CryoSleep': False, 'RoomService': False, 'FoodCourt': False, 'ShoppingMall': False, 'VRDeck': False}
+decision: False
+
+
+
+
+
+### FEATURES INFORMED TEST ###
+
+
+---for dataset adult income
+output:
+ [education, race, marital.status, native.language, hours.worked, native.country, native.continent, native.region, native.city, native.state, native.zip, native.county, native.district, native.village, native.ward, native.neighborhood, native.street, native.house, native.apartment, native.suite, native.room, native.floor, native.building, native.land, native.lot, native.unit, native.area, native.region, native.district, native.ward, native.neighborhood, native.street, native.house, native.apartment, native.suite, native.room, native.floor, native.building, native.land, native.lot, native.unit, native.area, native.region, native.district, native.ward, native.neighborhood, native.street, native.house, native.apartment, native.suite, native.room, native.floor, native.building, native.land, native.lot, native.unit, native.area, native.region, native
+Expected:
+['workclass', 'fnlwgt', 'education', 'education.num', 'marital.status', 'relationship', 'race', 'capital.loss', 'hours.per.week', 'native.country']
+matches:
+{'workclass': False, 'fnlwgt': False, 'education.num': False, 'marital.status': True, 'capital.loss': False, 'hours.per.week': False, 'native.country': True}
+decision: True
+final decision: True
+output:
+ [education, race, occupation, hours, native.language, native.country, capital.gain, sex, age]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Expected:
+['workclass', 'education', 'education.num', 'marital.status', 'occupation', 'relationship', 'race', 'capital.loss', 'hours.per.week', 'income']
+matches:
+{'workclass': False, 'education.num': False, 'marital.status': False, 'capital.loss': False, 'hours.per.week': False}
+decision: False
+final decision: True
+output:
+ [age, education, race, sex, occupation, native.language, native.country, hours.per.week, relationship, capital.gain, marital.status]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Expected:
+['age', 'workclass', 'fnlwgt', 'education', 'education.num', 'occupation', 'race', 'sex', 'capital.loss', 'native.country']
+matches:
+{'workclass': False, 'fnlwgt': False, 'education.num': False, 'capital.loss': False, 'native.country': True}
+decision: True
+final decision: True
+
+
+
+
+---for dataset bank marketing
+output:
+ [age, income, marital, occupation, zipcode]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Expected:
+['age', 'job', 'marital', 'balance', 'loan', 'day', 'duration', 'campaign', 'pdays', 'previous', 'poutcome', 'y']
+matches:
+{'pdays': False, 'poutcome': False}
+decision: False
+final decision: False
+output:
+ [age, gender, income, zipcode, credit_score]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Expected:
+['age', 'marital', 'education', 'default', 'housing', 'contact', 'day', 'month', 'duration', 'previous', 'poutcome', 'y']
+matches:
+{'poutcome': False}
+decision: False
+final decision: False
+output:
+ [income, credit_score, gender, marital_status, zipcode]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Expected:
+['job', 'marital', 'default', 'housing', 'loan', 'contact', 'day', 'month', 'duration', 'campaign', 'previous', 'y']
+matches:
+{'job': False, 'marital': True, 'default': False, 'housing': False, 'loan': False, 'contact': False, 'day': False, 'month': False, 'duration': False, 'campaign': False, 'previous': False, 'y': False}
+decision: False
+final decision: False
+
+
+
+
+---for dataset berkeley admissions
+output:
+ [Gender, Age, Race, SAT, SAT_M, SAT_E, SAT_W, SAT_B, SAT_V, SAT_Q, SAT_M_E, SAT_M_W, SAT_M_B, SAT_M_V, SAT_M_Q, SAT_E_W, SAT_E_B, SAT_E_V, SAT_E_Q, SAT_W_B, SAT_W_V, SAT_W_Q, SAT_B_V, SAT_B_Q, SAT_V_Q, GPA, Rank, Class, College, State, Country, Region, City, Street, Zip, Phone, Email, Interview, Extracurricular, Work, Volunteer, Sports, Arts, Music, Other, Notes]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Expected:
+['Year', 'Gender']
+matches:
+{'Year': False, 'Gender': True}
+decision: False
+final decision: False
+output:
+ [Gender, Year, Major, Minor, GPA, SAT, SAT_M, SAT_E, SAT_W, SAT_B, SAT_V, SAT_Q, SAT_M, SAT_E, SAT_W, SAT_B, SAT_V, SAT_Q, SAT_M, SAT_E, SAT_W, SAT_B, SAT_V, SAT_Q, SAT_M, SAT_E, SAT_W, SAT_B, SAT_V, SAT_Q, SAT_M, SAT_E, SAT_W, SAT_B, SAT_V, SAT_Q, SAT_M, SAT_E, SAT_W, SAT_B, SAT_V, SAT_Q, SAT_M, SAT_E, SAT_W, SAT_B, SAT_V, SAT_Q, SAT_M, SAT_E, SAT_W, SAT_B, SAT_V, SAT_Q,
+Expected:
+['Major', 'Admission']
+matches:
+{'Major': True, 'Admission': False}
+decision: False
+final decision: False
+output:
+ [Gender, Major, Minor, GPA, SAT, SAT_M, SAT_E, SAT_W, SAT_B, SAT_V, SAT_Q, SAT_M_E, SAT_M_W, SAT_M_B, SAT_M_V, SAT_M_Q, SAT_E_W, SAT_E_B, SAT_E_V, SAT_E_Q, SAT_W_B, SAT_W_V, SAT_W_Q, SAT_B_V, SAT_B_Q, SAT_V_Q, SAT_Q_Q, SAT_M_E_W, SAT_M_E_B, SAT_M_E_V, SAT_M_E_Q, SAT_M_W_B, SAT_M_W_V, SAT_M_W_Q, SAT_M_B_V, SAT_M_B_Q, SAT_M_B_Q, SAT_M_Q_Q, S
+Expected:
+['Major', 'Gender']
+matches:
+{'Major': True, 'Gender': True}
+decision: True
+final decision: True
+
+
+
+
+---for dataset german credit
+output:
+ [Income, Credit card, Loan, Marital status, Education, Employment, Gender]
+
+
+### Example
+
+```python
+>>> features = ["Risk", "Saving accounts", "Housing", "Age", "Checking account"]
+>>> features
+['Risk', 'Saving accounts', 'Housing', 'Age', 'Checking account']
+```
+
+### Explanation
+
+```python
+>>> features = ["Risk", "Saving accounts", "Housing", "Age", "Checking account"]
+>>> features
+['Risk', 'Saving accounts', 'Housing', 'Age', 'Checking account']
+>>> features.append("Income")
+>>> features
+['Risk', 'Saving accounts', 'Housing', 'Age', 'Checking account', 'Income']
+>>> features.append("Credit card")
+>>> features
+['Risk', 'Saving accounts', 'Housing', 'Age', 'Checking account', 'Income', 'Credit card']
+>>> features.append("Loan")
+>>> features
+Expected:
+['Sex', 'Job', 'Credit amount', 'Duration', 'Purpose']
+matches:
+{'Credit amount': False}
+decision: False
+final decision: False
+output:
+ [Income, Marital, Occupation, Residence, Education, Loan, Credit, MonthlyIncome, MonthlyExpense, MonthlySavings, MonthlyPayment, MonthlyIncome, MonthlyExpense, MonthlySavings, MonthlyPayment, MonthlyIncome, MonthlyExpense, MonthlySavings, MonthlyPayment, MonthlyIncome, MonthlyExpense, MonthlySavings, MonthlyPayment, MonthlyIncome, MonthlyExpense, MonthlySavings, MonthlyPayment, MonthlyIncome, MonthlyExpense, MonthlySavings, MonthlyPayment, MonthlyIncome, MonthlyExpense, MonthlySavings, MonthlyPayment, MonthlyIncome, MonthlyExpense, MonthlySavings, MonthlyPayment, MonthlyIncome, MonthlyExpense, MonthlySavings, MonthlyPayment, MonthlyIncome, MonthlyExpense, MonthlySavings, MonthlyPayment, MonthlyIncome, MonthlyExpense, MonthlySavings, MonthlyPayment, MonthlyIn
+Expected:
+['Housing', 'Saving accounts', 'Checking account', 'Credit amount', 'Duration']
+matches:
+{'Saving accounts': False, 'Checking account': False, 'Credit amount': False}
+decision: False
+final decision: False
+output:
+ [Income, Marital status, Occupation, Loan amount, Loan term, Loan purpose, Loan type, Loan status, Loan term, Loan type, Loan status, Loan term, Loan type, Loan status, Loan term, Loan type, Loan status, Loan term, Loan type, Loan status, Loan term, Loan type, Loan status, Loan term, Loan type, Loan status, Loan term, Loan type, Loan status, Loan term, Loan type, Loan status, Loan term, Loan type, Loan status, Loan term, Loan type, Loan status, Loan term, Loan type, Loan status, Loan term, Loan type, Loan status, Loan term, Loan type, Loan status, Loan term, Loan type, Loan status, Loan term, Loan type, Loan status, Loan term, Loan type, Loan status, Loan term, Loan type, Loan status, Loan term, Loan type, Loan status, Loan term, Loan type,
+Expected:
+['Housing', 'Saving accounts', 'Credit amount', 'Duration', 'Risk']
+matches:
+{'Saving accounts': False, 'Credit amount': False}
+decision: False
+final decision: False
+
+
+
+
+---for dataset california housing
+output:
+ [median_income, total_rooms, total_bathrooms, year_built, number_stories, number_of_rooms, number_of_bathrooms, number_of_fireplaces, heating_type, year_sold, year_built_year, year_sold_year, year_built_year_year, year_sold_year_year]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Expected:
+['latitude', 'housing_median_age', 'total_rooms', 'median_income', 'ocean_proximity']
+matches:
+{'housing_median_age': False, 'total_rooms': True, 'median_income': True, 'ocean_proximity': False}
+decision: True
+final decision: True
+output:
+ [median_age, median_age_income, median_age_income_population, median_age_population, median_income_population, population_median_age, population_median_age_income, population_median_age_income_population, population_median_age_population, population_median_income, population_median_income_population, population_median_income_population_age, population_median_income_population_age_income, population_median_income_population_age_income_population, population_median_income_population_age_income_population_age, population_median_income_population_age_income_population_age_income, population_median_income_population_age_income_population_age_income_population, population_median_income_population_age_income_population_age_income_population_age, population_median_income_population
+Expected:
+['longitude', 'latitude', 'households', 'median_house_value', 'ocean_proximity']
+matches:
+{'median_house_value': False, 'ocean_proximity': False}
+decision: False
+final decision: True
+output:
+ [median_house_value, latitude, households, longitude, housing_median_age, number_of_rooms, number_of_bathrooms, year_built, bedrooms, number_of_stories, total_rooms, year_sold, square_feet, heating, cooling, fireplace, garage, carport, porch, patio, finished_basement, swimming_pool, fire_place, central_air, ceiling_fan, washer, dryer, dishwasher, microwave, refrigerator, stove, oven, garbage, trash, water, sewer, electricity, gas, cable, phone, internet, rent, owner_occupied, vacant, for_sale, for_rent, sold, rented, owner_occupied, vacant, for_sale, for_rent, sold, rented, owner_occupied, vacant, for_sale, for_rent, sold, rented, owner_occupied, vacant, for_sale, for_rent, sold, rented, owner_occupied, vacant, for_s
+Expected:
+['total_rooms', 'total_bedrooms', 'population', 'median_income', 'ocean_proximity']
+matches:
+{'total_rooms': True, 'total_bedrooms': False, 'median_income': False, 'ocean_proximity': False}
+decision: True
+final decision: True
+
+
+
+
+---for dataset iris
+output:
+ [petal width (cm), sepal width (cm), target]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Expected:
+['sepal width (cm)', 'petal width (cm)']
+matches:
+{'sepal width': True, 'petal width': True}
+decision: True
+final decision: True
+output:
+ [sepal width (cm), petal width (cm), petal length (cm), sepal length (cm)]
+
+
+### Examples
+
+```python
+>>> iris_features = ['petal width (cm)','sepal length (cm)', 'petal length (cm)']
+>>> iris_features + ['sepal width (cm)', 'petal width (cm)', 'petal length (cm)','sepal length (cm)']
+['petal width (cm)','sepal length (cm)', 'petal length (cm)','sepal width (cm)', 'petal width (cm)', 'petal length (cm)','sepal length (cm)']
+```
+
+### Notes
+
+- The dataset is from the UCI Machine Learning Repository.
+- The dataset is available at https://archive.ics.uci.edu/ml/datasets/Iris
+- The dataset is available in the Python package `sklearn.datasets`.
+- The dataset is available in the Python package `pandas`.
+- The dataset is available in the Python package `numpy`.
+
+Expected:
+['sepal width (cm)', 'target']
+matches:
+{'sepal width': True}
+decision: True
+final decision: True
+output:
+ [sepal length (cm), petal width (cm), target]
+
+### Examples
+
+```python
+>>> iris_features = ['sepal width (cm)', 'petal length (cm)', 'target']
+>>> iris_features + ['sepal length (cm)', 'petal width (cm)', 'target']
+['sepal width (cm)', 'petal length (cm)', 'target','sepal length (cm)', 'petal width (cm)', 'target']
+```
+
+### Notes
+
+- The dataset is from the UCI Machine Learning Repository.
+- The dataset is available at https://archive.ics.uci.edu/ml/datasets/Iris
+- The dataset is available in the Python package `sklearn`.
+- The dataset is available in the Python package `pandas`.
+- The dataset is available in the Python package `numpy`.
+- The dataset is available in the Python package `matplotlib`.
+- The dataset is available in the Python package `seaborn`.
+- The dataset is available in the Python package `scikit-learn`.
+- The dataset is available
+Expected:
+['sepal length (cm)', 'petal width (cm)']
+matches:
+{'sepal length': True, 'petal width': True}
+decision: True
+final decision: True
+
+
+
+
+---for dataset wine
+output:
+ [alcohol, pH, total_acidity, residual_sugars, citric_acid, malic_acid, chlorides, free_sulfur_dioxide, total_sulfur_dioxide, density, sulfates, total_polysaccharides, total_anthocyanins, total_phenols, total_flavanoids, total_proanthocyanins, total_tannins, total_volatile_acids, total_volatile_basic_nitrogen, total_volatile_sugars, total_volatile_acids_and_sugars, volatile_acidity, volatile_basic_nitrogen, volatile_sugars, fixed_acidity, fixed_basic_nitrogen, fixed_sugars, volatile_acidity_to_alcohol_ratio, volatile_basic_nitrogen_to_alcohol_ratio, volatile_sugars_to_alcohol_ratio, fixed_acidity_to_alcohol_ratio,
+Expected:
+['alcohol', 'malic_acid', 'magnesium', 'total_phenols', 'nonflavanoid_phenols', 'proanthocyanins', 'hue', 'od280/od315_of_diluted_wines', 'proline']
+matches:
+{'malic_acid': True, 'total_phenols': True, 'nonflavanoid_phenols': False, 'proanthocyanins': True, 'od280/od315_of_diluted_wines': False, 'proline': False}
+decision: True
+final decision: True
+output:
+ [color, total_phenols, titratable_acidity, residual_sugars, free_sulfur_compounds, pH, citric_acid, polymerized_anthocyanins, total_anthocyanins, malic_acid, tannins, total_flavanoids, sulfur_dioxide, density, sulfates, sulfites, volatile_acids, fixed_acids, esters, extractable_anthocyanins, total_anthocyanins, total_flavanoids, total_polymerized_anthocyanins, total_flavanoids, total_polymerized_anthocyanins, total_polymerized_anthocyanins, total_flavanoids, total_polymerized_anthocyanins, total_flavanoids, total_polymerized_anthocyanins, total_flavanoids, total_polymerized_anthocyanins, total_flavanoids, total_polymerized_anthocyanins, total_flavanoids, total_
+Expected:
+['malic_acid', 'ash', 'magnesium', 'total_phenols', 'flavanoids', 'proanthocyanins', 'color_intensity', 'od280/od315_of_diluted_wines', 'target']
+matches:
+{'malic_acid': True, 'total_phenols': True, 'flavanoids': True, 'proanthocyanins': False, 'color_intensity': False, 'od280/od315_of_diluted_wines': False}
+decision: True
+final decision: True
+output:
+ [alcohol_content, total_acidity, pH, residual_sugars, citric_acid, free_sulfur_compounds, chlorides, sulfates, water, total_sulfur_compounds, density, sulfides, sulfates, total_sulfur_compounds, free_sulfur_compounds, chlorides, water, total_sulfur_compounds, density, sulfides, sulfates, total_sulfur_compounds, free_sulfur_compounds, chlorides, water, total_sulfur_compounds, density, sulfides, sulfates, total_sulfur_compounds, free_sulfur_compounds, chlorides, water, total_sulfur_compounds, density, sulfides, sulfates, total_sulfur_compounds, free_sulfur_compounds, chlorides, water, total_sulfur_compounds, density, sulfides, sulfates, total_sulfur_compounds, free_sulfur_compounds
+Expected:
+['alcalinity_of_ash', 'magnesium', 'total_phenols', 'flavanoids', 'nonflavanoid_phenols', 'proanthocyanins', 'hue', 'proline', 'target']
+matches:
+{'alcalinity_of_ash': False, 'total_phenols': False, 'flavanoids': False, 'nonflavanoid_phenols': False, 'proanthocyanins': False, 'proline': False}
+decision: False
+final decision: True
+
+
+
+
+---for dataset titanic
+output:
+ [Sex, SibSp, Parch, Fare, Cabin, Embarked]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Expected:
+['Survived', 'Sex', 'Age', 'SibSp', 'Parch', 'Cabin', 'Embarked']
+matches:
+{'SibSp': True}
+decision: True
+final decision: True
+output:
+ [Pclass, Name, Sex, Age, Saloon, Survived]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Expected:
+['PassengerId', 'Survived', 'Pclass', 'Name', 'Sex', 'Age', 'Parch']
+matches:
+{'PassengerId': False, 'Pclass': True}
+decision: True
+final decision: True
+output:
+ [Age, Fare, SibSp, Pclass, Name]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Expected:
+['Pclass', 'Name', 'Age', 'SibSp', 'Ticket', 'Fare', 'Cabin']
+matches:
+{'Pclass': True, 'SibSp': True}
+decision: True
+final decision: True
+
+
+
+
+---for dataset spaceship_titanic
+output:
+ [Name, VRDeck, Age, ShoppingMall, FoodCourt, Gender, Height, Weight, HairColor, EyeColor, HairLength, HairType, HairStyle, HairCondition, SkinColor, SkinType, SkinCondition, SkinTone, SkinTexture, SkinHair, SkinHairColor, SkinHairType, SkinHairStyle, SkinHairCondition, SkinHairTexture, SkinHairHair, SkinHairHairColor, SkinHairHairType, SkinHairHairStyle, SkinHairHairCondition, SkinHairHairTexture, SkinHairHairHair, SkinHairHairHairColor, SkinHairHairHairType, SkinHairHairHairStyle, SkinHairHairHairCondition, SkinHairHairHairTexture, SkinHairHairHairHair, SkinHairHairHairHairColor, SkinHairHairHairHairType, SkinHairHairHair
+Expected:
+['HomePlanet', 'CryoSleep', 'Cabin', 'Destination', 'VIP', 'RoomService', 'Spa', 'Transported']
+matches:
+{'HomePlanet': False, 'CryoSleep': False, 'RoomService': False}
+decision: False
+final decision: False
+output:
+ [Age, Gender, Weight, Height, Class, Fare, Cabin, Survived]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Expected:
+['CryoSleep', 'Cabin', 'Age', 'VIP', 'RoomService', 'FoodCourt', 'Spa', 'VRDeck']
+matches:
+{'CryoSleep': False, 'RoomService': False, 'FoodCourt': False, 'VRDeck': False}
+decision: False
+final decision: False
+output:
+ [Gender, Class, Fare, Survived, Pclass, SibSp, Parch, Ticket, FarePaid, CabinClass, Embarked, Name, Sex, Nationality, ParchDeck, SibSpDeck, TicketDeck, FarePaidDeck, CabinClassDeck, EmbarkedDeck, NameDeck, SexDeck, NationalityDeck]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Expected:
+['HomePlanet', 'Destination', 'RoomService', 'FoodCourt', 'ShoppingMall', 'Spa', 'Name', 'Transported']
+matches:
+{'HomePlanet': False, 'RoomService': False, 'FoodCourt': False, 'ShoppingMall': False}
+decision: False
+final decision: False
+
+
+
+
+
+### VALUES UNINFORMED TEST ###
+
+
+---for dataset adult income
+output:
+
+
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34
+Expected:
+['<=50K', '>50K']
+matches:
+{'<=50K': False, '>50K': False}
+decision: False
+final decision: False
+output:
+
+
+['Single', 'Married', 'Divorced', 'Widowed', 'Separated']
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Expected:
+['Widowed', 'Divorced', 'Separated', 'Never-married', 'Married-civ-spouse', 'Married-spouse-absent', 'Married-AF-spouse']
+matches:
+{'Married-civ-spouse': False}
+decision: False
+final decision: False
+
+
+
+
+---for dataset bank marketing
+output:
+
+
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+Expected:
+['no', 'yes']
+matches:
+{'no': False, 'yes': False}
+decision: False
+final decision: False
+output:
+
+
+0: sales
+
+1: marketing
+
+2: customer service
+
+3: finance
+
+4: operations
+
+5: human resources
+
+6: information technology
+
+7: other
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Expected:
+['management', 'technician', 'entrepreneur', 'blue-collar', 'unknown', 'retired', 'admin.', 'services', 'self-employed', 'unemployed', 'housemaid', 'student']
+matches:
+{'blue-collar': False, 'admin.': False, 'self-employed': False}
+decision: False
+final decision: False
+
+
+
+
+---for dataset berkeley admissions
+output:
+
+
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34
+Expected:
+['Rejected', 'Accepted']
+matches:
+{'Rejected': False, 'Accepted': False}
+decision: False
+final decision: False
+output:
+
+
+['Agriculture', 'Anthropology', 'Architecture', 'Art', 'Asian Studies', 'Biochemistry', 'Biology', 'Business Administration', 'Chemistry', 'Classics', 'Communication', 'Computer Science', 'Economics', 'Education', 'Engineering', 'Environmental Science', 'Film', 'French', 'German', 'History', 'Humanities', 'Journalism', 'Law', 'Linguistics', 'Mathematics', 'Music', 'Philosophy', 'Phys
+Expected:
+['C', 'B', 'Other', 'F', 'A', 'D', 'E']
+matches:
+{'C': True, 'B': True, 'Other': False, 'F': True, 'A': True, 'D': True, 'E': True}
+decision: False
+final decision: False
+
+
+
+
+---for dataset german credit
+output:
+
+
+0: Low risk
+1: Medium risk
+2: High risk
+
+### Example
+
+```python
+>>> from tabular_data_analysis import tabular_data_analysis
+>>> tabular_data_analysis.german_credit_dataset
+{'Risk': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+Expected:
+['good', 'bad']
+matches:
+{'good': False, 'bad': False}
+decision: False
+final decision: False
+output:
+
+
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+Expected:
+[nan, 'little', 'quite rich', 'rich', 'moderate']
+matches:
+{'quite rich': False}
+decision: False
+final decision: False
+
+
+
+
+---for dataset california housing
+output:
+
+
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33,
+Expected:
+['NEAR BAY', '<1H OCEAN', 'INLAND', 'NEAR OCEAN', 'ISLAND']
+matches:
+{'NEAR BAY': False, '<1H OCEAN': False, 'NEAR OCEAN': False}
+decision: False
+final decision: False
+
+
+
+
+---for dataset iris
+output:
+
+
+```
+['setosa','versicolor', 'virginica']
+```
+
+### Examples
+
+```
+iris_target = ['setosa','versicolor', 'virginica']
+```
+
+### Notes
+
+- The dataset is from the UCI Machine Learning Repository.
+- The dataset is available at [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Iris).
+- The dataset is available at [UCI Machine Learning Repository](https://archive.ics.uci
+Expected:
+['virginica', 'versicolor', 'setosa']
+matches:
+{'virginica': True, 'versicolor': True, 'setosa': True}
+decision: True
+final decision: True
+
+
+
+
+---for dataset titanic
+output:
+
+
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+Expected:
+['S', 'C', 'Q', nan]
+matches:
+{'S': False, 'C': False, 'Q': False}
+decision: False
+final decision: False
+
+
+
+
+---for dataset spaceship_titanic
+output:
+
+
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34
+Expected:
+['Europa', 'Earth', 'Mars', nan]
+matches:
+{'Europa': False, 'Earth': False, 'Mars': False}
+decision: False
+final decision: False
+output:
+
+
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+Expected:
+[False, True]
+matches:
+{'False': False, 'True': False}
+decision: False
+final decision: False
+output:
+
+
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34
+Expected:
+['TRAPPIST-1e', 'PSO J318.5-22', '55 Cancri e', nan]
+matches:
+{'TRAPPIST-1e': False, 'PSO J318.5-22': False, '55 Cancri e': False}
+decision: False
+final decision: False
+
+
+
+
+
+### VALUES INFORMED EXAMPLES TEST ###
+
+
+---for dataset adult income
+output:
+<=50K, <=50K, <=50K, <=50K, <=50K, <=50K, <=50K, <=50K, <=50K, <=50K, <=50K, <=50K, <=50K, <=50K, <=50K, <=50K, <=50K, <=50K, <=50K, <=50K, <=50K, <=50K, <=50K, <=50K, <=50K, <=
+Expected:
+['>50K']
+matches:
+{'>50K': False}
+decision: False
+final decision: False
+output:
+'Single', 'Married', 'Divorced', 'Widowed', 'Separated', 'Never-married']
+
+### Examples
+
+### Input
+
+The first line contains the number of examples, n.
+
+The next n lines contain the examples.
+
+The ith example is given by the ith line.
+
+The ith line contains the values of the feature marital.status.
+
+### Output
+
+The first line contains the number of possible values for the feature marital.status.
+
+The next n lines contain the possible
+Expected:
+['Divorced', 'Separated', 'Never-married', 'Married-civ-spouse', 'Married-spouse-absent', 'Married-AF-spouse']
+matches:
+{'Married-civ-spouse': False}
+decision: False
+final decision: False
+
+
+
+
+---for dataset bank marketing
+output:
+
+['yes', 'no', 'unknown']
+
+### Examples
+
+### Input
+
+The input is a Python list of examples from the bank marketing dataset.
+
+### Output
+
+The output is a Python list of all possible values for the feature y.
+
+### Example
+
+```python
+import pandas as pd
+
+df = pd.read_csv('bank_marketing.csv')
+
+examples = [
+    (58,'management','married', 'tertiary', 'no', 2143, 'yes', 'no
+Expected:
+['yes']
+matches:
+{'yes': True}
+decision: True
+final decision: True
+output:
+
+['management','management','management','management','management','management','management','management','management','management','management','management','management','management','management','management','management','management','management','management','management','management','management','management','management','management','management','management','management','management','management','management','management','management','management','management','management','management','management','management','management','management', '
+Expected:
+['technician', 'entrepreneur', 'blue-collar', 'unknown', 'retired', 'admin.', 'services', 'self-employed', 'unemployed', 'housemaid', 'student']
+matches:
+{'blue-collar': False, 'admin.': False, 'self-employed': False}
+decision: False
+final decision: True
+
+
+
+
+---for dataset berkeley admissions
+output:
+
+['Accepted', 'Rejected']
+
+### Examples
+
+```python
+import pandas as pd
+
+df = pd.read_csv('../datasets/berkeley_admissions.csv')
+
+# The Year is 1973, The Major is C, The Gender is F, The Admission is Rejected
+df['Admission'] = 'Rejected'
+
+# The Year is 1973, The Major is C, The Gender is F, The Admission is Accepted
+df['Admission'] = 'Accept
+Expected:
+['Accepted']
+matches:
+{'Accepted': True}
+decision: True
+final decision: True
+output:
+
+['A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', '
+Expected:
+['B', 'Other', 'F', 'A', 'D', 'E']
+matches:
+{'B': False, 'Other': False, 'F': False, 'A': True, 'D': False, 'E': False}
+decision: False
+final decision: True
+
+
+
+
+---for dataset german credit
+output:
+
+['bad', 'good','very good']
+
+### Input
+
+The input is a list of examples from the german credit dataset.
+
+### Output
+
+The output is a Python list of all possible values for the feature Risk.
+
+### Example
+
+```python
+examples = [
+    {
+        "Age": 67,
+        "Sex": "male",
+        "Job": 2,
+        "Housing": "own",
+        "Saving accounts": "nan",
+        "Checking account": "little",
+Expected:
+['bad']
+matches:
+{'bad': True}
+decision: True
+final decision: True
+output:
+
+['nan', 'little', 'big', 'none']
+
+### Input
+
+The input is a list of examples from the german credit dataset.
+
+### Output
+
+The output is a Python list of all possible values for the feature Saving accounts.
+
+### Example
+
+```python
+examples = [
+    {
+        "Age": 67,
+        "Sex": "male",
+        "Job": 2,
+        "Housing": "own",
+        "Saving accounts": "nan",
+        "Checking account":
+Expected:
+['little', 'quite rich', 'rich', 'moderate']
+matches:
+{'quite rich': False}
+decision: False
+final decision: True
+
+
+
+
+---for dataset california housing
+output:
+
+[NEAR BAY, NEAR OCEAN, NEAR BAY, NEAR OCEAN, NEAR BAY, NEAR OCEAN, NEAR BAY, NEAR OCEAN, NEAR BAY, NEAR OCEAN, NEAR BAY, NEAR OCEAN, NEAR BAY, NEAR OCEAN, NEAR BAY, NEAR OCEAN, NEAR BAY, NEAR OCEAN, NEAR BAY, NEAR OCEAN, NEAR BAY,
+Expected:
+['<1H OCEAN', 'INLAND', 'NEAR OCEAN', 'ISLAND']
+matches:
+{'<1H OCEAN': False, 'NEAR OCEAN': True}
+decision: True
+final decision: True
+
+
+
+
+---for dataset iris
+output:
+
+['virginica','versicolor']
+
+### Examples
+
+### Input
+
+```
+["The sepal length (cm) is 5.8, The sepal width (cm) is 2.8, The petal length (cm) is 5.1, The petal width (cm) is 2.4, The target is virginica"]
+["The sepal length (cm) is 6.0, The sepal width (cm) is 2.2, The petal length (cm) is 4.0, The
+Expected:
+['setosa']
+matches:
+{'setosa': False}
+decision: False
+final decision: False
+
+
+
+
+---for dataset titanic
+output:
+
+['C', 'C1', 'C2', 'C3', 'C4', 'C5', 'C6', 'C7', 'C8', 'C9', 'C10', 'C11', 'C12', 'C13', 'C14', 'C15', 'C16', 'C17', 'C18', 'C19', 'C20', 'C21', 'C22', 'C23', 'C24', 'C25', 'C26', 'C2
+Expected:
+['Q', nan]
+matches:
+{'Q': False}
+decision: False
+final decision: False
+
+
+
+
+---for dataset spaceship_titanic
+output:
+
+
+[TRAPPIST-1e, TRAPPIST-1f, TRAPPIST-1g, TRAPPIST-1h, TRAPPIST-1i, TRAPPIST-1j, TRAPPIST-1k, TRAPPIST-1l, TRAPPIST-1m, TRAPPIST-1n, TRAPPIST-1o, TRAPPIST-1p, TRAPPIST-1q, TRAPPIST-1r, TRAPPIST-1s, TRAPPIST-
+Expected:
+['PSO J318.5-22', '55 Cancri e', nan]
+matches:
+{'PSO J318.5-22': False, '55 Cancri e': False}
+decision: False
+final decision: False
+
+
+
+
+
+### COMPLETION INCOMPLETE TEST ###
+
+
+---for dataset adult income
+output:
+e hours.per.week is 40, The native.country is United-States, The income is <=50K
+Expected:
+age                           41
+workclass                Private
+fnlwgt                    264663
+education           Some-college
+education.num                 10
+marital.status         Separated
+occupation        Prof-specialty
+relationship           Own-child
+race                       White
+sex                       Female
+capital.gain                   0
+capital.loss                3900
+hours.per.week                40
+native.country     United-States
+income                     <=50K
+Name: 4, dtype: object
+matches:
+{'hours.per.week': ('40', True), 'native.country': ('United-States', True), 'income': ('<=50K', True)}
+decision: True
+
+
+
+
+---for dataset bank marketing
+output:
+, The previous is 0, The poutcome is unknown, The y is no
+Expected:
+age               33
+job          unknown
+marital       single
+education    unknown
+default           no
+balance            1
+housing           no
+loan              no
+contact      unknown
+day                5
+month            may
+duration         198
+campaign           1
+pdays             -1
+previous           0
+poutcome     unknown
+y                 no
+Name: 4, dtype: object
+matches:
+{'previous': ('0', True), 'poutcome': ('unknown', True), 'y': ('no', True)}
+decision: True
+
+
+
+
+---for dataset berkeley admissions
+output:
+, The Major is C, The Gender is F, The Admission is Accepted
+Expected:
+Year             1973
+Major           Other
+Gender              M
+Admission    Rejected
+Name: 4, dtype: object
+matches:
+{'Major': ('Other', False), 'Gender': ('M', True), 'Admission': ('Rejected', False)}
+decision: False
+
+
+
+
+---for dataset german credit
+output:
+, The Duration is 12, The Purpose is furniture/equipment, The Risk is good
+Expected:
+Age                     53
+Sex                   male
+Job                      2
+Housing               free
+Saving accounts     little
+Checking account    little
+Credit amount         4870
+Duration                24
+Purpose                car
+Risk                   bad
+Name: 4, dtype: object
+matches:
+{'Duration': ('24', False), 'Purpose': ('car', False), 'Risk': ('bad', False)}
+decision: False
+
+
+
+
+---for dataset california housing
+output:
+, The median_income is 5.6431, The median_house_value is 341300.0, The ocean_proximity is NEAR BAY
+Expected:
+longitude              -122.25
+latitude                 37.85
+housing_median_age        52.0
+total_rooms             1627.0
+total_bedrooms           280.0
+population               565.0
+households               259.0
+median_income           3.8462
+median_house_value    342200.0
+ocean_proximity       NEAR BAY
+Name: 4, dtype: object
+matches:
+{'median_income': ('3.8462', False), 'median_house_value': ('342200.0', False), 'ocean_proximity': ('NEAR BAY', True)}
+decision: False
+
+
+
+
+---for dataset iris
+output:
+, The petal length (cm) is 4.0, The petal width (cm) is 1.0, The target is versicolor
+Expected:
+sepal length (cm)       5.0
+sepal width (cm)        3.4
+petal length (cm)       1.5
+petal width (cm)        0.2
+target               setosa
+Name: 7, dtype: object
+matches:
+{'petal length (cm)': ('1.5', False), 'petal width (cm)': ('0.2', False), 'target': ('setosa', False)}
+decision: False
+
+
+
+
+---for dataset wine
+output:
+, The od280/od315_of_diluted_wines is 2.8, The proline is 1060.0, The target is class_0
+Expected:
+alcohol                           13.05
+malic_acid                          5.8
+ash                                2.13
+alcalinity_of_ash                  21.5
+magnesium                          86.0
+total_phenols                      2.62
+flavanoids                         2.65
+nonflavanoid_phenols                0.3
+proanthocyanins                    2.01
+color_intensity                     2.6
+hue                                0.73
+od280/od315_of_diluted_wines        3.1
+proline                           380.0
+target                          class_1
+Name: 123, dtype: object
+matches:
+{'od280/od315_of_diluted_wines': ('3.1', False), 'proline': ('380.0', False), 'target': ('class_1', False)}
+decision: False
+
+
+
+
+---for dataset titanic
+output:
+, The Fare is 7.925, The Cabin is C123, The Embarked is S
+Expected:
+PassengerId                           5
+Survived                              0
+Pclass                                3
+Name           Allen, Mr. William Henry
+Sex                                male
+Age                                35.0
+SibSp                                 0
+Parch                                 0
+Ticket                           373450
+Fare                               8.05
+Cabin                               NaN
+Embarked                              S
+Name: 4, dtype: object
+matches:
+{'Fare': ('8.05', False), 'Cabin': ('nan', False), 'Embarked': ('S', True)}
+decision: False
+
+
+
+
+---for dataset spaceship_titanic
+output:
+, The VRDeck is 10.0, The Name is Krystle Sparks, The Transported is True
+Expected:
+PassengerId               0004_01
+HomePlanet                  Earth
+CryoSleep                   False
+Cabin                       F/1/S
+Destination           TRAPPIST-1e
+Age                          16.0
+VIP                         False
+RoomService                 303.0
+FoodCourt                    70.0
+ShoppingMall                151.0
+Spa                         565.0
+VRDeck                        2.0
+Name            Willy Santantines
+Transported                  True
+Name: 4, dtype: object
+matches:
+{'VRDeck': ('2.0', False), 'Name': ('Willy Santantines', False), 'Transported': ('True', True)}
+decision: False
+
+
+
+
+
+### COMPLETION FULL TEST ###
+
+
+---for dataset adult income
+output:
+The age is 90, The workclass is?, The fnlwgt is 77053, The education is HS-grad, The education.num is 9, The marital.status is Widowed, The occupation is?, The relationship is Not-in-family, The race is White, The sex is Female, The capital.gain is 0, The capital.loss is 4356, The hours.per.week is 40, The native.country is United-States, The income is <=50K
+Expected:
+age                           41
+workclass                Private
+fnlwgt                    264663
+education           Some-college
+education.num                 10
+marital.status         Separated
+occupation        Prof-specialty
+relationship           Own-child
+race                       White
+sex                       Female
+capital.gain                   0
+capital.loss                3900
+hours.per.week                40
+native.country     United-States
+income                     <=50K
+Name: 4, dtype: object
+matches:
+{'age': ('41', False), 'workclass': ('Private', False), 'fnlwgt': ('264663', False), 'education': ('Some-college', False), 'education.num': ('10', False), 'marital.status': ('Separated', False), 'occupation': ('Prof-specialty', False), 'relationship': ('Own-child', False), 'race': ('White', True), 'sex': ('Female', True), 'capital.gain': ('0', True), 'capital.loss': ('3900', False), 'hours.per.week': ('40', True), 'native.country': ('United-States', True), 'income': ('<=50K', True)}
+decision: False
+
+
+
+
+---for dataset bank marketing
+output:
+The age is 58, The job is management, The marital is married, The education is tertiary, The default is no, The balance is 2143, The housing is yes, The loan is no, The contact is unknown, The day is 5, The month is may, The duration is 261, The campaign is 1, The pdays is -1, The previous is 0, The poutcome is unknown, The y is no
+Expected:
+age               33
+job          unknown
+marital       single
+education    unknown
+default           no
+balance            1
+housing           no
+loan              no
+contact      unknown
+day                5
+month            may
+duration         198
+campaign           1
+pdays             -1
+previous           0
+poutcome     unknown
+y                 no
+Name: 4, dtype: object
+matches:
+{'age': ('33', False), 'job': ('unknown', True), 'marital': ('single', False), 'education': ('unknown', True), 'default': ('no', True), 'balance': ('1', True), 'housing': ('no', True), 'loan': ('no', True), 'contact': ('unknown', True), 'day': ('5', True), 'month': ('may', True), 'duration': ('198', False), 'campaign': ('1', True), 'pdays': ('-1', True), 'previous': ('0', True), 'poutcome': ('unknown', True), 'y': ('no', True)}
+decision: False
+
+
+
+
+---for dataset berkeley admissions
+output:
+The Year is 1974, The Major is C, The Gender is F, The Admission is Rejected
+Expected:
+Year             1973
+Major           Other
+Gender              M
+Admission    Rejected
+Name: 4, dtype: object
+matches:
+{'Year': ('1973', False), 'Major': ('Other', False), 'Gender': ('M', True), 'Admission': ('Rejected', True)}
+decision: False
+
+
+
+
+---for dataset german credit
+output:
+The Age is 67, The Sex is male, The Job is 2, The Housing is own, The Saving accounts is nan, The Checking account is little, The Credit amount is 1169, The Duration is 6, The Purpose is radio/TV, The Risk is good
+Expected:
+Age                     53
+Sex                   male
+Job                      2
+Housing               free
+Saving accounts     little
+Checking account    little
+Credit amount         4870
+Duration                24
+Purpose                car
+Risk                   bad
+Name: 4, dtype: object
+matches:
+{'Age': ('53', False), 'Sex': ('male', True), 'Job': ('2', True), 'Housing': ('free', False), 'Saving accounts': ('little', True), 'Checking account': ('little', True), 'Credit amount': ('4870', False), 'Duration': ('24', False), 'Purpose': ('car', False), 'Risk': ('bad', False)}
+decision: False
+
+
+
+
+---for dataset california housing
+output:
+The longitude is -122.23, The latitude is 37.88, The housing_median_age is 41.0, The total_rooms is 880.0, The total_bedrooms is 129.0, The population is 322.0, The households is 126.0, The median_income is 8.3252, The median_house_value is 452600.0, The ocean_proximity is NEAR BAY
+Expected:
+longitude              -122.25
+latitude                 37.85
+housing_median_age        52.0
+total_rooms             1627.0
+total_bedrooms           280.0
+population               565.0
+households               259.0
+median_income           3.8462
+median_house_value    342200.0
+ocean_proximity       NEAR BAY
+Name: 4, dtype: object
+matches:
+{'longitude': ('-122.25', False), 'latitude': ('37.85', False), 'housing_median_age': ('52.0', False), 'total_rooms': ('1627.0', False), 'total_bedrooms': ('280.0', False), 'population': ('565.0', False), 'households': ('259.0', False), 'median_income': ('3.8462', False), 'median_house_value': ('342200.0', False), 'ocean_proximity': ('NEAR BAY', True)}
+decision: False
+
+
+
+
+---for dataset iris
+output:
+The sepal length (cm) is 5.8, The sepal width (cm) is 2.8, The petal length (cm) is 5.1, The petal width (cm) is 2.4, The target is virginica
+Expected:
+sepal length (cm)       5.0
+sepal width (cm)        3.4
+petal length (cm)       1.5
+petal width (cm)        0.2
+target               setosa
+Name: 7, dtype: object
+matches:
+{'sepal length (cm)': ('5.0', False), 'sepal width (cm)': ('3.4', False), 'petal length (cm)': ('1.5', False), 'petal width (cm)': ('0.2', False), 'target': ('setosa', False)}
+decision: False
+
+
+
+
+---for dataset wine
+output:
+The alcohol is 13.74, The malic_acid is 1.67, The ash is 2.25, The alcalinity_of_ash is 16.4, The magnesium is 118.0, The total_phenols is 2.6, The flavanoids is 2.9, The nonflavanoid_phenols is 0.21, The proanthocyanins is 1.62, The color_intensity is 5.85, The hue is 0.92, The od280/od315_of_diluted_wines is 3.2, The proline is 1060.0, The target is class_0
+Expected:
+alcohol                           13.05
+malic_acid                          5.8
+ash                                2.13
+alcalinity_of_ash                  21.5
+magnesium                          86.0
+total_phenols                      2.62
+flavanoids                         2.65
+nonflavanoid_phenols                0.3
+proanthocyanins                    2.01
+color_intensity                     2.6
+hue                                0.73
+od280/od315_of_diluted_wines        3.1
+proline                           380.0
+target                          class_1
+Name: 123, dtype: object
+matches:
+{'alcohol': ('13.05', False), 'malic_acid': ('5.8', True), 'ash': ('2.13', False), 'alcalinity_of_ash': ('21.5', False), 'magnesium': ('86.0', False), 'total_phenols': ('2.62', False), 'flavanoids': ('2.65', False), 'nonflavanoid_phenols': ('0.3', False), 'proanthocyanins': ('2.01', False), 'color_intensity': ('2.6', True), 'hue': ('0.73', False), 'od280/od315_of_diluted_wines': ('3.1', False), 'proline': ('380.0', False), 'target': ('class_1', False)}
+decision: False
+
+
+
+
+---for dataset titanic
+output:
+The PassengerId is 5, The Survived is 0, The Pclass is 3, The Name is Barker, Mr. John, The Sex is male, The Age is 28.0, The SibSp is 1, The Parch is 0, The Ticket is A/5 21171, The Fare is 7.25, The Cabin is nan, The Embarked is S
+Expected:
+PassengerId                           5
+Survived                              0
+Pclass                                3
+Name           Allen, Mr. William Henry
+Sex                                male
+Age                                35.0
+SibSp                                 0
+Parch                                 0
+Ticket                           373450
+Fare                               8.05
+Cabin                               NaN
+Embarked                              S
+Name: 4, dtype: object
+matches:
+{'PassengerId': ('5', True), 'Survived': ('0', True), 'Pclass': ('3', True), 'Name': ('Allen, Mr. William Henry', False), 'Sex': ('male', True), 'Age': ('35.0', False), 'SibSp': ('0', True), 'Parch': ('0', True), 'Ticket': ('373450', False), 'Fare': ('8.05', False), 'Cabin': ('nan', True), 'Embarked': ('S', True)}
+decision: False
+
+
+
+
+---for dataset spaceship_titanic
+output:
+The PassengerId is 0004_01, The HomePlanet is Europa, The CryoSleep is False, The Cabin is A/0/S, The Destination is TRAPPIST-1e, The Age is 33.0, The VIP is False, The RoomService is 0.0, The FoodCourt is 1283.0, The ShoppingMall is 371.0, The Spa is 3329.0, The VRDeck is 193.0, The Name is Solam Susent, The Transported is False
+Expected:
+PassengerId               0004_01
+HomePlanet                  Earth
+CryoSleep                   False
+Cabin                       F/1/S
+Destination           TRAPPIST-1e
+Age                          16.0
+VIP                         False
+RoomService                 303.0
+FoodCourt                    70.0
+ShoppingMall                151.0
+Spa                         565.0
+VRDeck                        2.0
+Name            Willy Santantines
+Transported                  True
+Name: 4, dtype: object
+matches:
+{'PassengerId': ('0004_01', True), 'HomePlanet': ('Earth', False), 'CryoSleep': ('False', True), 'Cabin': ('F/1/S', False), 'Destination': ('TRAPPIST-1e', True), 'Age': ('16.0', False), 'VIP': ('False', True), 'RoomService': ('303.0', False), 'FoodCourt': ('70.0', False), 'ShoppingMall': ('151.0', False), 'Spa': ('565.0', False), 'VRDeck': ('2.0', False), 'Name': ('Willy Santantines', False), 'Transported': ('True', False)}
+decision: False
+
+
+
+
+
+### COMPLETION FEATURE TEST ###
+
+
+---for dataset adult income
+output:
+
+Expected:
+age                          90
+workclass                     ?
+fnlwgt                    77053
+education               HS-grad
+education.num                 9
+marital.status          Widowed
+occupation                    ?
+relationship      Not-in-family
+race                      White
+sex                      Female
+capital.gain                  0
+capital.loss               4356
+hours.per.week               40
+native.country    United-States
+income                    <=50K
+Name: 0, dtype: object
+matches:
+{'fnlwgt': ('77053', False)}
+decision: False
+final decision: False
+output:
+ 0
+Expected:
+age                            82
+workclass                 Private
+fnlwgt                     132870
+education                 HS-grad
+education.num                   9
+marital.status            Widowed
+occupation        Exec-managerial
+relationship        Not-in-family
+race                        White
+sex                        Female
+capital.gain                    0
+capital.loss                 4356
+hours.per.week                 18
+native.country      United-States
+income                      <=50K
+Name: 1, dtype: object
+matches:
+{'fnlwgt': ('132870', False)}
+decision: False
+final decision: False
+output:
+
+Expected:
+age                          66
+workclass                     ?
+fnlwgt                   186061
+education          Some-college
+education.num                10
+marital.status          Widowed
+occupation                    ?
+relationship          Unmarried
+race                      Black
+sex                      Female
+capital.gain                  0
+capital.loss               4356
+hours.per.week               40
+native.country    United-States
+income                    <=50K
+Name: 2, dtype: object
+matches:
+{'fnlwgt': ('186061', False)}
+decision: False
+final decision: False
+output:
+ 1
+Expected:
+age                              54
+workclass                   Private
+fnlwgt                       140359
+education                   7th-8th
+education.num                     4
+marital.status             Divorced
+occupation        Machine-op-inspct
+relationship              Unmarried
+race                          White
+sex                          Female
+capital.gain                      0
+capital.loss                   3900
+hours.per.week                   40
+native.country        United-States
+income                        <=50K
+Name: 3, dtype: object
+matches:
+{'fnlwgt': ('140359', False)}
+decision: False
+final decision: False
+output:
+ 1
+Expected:
+age                           41
+workclass                Private
+fnlwgt                    264663
+education           Some-college
+education.num                 10
+marital.status         Separated
+occupation        Prof-specialty
+relationship           Own-child
+race                       White
+sex                       Female
+capital.gain                   0
+capital.loss                3900
+hours.per.week                40
+native.country     United-States
+income                     <=50K
+Name: 4, dtype: object
+matches:
+{'fnlwgt': ('264663', False)}
+decision: False
+final decision: False
+
+
+
+
+---for dataset bank marketing
+output:
+ 0
+Expected:
+age                  58
+job          management
+marital         married
+education      tertiary
+default              no
+balance            2143
+housing             yes
+loan                 no
+contact         unknown
+day                   5
+month               may
+duration            261
+campaign              1
+pdays                -1
+previous              0
+poutcome        unknown
+y                    no
+Name: 0, dtype: object
+matches:
+{'balance': ('2143', False)}
+decision: False
+final decision: False
+output:
+ 0
+Expected:
+age                  44
+job          technician
+marital          single
+education     secondary
+default              no
+balance              29
+housing             yes
+loan                 no
+contact         unknown
+day                   5
+month               may
+duration            151
+campaign              1
+pdays                -1
+previous              0
+poutcome        unknown
+y                    no
+Name: 1, dtype: object
+matches:
+{'balance': ('29', False)}
+decision: False
+final decision: False
+output:
+ 0
+Expected:
+age                    33
+job          entrepreneur
+marital           married
+education       secondary
+default                no
+balance                 2
+housing               yes
+loan                  yes
+contact           unknown
+day                     5
+month                 may
+duration               76
+campaign                1
+pdays                  -1
+previous                0
+poutcome          unknown
+y                      no
+Name: 2, dtype: object
+matches:
+{'balance': ('2', False)}
+decision: False
+final decision: False
+output:
+ 0
+Expected:
+age                   47
+job          blue-collar
+marital          married
+education        unknown
+default               no
+balance             1506
+housing              yes
+loan                  no
+contact          unknown
+day                    5
+month                may
+duration              92
+campaign               1
+pdays                 -1
+previous               0
+poutcome         unknown
+y                     no
+Name: 3, dtype: object
+matches:
+{'balance': ('1506', False)}
+decision: False
+final decision: False
+output:
+ 0
+Expected:
+age               33
+job          unknown
+marital       single
+education    unknown
+default           no
+balance            1
+housing           no
+loan              no
+contact      unknown
+day                5
+month            may
+duration         198
+campaign           1
+pdays             -1
+previous           0
+poutcome     unknown
+y                 no
+Name: 4, dtype: object
+matches:
+{'balance': ('1', False)}
+decision: False
+final decision: False
+
+
+
+
+---for dataset german credit
+output:
+ 1000
+Expected:
+Age                       67
+Sex                     male
+Job                        2
+Housing                  own
+Saving accounts          NaN
+Checking account      little
+Credit amount           1169
+Duration                   6
+Purpose             radio/TV
+Risk                    good
+Name: 0, dtype: object
+matches:
+{'Credit amount': ('1169', False)}
+decision: False
+final decision: False
+output:
+ 1000
+Expected:
+Age                       22
+Sex                   female
+Job                        2
+Housing                  own
+Saving accounts       little
+Checking account    moderate
+Credit amount           5951
+Duration                  48
+Purpose             radio/TV
+Risk                     bad
+Name: 1, dtype: object
+matches:
+{'Credit amount': ('5951', False)}
+decision: False
+final decision: False
+output:
+ 10000
+Expected:
+Age                        49
+Sex                      male
+Job                         1
+Housing                   own
+Saving accounts        little
+Checking account          NaN
+Credit amount            2096
+Duration                   12
+Purpose             education
+Risk                     good
+Name: 2, dtype: object
+matches:
+{'Credit amount': ('2096', False)}
+decision: False
+final decision: False
+output:
+ 1000
+Expected:
+Age                                  45
+Sex                                male
+Job                                   2
+Housing                            free
+Saving accounts                  little
+Checking account                 little
+Credit amount                      7882
+Duration                             42
+Purpose             furniture/equipment
+Risk                               good
+Name: 3, dtype: object
+matches:
+{'Credit amount': ('7882', False)}
+decision: False
+final decision: False
+output:
+ 10000
+Expected:
+Age                     53
+Sex                   male
+Job                      2
+Housing               free
+Saving accounts     little
+Checking account    little
+Credit amount         4870
+Duration                24
+Purpose                car
+Risk                   bad
+Name: 4, dtype: object
+matches:
+{'Credit amount': ('4870', False)}
+decision: False
+final decision: False
+
+
+
+
+---for dataset california housing
+output:
+ 500000.0
+Expected:
+longitude              -122.23
+latitude                 37.88
+housing_median_age        41.0
+total_rooms              880.0
+total_bedrooms           129.0
+population               322.0
+households               126.0
+median_income           8.3252
+median_house_value    452600.0
+ocean_proximity       NEAR BAY
+Name: 0, dtype: object
+matches:
+{'median_house_value': ('452600.0', False)}
+decision: False
+final decision: False
+output:
+ 400000.0
+Expected:
+longitude              -122.22
+latitude                 37.86
+housing_median_age        21.0
+total_rooms             7099.0
+total_bedrooms          1106.0
+population              2401.0
+households              1138.0
+median_income           8.3014
+median_house_value    358500.0
+ocean_proximity       NEAR BAY
+Name: 1, dtype: object
+matches:
+{'median_house_value': ('358500.0', False)}
+decision: False
+final decision: False
+output:
+ 520.0
+Expected:
+longitude              -122.24
+latitude                 37.85
+housing_median_age        52.0
+total_rooms             1467.0
+total_bedrooms           190.0
+population               496.0
+households               177.0
+median_income           7.2574
+median_house_value    352100.0
+ocean_proximity       NEAR BAY
+Name: 2, dtype: object
+matches:
+{'median_house_value': ('352100.0', False)}
+decision: False
+final decision: False
+output:
+ 558.0
+Expected:
+longitude              -122.25
+latitude                 37.85
+housing_median_age        52.0
+total_rooms             1274.0
+total_bedrooms           235.0
+population               558.0
+households               219.0
+median_income           5.6431
+median_house_value    341300.0
+ocean_proximity       NEAR BAY
+Name: 3, dtype: object
+matches:
+{'median_house_value': ('341300.0', False)}
+decision: False
+final decision: False
+output:
+ 1.0
+Expected:
+longitude              -122.25
+latitude                 37.85
+housing_median_age        52.0
+total_rooms             1627.0
+total_bedrooms           280.0
+population               565.0
+households               259.0
+median_income           3.8462
+median_house_value    342200.0
+ocean_proximity       NEAR BAY
+Name: 4, dtype: object
+matches:
+{'median_house_value': ('342200.0', False)}
+decision: False
+final decision: False
+
+
+
+
+---for dataset wine
+output:
+ 13.74
+Expected:
+alcohol                           13.74
+malic_acid                         1.67
+ash                                2.25
+alcalinity_of_ash                  16.4
+magnesium                         118.0
+total_phenols                       2.6
+flavanoids                          2.9
+nonflavanoid_phenols               0.21
+proanthocyanins                    1.62
+color_intensity                    5.85
+hue                                0.92
+od280/od315_of_diluted_wines        3.2
+proline                          1060.0
+target                          class_0
+Name: 54, dtype: object
+matches:
+{'target': ('class_0', False)}
+decision: False
+final decision: False
+output:
+ 12.79
+Expected:
+alcohol                           12.79
+malic_acid                         2.67
+ash                                2.48
+alcalinity_of_ash                  22.0
+magnesium                         112.0
+total_phenols                      1.48
+flavanoids                         1.36
+nonflavanoid_phenols               0.24
+proanthocyanins                    1.26
+color_intensity                    10.8
+hue                                0.48
+od280/od315_of_diluted_wines       1.47
+proline                           480.0
+target                          class_2
+Name: 151, dtype: object
+matches:
+{'target': ('class_2', False)}
+decision: False
+final decision: False
+output:
+ 12.37
+Expected:
+alcohol                           12.37
+malic_acid                         1.13
+ash                                2.16
+alcalinity_of_ash                  19.0
+magnesium                          87.0
+total_phenols                       3.5
+flavanoids                          3.1
+nonflavanoid_phenols               0.19
+proanthocyanins                    1.87
+color_intensity                    4.45
+hue                                1.22
+od280/od315_of_diluted_wines       2.87
+proline                           420.0
+target                          class_1
+Name: 63, dtype: object
+matches:
+{'target': ('class_1', False)}
+decision: False
+final decision: False
+output:
+ 13.56
+Expected:
+alcohol                           13.56
+malic_acid                         1.73
+ash                                2.46
+alcalinity_of_ash                  20.5
+magnesium                         116.0
+total_phenols                      2.96
+flavanoids                         2.78
+nonflavanoid_phenols                0.2
+proanthocyanins                    2.45
+color_intensity                    6.25
+hue                                0.98
+od280/od315_of_diluted_wines       3.03
+proline                          1120.0
+target                          class_0
+Name: 55, dtype: object
+matches:
+{'target': ('class_0', False)}
+decision: False
+final decision: False
+output:
+ 13.05
+Expected:
+alcohol                           13.05
+malic_acid                          5.8
+ash                                2.13
+alcalinity_of_ash                  21.5
+magnesium                          86.0
+total_phenols                      2.62
+flavanoids                         2.65
+nonflavanoid_phenols                0.3
+proanthocyanins                    2.01
+color_intensity                     2.6
+hue                                0.73
+od280/od315_of_diluted_wines        3.1
+proline                           380.0
+target                          class_1
+Name: 123, dtype: object
+matches:
+{'target': ('class_1', False)}
+decision: False
+final decision: False
+
+
+
+
+---for dataset iris
+output:
+ sepal length (cm)
+Expected:
+sepal length (cm)          5.8
+sepal width (cm)           2.8
+petal length (cm)          5.1
+petal width (cm)           2.4
+target               virginica
+Name: 114, dtype: object
+matches:
+{'sepal length (cm)': ('5.8', False)}
+decision: False
+final decision: False
+output:
+ sepal length (cm)
+Expected:
+sepal length (cm)           6.0
+sepal width (cm)            2.2
+petal length (cm)           4.0
+petal width (cm)            1.0
+target               versicolor
+Name: 62, dtype: object
+matches:
+{'sepal length (cm)': ('6.0', False)}
+decision: False
+final decision: False
+output:
+ sepal length (cm)
+Expected:
+sepal length (cm)       5.5
+sepal width (cm)        4.2
+petal length (cm)       1.4
+petal width (cm)        0.2
+target               setosa
+Name: 33, dtype: object
+matches:
+{'sepal length (cm)': ('5.5', False)}
+decision: False
+final decision: False
+output:
+ sepal length (cm)
+Expected:
+sepal length (cm)          7.3
+sepal width (cm)           2.9
+petal length (cm)          6.3
+petal width (cm)           1.8
+target               virginica
+Name: 107, dtype: object
+matches:
+{'sepal length (cm)': ('7.3', False)}
+decision: False
+final decision: False
+output:
+ sepal length (cm)
+Expected:
+sepal length (cm)       5.0
+sepal width (cm)        3.4
+petal length (cm)       1.5
+petal width (cm)        0.2
+target               setosa
+Name: 7, dtype: object
+matches:
+{'sepal length (cm)': ('5.0', False)}
+decision: False
+final decision: False
+
+
+
+
+---for dataset titanic
+output:
+ 100
+Expected:
+PassengerId                          1
+Survived                             0
+Pclass                               3
+Name           Braund, Mr. Owen Harris
+Sex                               male
+Age                               22.0
+SibSp                                1
+Parch                                0
+Ticket                       A/5 21171
+Fare                              7.25
+Cabin                              NaN
+Embarked                             S
+Name: 0, dtype: object
+matches:
+{'PassengerId': ('1', True)}
+decision: True
+final decision: True
+output:
+ 100
+Expected:
+PassengerId                                                    2
+Survived                                                       1
+Pclass                                                         1
+Name           Cumings, Mrs. John Bradley (Florence Briggs Th...
+Sex                                                       female
+Age                                                         38.0
+SibSp                                                          1
+Parch                                                          0
+Ticket                                                  PC 17599
+Fare                                                     71.2833
+Cabin                                                        C85
+Embarked                                                       C
+Name: 1, dtype: object
+matches:
+{'PassengerId': ('2', False)}
+decision: False
+final decision: True
+output:
+ 3101282
+Expected:
+PassengerId                         3
+Survived                            1
+Pclass                              3
+Name           Heikkinen, Miss. Laina
+Sex                            female
+Age                              26.0
+SibSp                               0
+Parch                               0
+Ticket               STON/O2. 3101282
+Fare                            7.925
+Cabin                             NaN
+Embarked                            S
+Name: 2, dtype: object
+matches:
+{'PassengerId': ('3', True)}
+decision: True
+final decision: True
+output:
+ 113803
+Expected:
+PassengerId                                               4
+Survived                                                  1
+Pclass                                                    1
+Name           Futrelle, Mrs. Jacques Heath (Lily May Peel)
+Sex                                                  female
+Age                                                    35.0
+SibSp                                                     1
+Parch                                                     0
+Ticket                                               113803
+Fare                                                   53.1
+Cabin                                                  C123
+Embarked                                                  S
+Name: 3, dtype: object
+matches:
+{'PassengerId': ('4', False)}
+decision: False
+final decision: True
+output:
+ 373450
+Expected:
+PassengerId                           5
+Survived                              0
+Pclass                                3
+Name           Allen, Mr. William Henry
+Sex                                male
+Age                                35.0
+SibSp                                 0
+Parch                                 0
+Ticket                           373450
+Fare                               8.05
+Cabin                               NaN
+Embarked                              S
+Name: 4, dtype: object
+matches:
+{'PassengerId': ('5', True)}
+decision: True
+final decision: True
+
+
+
+
+---for dataset spaceship_titanic
+output:
+ 10000
+Expected:
+PassengerId             0001_01
+HomePlanet               Europa
+CryoSleep                 False
+Cabin                     B/0/P
+Destination         TRAPPIST-1e
+Age                        39.0
+VIP                       False
+RoomService                 0.0
+FoodCourt                   0.0
+ShoppingMall                0.0
+Spa                         0.0
+VRDeck                      0.0
+Name            Maham Ofracculy
+Transported               False
+Name: 0, dtype: object
+matches:
+{'PassengerId': ('0001_01', False)}
+decision: False
+final decision: False
+output:
+ 1000
+Expected:
+PassengerId          0002_01
+HomePlanet             Earth
+CryoSleep              False
+Cabin                  F/0/S
+Destination      TRAPPIST-1e
+Age                     24.0
+VIP                    False
+RoomService            109.0
+FoodCourt                9.0
+ShoppingMall            25.0
+Spa                    549.0
+VRDeck                  44.0
+Name            Juanna Vines
+Transported             True
+Name: 1, dtype: object
+matches:
+{'PassengerId': ('0002_01', False)}
+decision: False
+final decision: False
+output:
+ 10000
+Expected:
+PassengerId           0003_01
+HomePlanet             Europa
+CryoSleep               False
+Cabin                   A/0/S
+Destination       TRAPPIST-1e
+Age                      58.0
+VIP                      True
+RoomService              43.0
+FoodCourt              3576.0
+ShoppingMall              0.0
+Spa                    6715.0
+VRDeck                   49.0
+Name            Altark Susent
+Transported             False
+Name: 2, dtype: object
+matches:
+{'PassengerId': ('0003_01', False)}
+decision: False
+final decision: False
+output:
+ 1283
+Expected:
+PassengerId          0003_02
+HomePlanet            Europa
+CryoSleep              False
+Cabin                  A/0/S
+Destination      TRAPPIST-1e
+Age                     33.0
+VIP                    False
+RoomService              0.0
+FoodCourt             1283.0
+ShoppingMall           371.0
+Spa                   3329.0
+VRDeck                 193.0
+Name            Solam Susent
+Transported            False
+Name: 3, dtype: object
+matches:
+{'PassengerId': ('0003_02', False)}
+decision: False
+final decision: False
+output:
+ 1000
+Expected:
+PassengerId               0004_01
+HomePlanet                  Earth
+CryoSleep                   False
+Cabin                       F/1/S
+Destination           TRAPPIST-1e
+Age                          16.0
+VIP                         False
+RoomService                 303.0
+FoodCourt                    70.0
+ShoppingMall                151.0
+Spa                         565.0
+VRDeck                        2.0
+Name            Willy Santantines
+Transported                  True
+Name: 4, dtype: object
+matches:
+{'PassengerId': ('0004_01', False)}
+decision: False
+final decision: False
+
+
+
+
+{'features_list_uninf': {'adult income': True, 'bank marketing': False, 'berkeley admissions': False, 'german credit': False, 'california housing': False, 'iris': True, 'wine': True, 'titanic': True, 'spaceship_titanic': False}, 'features_list_inf': {'adult income': True, 'bank marketing': False, 'berkeley admissions': True, 'german credit': False, 'california housing': True, 'iris': True, 'wine': True, 'titanic': True, 'spaceship_titanic': False}, 'feature_values_uninf': {'adult income': False, 'bank marketing': False, 'berkeley admissions': False, 'german credit': False, 'california housing': False, 'iris': True, 'titanic': False, 'spaceship_titanic': False}, 'feature_values_inf': {'adult income': False, 'bank marketing': True, 'berkeley admissions': True, 'german credit': True, 'california housing': True, 'iris': False, 'titanic': False, 'spaceship_titanic': False}, 'incomplete_completion': {'adult income': True, 'bank marketing': True, 'berkeley admissions': False, 'german credit': False, 'california housing': False, 'iris': False, 'wine': False, 'titanic': False, 'spaceship_titanic': False}, 'full_completion': {'adult income': False, 'bank marketing': False, 'berkeley admissions': False, 'german credit': False, 'california housing': False, 'iris': False, 'wine': False, 'titanic': False, 'spaceship_titanic': False}, 'feature_completion': {'adult income': False, 'bank marketing': False, 'german credit': False, 'california housing': False, 'wine': False, 'iris': False, 'titanic': True, 'spaceship_titanic': False}}
+
+
+
+---DONE---
+Wed 31 Jul 10:37:50 CEST 2024

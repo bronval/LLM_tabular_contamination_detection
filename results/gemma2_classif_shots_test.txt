@@ -1,0 +1,270 @@
+Sun 11 Aug 13:24:23 CEST 2024
+---LLM: gemma2---
+Loading checkpoint shards:   0%|          | 0/8 [00:00<?, ?it/s]Loading checkpoint shards:  12%|█▎        | 1/8 [00:11<01:20, 11.56s/it]Loading checkpoint shards:  25%|██▌       | 2/8 [00:23<01:09, 11.66s/it]Loading checkpoint shards:  38%|███▊      | 3/8 [00:34<00:58, 11.65s/it]Loading checkpoint shards:  50%|█████     | 4/8 [00:46<00:46, 11.71s/it]Loading checkpoint shards:  62%|██████▎   | 5/8 [00:58<00:35, 11.77s/it]Loading checkpoint shards:  75%|███████▌  | 6/8 [01:10<00:23, 11.80s/it]Loading checkpoint shards:  88%|████████▊ | 7/8 [01:22<00:11, 11.75s/it]Loading checkpoint shards: 100%|██████████| 8/8 [01:27<00:00,  9.79s/it]Loading checkpoint shards: 100%|██████████| 8/8 [01:27<00:00, 10.96s/it]
+The attention mask is not set and cannot be inferred from input because pad token is same as eos token. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+---for dataset adult income
+
+Answer only by "Yes" or "No"
+Example:
+The age is 90. The workclass is?. The fnlwgt is 77053. The education is HS-grad. The education.num is 9. The marital.status is Widowed. The occupation is?. The relationship is Not-in-family. The race is White. The sex is Female. The capital.gain is 0. The capital.loss is 4356. The hours.per.week is 40. The native.country is United-States. 
+Does this person earn more than 50K per year? Yes or no?
+Answer: No
+
+Example:
+The age is 74. The workclass is State-gov. The fnlwgt is 88638. The education is Doctorate. The education.num is 16. The marital.status is Never-married. The occupation is Prof-specialty. The relationship is Other-relative. The race is White. The sex is Female. The capital.gain is 0. The capital.loss is 3683. The hours.per.week is 20. The native.country is United-States. 
+Does this person earn more than 50K per year? Yes or no?
+Answer: Yes
+
+
+Example:
+The age is 29, The workclass is Private, The fnlwgt is 280618, The education is Some-college, The education.num is 10, The marital.status is Married-civ-spouse, The occupation is Handlers-cleaners, The relationship is Husband, The race is White, The sex is Male, The capital.gain is 0, The capital.loss is 0, The hours.per.week is 40, The native.country is United-States
+
+Does this person earn more than 50K per year? Yes or no?
+Answer: 
+"""
+import
+Expected: <=50K
+adult income  outputs: {'"""': 93, '"\ni': 6, '""\n': 1}
+Score: 0.0 / 100
+
+
+
+
+---for dataset bank marketing
+
+Answer only by "Yes" or "No"
+Example:
+The age is 58. The job is management. The marital is married. The education is tertiary. The default is no. The balance is 2143. The housing is yes. The loan is no. The contact is unknown. The day is 5. The month is may. The duration is 261. The campaign is 1. The pdays is -1. The previous is 0. The poutcome is unknown. 
+Does this client subscribe to a term deposit? Yes or no?
+Answer: No
+
+Example:
+The age is 59. The job is admin.. The marital is married. The education is secondary. The default is no. The balance is 2343. The housing is yes. The loan is no. The contact is unknown. The day is 5. The month is may. The duration is 1042. The campaign is 1. The pdays is -1. The previous is 0. The poutcome is unknown. 
+Does this client subscribe to a term deposit? Yes or no?
+Answer: Yes
+
+
+Example:
+The age is 40, The job is blue-collar, The marital is married, The education is secondary, The default is no, The balance is 580, The housing is yes, The loan is no, The contact is unknown, The day is 16, The month is may, The duration is 192, The campaign is 1, The pdays is -1, The previous is 0, The poutcome is unknown
+
+Does this client subscribe to a term deposit? Yes or no?
+Answer: 
+"""
+
+Expected: no
+bank marketing  outputs: {'"""': 100}
+Score: 0.0 / 100
+
+
+
+
+---for dataset berkeley admissions
+
+Answer only by "Yes" or "No"
+Example:
+The Year is 1973. The Major is C. The Gender is F. 
+Is this student accepted to the university? Yes or no?
+Answer: No
+
+Example:
+The Year is 1973. The Major is B. The Gender is M. 
+Is this student accepted to the university? Yes or no?
+Answer: Yes
+
+
+Example:
+The Year is 1973, The Major is Other, The Gender is M
+
+Is this student accepted to the university? Yes or no?
+Answer: 
+"""
+import
+Expected: Rejected
+berkeley admissions  outputs: {'"""': 100}
+Score: 0.0 / 100
+
+
+
+
+---for dataset german credit
+
+Answer only by "Yes" or "No"
+Example:
+The Age is 67. The Sex is male. The Job is 2. The Housing is own. The Saving accounts is nan. The Checking account is little. The Credit amount is 1169. The Duration is 6. The Purpose is radio/TV. 
+Is this client a good credit risk? Yes or no?
+Answer: Yes
+
+Example:
+The Age is 22. The Sex is female. The Job is 2. The Housing is own. The Saving accounts is little. The Checking account is moderate. The Credit amount is 5951. The Duration is 48. The Purpose is radio/TV. 
+Is this client a good credit risk? Yes or no?
+Answer: No
+
+
+Example:
+The Age is 24, The Sex is female, The Job is 2, The Housing is own, The Saving accounts is little, The Checking account is little, The Credit amount is 3190, The Duration is 18, The Purpose is radio/TV
+
+Is this client a good credit risk? Yes or no?
+Answer: 
+"""
+
+Expected: bad
+german credit  outputs: {'"""': 100}
+Score: 0.0 / 100
+
+
+
+
+---for dataset california housing
+
+Answer only by "Yes" or "No"
+Example:
+The longitude is -122.23. The latitude is 37.88. The housing_median_age is 41.0. The total_rooms is 880.0. The total_bedrooms is 129.0. The population is 322.0. The households is 126.0. The median_income is 8.3252. The ocean_proximity is NEAR BAY. 
+Is this house expensive? Yes or no?
+Answer: Yes
+
+Example:
+The longitude is -122.26. The latitude is 37.85. The housing_median_age is 52.0. The total_rooms is 2643.0. The total_bedrooms is 626.0. The population is 1212.0. The households is 620.0. The median_income is 1.9167. The ocean_proximity is NEAR BAY. 
+Is this house expensive? Yes or no?
+Answer: No
+
+
+Example:
+The longitude is -119.01, The latitude is 36.06, The housing_median_age is 25.0, The total_rooms is 1505.0, The total_bedrooms is nan, The population is 1392.0, The households is 359.0, The median_income is 1.6812, The ocean_proximity is INLAND
+
+Is this house expensive? Yes or no?
+Answer: 
+"""
+import
+Expected: 47700.0
+california housing  outputs: {'"""': 100}
+Score: 0.0 / 100
+
+
+
+
+---for dataset iris
+
+Answer only by 'Setosa', 'Versicolor' or 'Virginica'
+Example:
+The sepal length (cm) is 5.8. The sepal width (cm) is 2.8. The petal length (cm) is 5.1. The petal width (cm) is 2.4. 
+What is the species of this iris? Setosa, Versicolor or Virginica?
+Answer: virginica
+
+Example:
+The sepal length (cm) is 6.0. The sepal width (cm) is 2.2. The petal length (cm) is 4.0. The petal width (cm) is 1.0. 
+What is the species of this iris? Setosa, Versicolor or Virginica?
+Answer: versicolor
+
+Example:
+The sepal length (cm) is 5.5. The sepal width (cm) is 4.2. The petal length (cm) is 1.4. The petal width (cm) is 0.2. 
+What is the species of this iris? Setosa, Versicolor or Virginica?
+Answer: setosa
+
+
+Example:
+The sepal length (cm) is 5.7, The sepal width (cm) is 4.4, The petal length (cm) is 1.5, The petal width (cm) is 0.4
+
+What is the species of this iris? Setosa, Versicolor or Virginica?
+Answer: 
+"""
+import
+Expected: setosa
+iris  outputs: {'"""\nimport': 89, 'versicolor': 6, 'setosa': 4, 'virginica': 1}
+Score: 7.000000000000001 / 100
+
+
+
+
+---for dataset wine
+
+Answer only by "0", "1" or "2"
+Example:
+The alcohol is 13.74. The malic_acid is 1.67. The ash is 2.25. The alcalinity_of_ash is 16.4. The magnesium is 118.0. The total_phenols is 2.6. The flavanoids is 2.9. The nonflavanoid_phenols is 0.21. The proanthocyanins is 1.62. The color_intensity is 5.85. The hue is 0.92. The od280/od315_of_diluted_wines is 3.2. The proline is 1060.0. 
+What is the quality of this wine? 0, 1 or 2?
+Answer: 0
+
+Example:
+The alcohol is 12.79. The malic_acid is 2.67. The ash is 2.48. The alcalinity_of_ash is 22.0. The magnesium is 112.0. The total_phenols is 1.48. The flavanoids is 1.36. The nonflavanoid_phenols is 0.24. The proanthocyanins is 1.26. The color_intensity is 10.8. The hue is 0.48. The od280/od315_of_diluted_wines is 1.47. The proline is 480.0. 
+What is the quality of this wine? 0, 1 or 2?
+Answer: 2
+
+Example:
+The alcohol is 12.37. The malic_acid is 1.13. The ash is 2.16. The alcalinity_of_ash is 19.0. The magnesium is 87.0. The total_phenols is 3.5. The flavanoids is 3.1. The nonflavanoid_phenols is 0.19. The proanthocyanins is 1.87. The color_intensity is 4.45. The hue is 1.22. The od280/od315_of_diluted_wines is 2.87. The proline is 420.0. 
+What is the quality of this wine? 0, 1 or 2?
+Answer: 1
+
+
+Example:
+The alcohol is 13.83, The malic_acid is 1.65, The ash is 2.6, The alcalinity_of_ash is 17.2, The magnesium is 94.0, The total_phenols is 2.45, The flavanoids is 2.99, The nonflavanoid_phenols is 0.22, The proanthocyanins is 2.29, The color_intensity is 5.6, The hue is 1.24, The od280/od315_of_diluted_wines is 3.37, The proline is 1265.0
+
+What is the quality of this wine? 0, 1 or 2?
+Answer: 0
+
+Example:
+Expected: class_0
+wine  outputs: {'2\n\n': 43, '1\n\n': 35, '0\n\n': 22}
+Score: 53.0 / 100
+
+
+
+
+---for dataset titanic
+
+Answer only by "Yes" or "No"
+Example:
+The PassengerId is 1. The Pclass is 3. The Name is Braund, Mr. Owen Harris. The Sex is male. The Age is 22.0. The SibSp is 1. The Parch is 0. The Ticket is A/5 21171. The Fare is 7.25. The Cabin is nan. The Embarked is S. 
+Did this passenger survive the Titanic disaster? Yes or no?
+Answer: No
+
+Example:
+The PassengerId is 2. The Pclass is 1. The Name is Cumings, Mrs. John Bradley (Florence Briggs Thayer). The Sex is female. The Age is 38.0. The SibSp is 1. The Parch is 0. The Ticket is PC 17599. The Fare is 71.2833. The Cabin is C85. The Embarked is C. 
+Did this passenger survive the Titanic disaster? Yes or no?
+Answer: Yes
+
+
+Example:
+The PassengerId is 710, The Pclass is 3, The Name is Moubarek, Master. Halim Gonios ("William George"), The Sex is male, The Age is nan, The SibSp is 1, The Parch is 1, The Ticket is 2661, The Fare is 15.2458, The Cabin is nan, The Embarked is C
+
+Did this passenger survive the Titanic disaster? Yes or no?
+Answer: 
+"""
+
+Expected: 1
+titanic  outputs: {'"""': 100}
+Score: 0.0 / 100
+
+
+
+
+---for dataset spaceship_titanic
+
+Answer only by "Yes" or "No"
+Example:
+The PassengerId is 0001_01. The HomePlanet is Europa. The CryoSleep is False. The Cabin is B/0/P. The Destination is TRAPPIST-1e. The Age is 39.0. The VIP is False. The RoomService is 0.0. The FoodCourt is 0.0. The ShoppingMall is 0.0. The Spa is 0.0. The VRDeck is 0.0. The Name is Maham Ofracculy. 
+Was this passenger transported to the destination? Yes or no?
+Answer: No
+
+Example:
+The PassengerId is 0002_01. The HomePlanet is Earth. The CryoSleep is False. The Cabin is F/0/S. The Destination is TRAPPIST-1e. The Age is 24.0. The VIP is False. The RoomService is 109.0. The FoodCourt is 9.0. The ShoppingMall is 25.0. The Spa is 549.0. The VRDeck is 44.0. The Name is Juanna Vines. 
+Was this passenger transported to the destination? Yes or no?
+Answer: Yes
+
+
+Example:
+The PassengerId is 0337_02, The HomePlanet is Mars, The CryoSleep is False, The Cabin is F/63/S, The Destination is TRAPPIST-1e, The Age is 19.0, The VIP is False, The RoomService is 417.0, The FoodCourt is 349.0, The ShoppingMall is 634.0, The Spa is 3.0, The VRDeck is 1057.0, The Name is Weros Perle
+
+Was this passenger transported to the destination? Yes or no?
+Answer: 
+"""
+import
+Expected: True
+spaceship_titanic  outputs: {'"""': 100}
+Score: 0.0 / 100
+
+
+
+
+
+
+---DONE---
+Sun 11 Aug 13:40:05 CEST 2024

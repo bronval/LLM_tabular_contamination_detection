@@ -1,0 +1,21 @@
+,Adult,Bank,Berkeley,German,Housing,Iris,Wine,Titanic,Sp. Titanic,serialization
+feature_values_inf,1,1,1,1,1,1,0,1,0,0
+incomplete_completion,1,1,0,0,0,1,0,1,0,0
+full_completion,0,0,0,0,0,0,0,1,0,0
+feature_completion,0,0,0,0,0,1,0,0,0,0
+recognition_ex,0,1,0,1,1,1,1,1,0,0
+feature_values_inf,1,1,0,1,1,1,0,1,0,1
+incomplete_completion,1,1,0,0,0,1,0,1,0,1
+full_completion,0,0,0,0,0,0,0,1,0,1
+feature_completion,0,0,0,0,0,0,0,0,0,1
+recognition_ex,0,1,0,1,1,1,1,1,0,1
+feature_values_inf,1,1,0,1,1,1,0,1,0,2
+incomplete_completion,1,1,0,0,0,1,0,1,0,2
+full_completion,0,0,0,0,0,0,0,1,0,2
+feature_completion,0,0,0,0,0,0,0,0,0,2
+recognition_ex,0,1,0,0,1,1,1,1,0,2
+feature_values_inf,1,1,1,1,1,1,0,1,0,3
+incomplete_completion,1,1,0,0,0,1,0,1,0,3
+full_completion,0,0,0,0,0,0,0,1,0,3
+feature_completion,0,0,0,0,0,1,0,0,0,3
+recognition_ex,0,1,0,1,1,1,1,1,0,3

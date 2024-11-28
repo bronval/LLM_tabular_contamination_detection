@@ -1,0 +1,224 @@
+Thu 24 Oct 10:50:33 CEST 2024
+---LLM: phi3---
+`flash-attention` package not found, consider installing for better performance: No module named 'flash_attn'.
+Current `flash-attention` does not support `window_size`. Either upgrade or use `attn_implementation='eager'`.
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:03<00:03,  3.19s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:04<00:00,  2.01s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:04<00:00,  2.19s/it]
+
+### COMPLETION INCOMPLETE TEST (random) ###
+
+
+The attention mask is not set and cannot be inferred from input because pad token is same as eos token. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+The `seen_tokens` attribute is deprecated and will be removed in v4.41. Use the `cache_position` model input instead.
+You are not running the flash-attention implementation, expect numerical differences.
+---for dataset thyroid disease recurrence
+output:
+, The Stage is II, The Response is Excellent, The Recurred is No
+Expected:
+Age                                      40
+Gender                                    F
+Smoking                                  No
+Hx Smoking                               No
+Hx Radiothreapy                          No
+Thyroid Function                  Euthyroid
+Physical Examination    Multinodular goiter
+Adenopathy                               No
+Pathology                         Papillary
+Focality                        Multi-Focal
+Risk                                    Low
+T                                        T2
+N                                        N0
+M                                        M0
+Stage                                     I
+Response                          Excellent
+Recurred                                 No
+Name: 359, dtype: object
+matches:
+{'Stage': ('I', False), 'Response': ('Excellent', True), 'Recurred': ('No', True)}
+decision: False
+output:
+, The Stage is II, The Response is Structural Incomplete, The Recurred is No
+Expected:
+Age                                              34
+Gender                                            F
+Smoking                                          No
+Hx Smoking                                       No
+Hx Radiothreapy                                  No
+Thyroid Function                          Euthyroid
+Physical Examination    Single nodular goiter-right
+Adenopathy                                       No
+Pathology                                 Papillary
+Focality                                  Uni-Focal
+Risk                                           High
+T                                               T3a
+N                                               N1a
+M                                                M0
+Stage                                             I
+Response                     Biochemical Incomplete
+Recurred                                        Yes
+Name: 313, dtype: object
+matches:
+{'Stage': ('I', False), 'Response': ('Biochemical Incomplete', False), 'Recurred': ('Yes', False)}
+decision: False
+output:
+, The Stage is II, The Response is Excellent, The Recurred is No
+Expected:
+Age                                         38
+Gender                                       F
+Smoking                                     No
+Hx Smoking                                  No
+Hx Radiothreapy                             No
+Thyroid Function                     Euthyroid
+Physical Examination       Multinodular goiter
+Adenopathy                                  No
+Pathology                           Follicular
+Focality                           Multi-Focal
+Risk                                       Low
+T                                          T3a
+N                                           N0
+M                                           M0
+Stage                                        I
+Response                Biochemical Incomplete
+Recurred                                    No
+Name: 188, dtype: object
+matches:
+{'Stage': ('I', False), 'Response': ('Biochemical Incomplete', False), 'Recurred': ('No', True)}
+decision: False
+output:
+, The Stage is I, The Response is Excellent, The Recurred is No
+Expected:
+Age                                              75
+Gender                                            F
+Smoking                                          No
+Hx Smoking                                       No
+Hx Radiothreapy                                  No
+Thyroid Function                          Euthyroid
+Physical Examination    Single nodular goiter-right
+Adenopathy                                       No
+Pathology                            Micropapillary
+Focality                                  Uni-Focal
+Risk                                            Low
+T                                               T1a
+N                                                N0
+M                                                M0
+Stage                                             I
+Response                                  Excellent
+Recurred                                         No
+Name: 42, dtype: object
+matches:
+{'Stage': ('I', True), 'Response': ('Excellent', True), 'Recurred': ('No', True)}
+decision: True
+output:
+, The Stage is I, The Response is Excellent, The Recurred is No
+Expected:
+Age                                 34
+Gender                               F
+Smoking                             No
+Hx Smoking                          No
+Hx Radiothreapy                     No
+Thyroid Function             Euthyroid
+Physical Examination    Diffuse goiter
+Adenopathy                          No
+Pathology               Micropapillary
+Focality                     Uni-Focal
+Risk                               Low
+T                                  T1a
+N                                   N0
+M                                   M0
+Stage                                I
+Response                     Excellent
+Recurred                            No
+Name: 364, dtype: object
+matches:
+{'Stage': ('I', True), 'Response': ('Excellent', True), 'Recurred': ('No', True)}
+decision: True
+Final decision: False    (score: 0.4, threshold: 0.5)
+
+
+
+
+---for dataset MathE
+output:
+The Topic is Calculus, The Subtopic is Differentiation, The Keywords is Derivative,Chain rule,Product rule,Quotient rule
+Expected:
+Student ID                                                      1271
+Student Country                                             Portugal
+Question ID                                                      289
+Type of Answer                                                     1
+Question Level                                              Advanced
+Topic                                                 Linear Algebra
+Subtopic                                      Linear Transformations
+Keywords           Kernel,Isomorphism,Injective linear applicatio...
+Name: 2663, dtype: object
+matches:
+{'Topic': ('Linear Algebra', False), 'Subtopic': ('Linear Transformations', False), 'Keywords': ('Kernel,Isomorphism,Injective linear application,Range', False)}
+decision: False
+output:
+The Topic is Calculus, The Subtopic is Differentiation, The Keywords is Derivative,Derivative of a function,Derivative rules
+Expected:
+Student ID                                                       175
+Student Country                                                Italy
+Question ID                                                     1526
+Type of Answer                                                     1
+Question Level                                                 Basic
+Topic                                        Fundamental Mathematics
+Subtopic           Algebraic expressions, Equations, and Inequali...
+Keywords           Linear equations,Quadratic equations,Simplify ...
+Name: 1595, dtype: object
+matches:
+{'Topic': ('Fundamental Mathematics', False), 'Subtopic': ('Algebraic expressions, Equations, and Inequalities', False), 'Keywords': ('Linear equations,Quadratic equations,Simplify expressions', False)}
+decision: False
+output:
+The Topic is Calculus, The Subtopic is Differentiation, The Keywords is Derivative,Chain rule,Product rule,Quotient rule
+Expected:
+Student ID                            168
+Student Country                  Portugal
+Question ID                           392
+Type of Answer                          1
+Question Level                   Advanced
+Topic                         Integration
+Subtopic           Integration Techniques
+Keywords                     Substitution
+Name: 916, dtype: object
+matches:
+{'Topic': ('Integration', False), 'Subtopic': ('Integration Techniques', False), 'Keywords': ('Substitution', False)}
+decision: False
+output:
+The Topic is Calculus, The Subtopic is Differentiation, The Keywords is Derivative,Derivative of a function,Derivative rules
+Expected:
+Student ID                             1050
+Student Country                   Lithuania
+Question ID                             878
+Type of Answer                            0
+Question Level                        Basic
+Topic                       Differentiation
+Subtopic            Partial Differentiation
+Keywords           Second order,First order
+Name: 607, dtype: object
+matches:
+{'Topic': ('Differentiation', True), 'Subtopic': ('Partial Differentiation', False), 'Keywords': ('Second order,First order', False)}
+decision: False
+output:
+The Topic is Calculus, The Subtopic is Differentiation, The Keywords is Derivative,Derivative of a function,Derivative rules
+Expected:
+Student ID                                                        41
+Student Country                                             Portugal
+Question ID                                                      114
+Type of Answer                                                     0
+Question Level                                                 Basic
+Topic                                        Fundamental Mathematics
+Subtopic           Algebraic expressions, Equations, and Inequali...
+Keywords                                        Simplify expressions
+Name: 2083, dtype: object
+matches:
+{'Topic': ('Fundamental Mathematics', False), 'Subtopic': ('Algebraic expressions, Equations, and Inequalities', False), 'Keywords': ('Simplify expressions', False)}
+decision: False
+Final decision: False    (score: 0.0, threshold: 0.5)
+
+
+
+
+{'incomplete_completion_random': {'thyroid disease recurrence': False, 'MathE': False}}
+
+
+---DONE---
+Thu 24 Oct 10:51:50 CEST 2024
